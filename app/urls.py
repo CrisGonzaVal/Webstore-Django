@@ -1,7 +1,10 @@
-from django.urls import path
+from django.urls import path, include
 from.views import home
 from.views import contacto
 from.views import galeria
+
+
+
 
 urlpatterns = [
     path('', home, name="home"),
