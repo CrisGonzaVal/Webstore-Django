@@ -15,7 +15,7 @@ class Producto(models.Model):
     descripcion = models.TextField()
     nuevo = models.BooleanField()
     marca = models.ForeignKey(Marca, on_delete=models.PROTECT)
-    imagen = models.ImageField(upload_to="producto", null=True)
+    #imagen = models.ImageField(upload_to="producto", null=True)
 
     def __str__(self):
       return self.nombre
