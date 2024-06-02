@@ -1,0 +1,32 @@
+cmd:
+python --version
+pip install django
+django-admin startproject demo (se crea un proyecto con django)
+dir (buscar la carpeta demo) 
+
+se crea una carpeta app
+
+en el terminal:
+python manage.py startapp app (es para crear una app)
+python manage.py runserver (para crear la url y servidor local)
+agregar la app en el setting.py
+
+se crea una carpeta app/ templates /app (se almacenan los .html)
+se crea una carpeta app/ static /app (se almacena los archivos css, imagenes e javascripts)
+
+
+
+DESPUES SE CREAR LOS MODELOS:
+
+para crear los modelos (BD) terminal:
+python manage.py makemigrations
+python manage.py migrate
+
+instalar extension SQLITE y abrir la BD desde db.sqlite.py (ctrl + p)
+
+terminal:
+python manage.py createsuperuser (crear usuario admin)
+pip install -r requirement.txt
+
+
+se crea la carpeta media

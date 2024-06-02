@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+# Se crean los modelos (tablas) desde aqui 
 
 class Marca(models.Model):
     nombre = models.CharField(max_length=50)
