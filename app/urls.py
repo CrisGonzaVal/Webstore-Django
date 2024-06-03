@@ -1,4 +1,6 @@
-from django.urls import path, include
+#se crean los urls de cada vista (html)
+
+from django.urls import path
 from.views import home
 from.views import contacto
 from.views import galeria

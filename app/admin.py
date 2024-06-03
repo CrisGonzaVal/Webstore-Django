@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+# se registran los modelos (tablas) en el admin
 
 from.models import Marca, Producto
 
