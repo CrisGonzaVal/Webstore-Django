@@ -5,8 +5,23 @@ from django.shortcuts import render
 def home(include):
     return render(include, 'app/home.html')
 
-def contacto(include):
-    return render(include, 'app/contacto.html')
+def login(include):
+    return render(include, 'app/login.html')
    
-def galeria(include):
-    return render(include, 'app/galeria.html')   
+def registro(include):
+    return render(include, 'app/registro.html')   
+
+def carro(include):
+    return render(include, 'app/carro.html') 
+
+def catalogo(include):
+    return render(include, 'app/catalogo.html')  
+
+def contactanos(include):
+    return render(include, 'app/contactanos.html')  
+
+def ofertas(include):
+    return render(include, 'app/ofertas.html')  
+
+def proveedores(include):
+    return render(include, 'app/proveedores.html')   

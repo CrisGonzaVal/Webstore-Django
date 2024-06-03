@@ -1,0 +1,155 @@
+{% extends 'app/base.html'%}
+
+{% load static %}
+
+{% block contenido %}
+    <main>
+        <!-- barra scroll -->
+        <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+            <!--Galeria Productos-->
+            <div class="container">  
+              <!-- fila 1 de galeria -->
+              <div class="row">
+                  <div class="col-sm-3 mb-3 mb-sm-0">
+                      <div class="card">
+                          <div class="card-body">
+                              <img class="img-fluid mx-auto d-block image" src="imagenes/productos/audifonos.png" alt="">    
+                              <h5 class="card-title">Special title treatment</h5>
+                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                              <div class="text-center">
+                                  <a href="#" class="btn btn-outline-light" >agregar al carro</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="col-sm-3 mb-3 mb-sm-0">
+                      <div class="card">
+                          <div class="card-body">
+                              <img class="img-fluid mx-auto d-block image" src="imagenes/productos/audifononegro.png" alt="">    
+                              <h5 class="card-title">Special title treatment</h5>
+                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                              <div class="text-center">
+                                  <a href="#" class="btn btn-outline-light" >agregar al carro</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-sm-3 mb-3 mb-sm-0">
+                      <div class="card">
+                          <div class="card-body">
+                              <img class="img-fluid mx-auto d-block image" src="imagenes/productos/inalambricos.png" alt="">    
+                              <br>
+                              <h5 class="card-title">Special title treatment</h5>
+                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                              <div class="text-center">
+                                  <a href="#" class="btn btn-outline-light" >agregar al carro</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-sm-3 mb-3 mb-sm-0">
+                      <div class="card">
+                          <div class="card-body">
+                              <img class="img-fluid mx-auto d-block image" src="imagenes/productos/parlante.png" alt="">    
+                              <h5 class="card-title">Special title treatment</h5>
+                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                              <div class="text-center">
+                                  <a href="#" class="btn btn-outline-light" >agregar al carro</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+              <br>
+              <!-- fila 2 -->
+              <div class="row">
+                  <div class="col-sm-3 mb-3 mb-sm-0">
+                      <div class="card">
+                          <div class="card-body">
+                              <img class="img-fluid mx-auto d-block image" src="imagenes/productos/parlanterojo.png" alt="">    
+                              <br><br>
+                              <h5 class="card-title">Special title treatment</h5>
+                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                              <div class="text-center">
+                                  <a href="#" class="btn btn-outline-light" >agregar al carro</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="col-sm-3 mb-3 mb-sm-0">
+                      <div class="card">
+                          <div class="card-body">
+                              <img class="img-fluid mx-auto d-block image" src="imagenes/productos/cargador.png" alt="">    
+                              <h5 class="card-title">Special title treatment</h5>
+                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                              <div class="text-center">
+                                  <a href="#" class="btn btn-outline-light" >agregar al carro</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-sm-3 mb-3 mb-sm-0">
+                      <div class="card">
+                          <div class="card-body">
+                              <br><br><br><br><br>
+                              <img class="img-fluid mx-auto d-block image" src="imagenes/productos/cargadorauto.png" alt="">    
+                              <br><br><br>
+                              <h5 class="card-title">Special title treatment</h5>
+                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                              <div class="text-center">
+                                  <a href="#" class="btn btn-outline-light" >agregar al carro</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="col-sm-3 mb-3 mb-sm-0">
+                      <div class="card">
+                          <div class="card-body">
+                              <br><br>
+                              <img class="img-fluid mx-auto d-block image" src="imagenes/productos/pendrive.png" alt="">    
+                              <h5 class="card-title">Special title treatment</h5>
+                              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                              <div class="text-center">
+                                  <a href="#" class="btn btn-outline-light" >agregar al carro</a>
+                              </div>
+                              
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+
+          <br><br>
+
+           <!-- paginacion -->
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+        </div>
+    </main>
+    <br><br>
+
+    {% endblock %}

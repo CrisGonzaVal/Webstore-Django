@@ -1,62 +1,195 @@
+
 {% extends 'app/base.html'%}
 
 {% load static %}
 
 {% block contenido %}
-<!-- contenido principal  -->
-<main>
+
+    <main>
+
+         <!-- inicio carrusel -->
+         <div id="carouselExampleCaptions" class="carousel slide w-50 mx-auto" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{% static '/app/imagenes/productos/sale.jpg' %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5></h5>
+                  <p class="parrafo_inicio"></p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="{% static '/app/imagenes/productos/blackfriday.jpg' %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5></h5>
+                  <p class="parrafo_inicio"></p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="{% static '/app/imagenes/productos/2x1.jpg' %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5></h5>
+                  <p class="parrafo_inicio"></p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <!-- cierre carrusel     -->
+        <br><br>
+      
         
-    <!-- articulo -->
-    <article id="main">
-      <h2>¡Mantente al día con las noticias!</h2> 
-      <br>          
-      <p>¡Bienvenido a "News Chile"! donde te informarás sobre todo lo que sucede a lo largo de Chile, pues ofrecemos un abanico de diversos temas y para todos los gustos sobre la actualidad, abordando tanto noticias nacionales como regionales y locales. Sumergete en este viaje donde podrás navegar a través de nuestras secciones y descubrir la diversidad y la riqueza de nuestro país, donde la historia se encuentra con la modernidad y la tradición se mezcla con la innovación. ¡Explora nuestras secciones, llenate de conocimiento y descubre nuestra esencia!.</p>
-      <br>
-      <p>En esta página encontrarás información verídica que te mantendra actualizado con todo lo que necesitas saber para estar al tanto de lo que sucede en esta vibrante comunidad, desde las últimas noticias políticas y económicas hasta eventos culturales, deportivos y sociales que mantienen a sus habitantes comprometidos con su comunidad y a los visitantes atraidos por su historia, geografía y acontecimientos fascinantes. ¡Únete a nosotros para estar siempre al tanto de lo que sucede y no te pierdas ninguna actualización. Te invitamos a seguir conectado junto a nosotros, a través de, nuestra redes sociales.</p>
-    </article>
 
-    <br>
-
-    <!-- inicio carrusel -->
-    <div id="carouselExampleCaptions" class="carousel slide w-50 mx-auto" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="{% static 'app/IMAGENES/incendio.jpeg' %}" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Valparaiso</h5>
-              <p class="parrafo_inicio">El incendio de Valparaiso se convierte en el segundo mas letal de la historia</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="{% static 'app/IMAGENES/volcan-villarica.jpg' %}" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Volcan Villarica</h5>
-              <p class="parrafo_inicio">Se declara alerta amarilla por aumento de actividad sismica</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="{% static 'app/IMAGENES/rapanui.jpg' %}" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Rapa Nui</h5>
-              <p class="parrafo_inicio">Conoce la nueva normativa para visitar la isla</p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-    <!-- cierre carrusel     -->
+        <!-- categorias -->
+        <!-- fila 1 de galeria -->
+        <div class="container">
+            <div class="card text-bg-primary mb-3" >
+                <div class="card-body">
+                  <h5 class="card-title">CATEGORIAS</h5>
+                  <p class="card-text"></p>
+                </div>
+              </div>
+            <div class="row">
+                <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <br>
+                            <img class="img-fluid mx-auto d-block image" src="{% static '/app/imagenes/productos/monitor.png' %}" alt="">    
+                            <h5 class="card-title">COMPUTACIÓN</h5>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-outline-light" >ver categoría</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img class="img-fluid mx-auto d-block image" src="{% static '/app/imagenes/productos/audifononegro.png' %}" alt="">    
+                            <h5 class="card-title">AUDIO</h5>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-outline-light" >ver categoría</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
     
-{% endblock %}
+                <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <br><br><br>
+                            <img class="img-fluid mx-auto d-block image" src="{% static '/app/imagenes/productos/reloj.png' %}" alt="">    
+                            <br><br>
+                            <h5 class="card-title">RELOJES</h5>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-outline-light" >ver categoría</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img class="img-fluid mx-auto d-block image" src="{% static '/app/imagenes/productos/eufi.png' %}" alt="">    
+                            <h5 class="card-title">ELECTROHOGAR</h5>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-outline-light" >ver categoría</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+        <br><br>
 
+         <!-- ofertas -->
+        <!-- fila 1 de galeria -->
+        <div class="container">
+            <div class="card text-bg-primary mb-3" >
+                <div class="card-body">
+                  <h5 class="card-title">DESCUENTOS</h5>
+                  <p class="card-text"></p>
+                </div>
+              </div>
+            <div class="row">
+                <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <br>
+                            <img class="img-fluid mx-auto d-block image" src="{% static '/app/imagenes/productos/30.png' %}" alt="">
+                            <br>    
+                            <h5 class="card-title"></h5>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-outline-light" >ver descuento</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <br>
+                            <img class="img-fluid mx-auto d-block image" src="{% static '/app/imagenes/productos/40.png' %}" alt="">    
+                            <br>
+                            <h5 class="card-title"></h5>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-outline-light" >ver descuentoa</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <br>
+                            <img class="img-fluid mx-auto d-block image" src="{% static '/app/imagenes/productos/50.png' %}" alt="">    
+                            <br>
+                            <h5 class="card-title"></h5>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-outline-light" >ver descuento</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <br>
+                            <img class="img-fluid mx-auto d-block image" src="{% static '/app/imagenes/productos/60.png' %}" alt="">    
+                            <br>
+                            <h5 class="card-title"></h5>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-outline-light" >ver descuento</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+       
+        <br><br>
+
+    </main>
+    <br><br>
+    {% endblock %}
+
+
+    
