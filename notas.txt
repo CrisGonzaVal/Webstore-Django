@@ -18,7 +18,7 @@ se crea una carpeta app/ static /app (se almacena los archivos css, imagenes e j
 
 DESPUES SE CREAR LOS MODELOS:
 
-para crear los modelos (BD) terminal:
+para crear los modelos (BD) terminal y actualizar cambios en el modelo:
 python manage.py makemigrations
 python manage.py migrate
 
@@ -30,3 +30,5 @@ pip install -r requirement.txt
 
 
 se crea la carpeta media
+
+* para eliminar la base de datos se usa: rm db.sqlite3

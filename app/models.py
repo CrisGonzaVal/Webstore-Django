@@ -117,27 +117,37 @@ class Comuna(models.Model):
     nombre_comuna = models.CharField(max_length=100)
     id_ciudad = models.ForeignKey(Ciudad, on_delete=models.CASCADE)
 
+class TipoUsuario(models.Model):
+    id_tipo = models.AutoField(primary_key=True)
+    nombre = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.nombre    
+
 class Usuario(models.Model):
     id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
     edad = models.IntegerField()
-    rut = models.CharField(max_length=20)
-    dv = models.CharField(max_length=10)
+    rut = models.CharField(max_length=12, unique=True)
+    dv = models.CharField(max_length=1)
     email = models.CharField(max_length=100)
-    tipo_usuario = models.CharField(max_length=50)
+    tipo_usuario = models.ForeignKey(TipoUsuario, on_delete=models.CASCADE)
 
     def __str__(self):
-      return self.nombre
+      return self.nombre + " "+ self.apellido
 
+    
 class Cliente(models.Model):
     id_cliente = models.AutoField(primary_key=True)
     id_usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
 
+
 class Empleado(models.Model):
-    id_emp = models.AutoField(primary_key=True)
+    id_empleado = models.AutoField(primary_key=True)
     id_usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     rol = models.CharField(max_length=50)
+
 
 class Cuenta(models.Model):
     id_cuenta = models.AutoField(primary_key=True)
