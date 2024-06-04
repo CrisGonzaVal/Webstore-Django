@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render 
 
 # se crean las vistas
 
@@ -25,3 +25,5 @@ def ofertas(include):
 
 def proveedores(include):
     return render(include, 'app/proveedores.html')   
+
+

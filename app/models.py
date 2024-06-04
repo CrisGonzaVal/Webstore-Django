@@ -143,14 +143,18 @@ class Usuario(models.Model):
 
     
 class Cliente(models.Model):
-    id_cliente = models.AutoField(primary_key=True)
-    id_usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+   usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE, primary_key=True)
+
+   def __str__(self):
+      return self.usuario
 
 
 class Empleado(models.Model):
-    id_empleado = models.AutoField(primary_key=True)
-    id_usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE, primary_key=True)
     rol = models.CharField(max_length=50)
+
+    def __str__(self):
+      return self.usuario
 
 
 class Cuenta(models.Model):
