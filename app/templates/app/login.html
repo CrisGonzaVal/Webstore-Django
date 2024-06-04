@@ -13,7 +13,7 @@
                 <div class="col-md-6">
                     <!-- logo larrain -->
                     <div class="text-center mt-3">
-                        <a href="home.html"><img src="IMAGENES/logo/logotipo.png" alt="logotipo" width="auto" height="150px"></a>
+                        <a href="{% url 'home' %}"><img src="{% static 'app/imagenes/logo/logotipo.png' &}" alt="logotipo" width="auto" height="150px"></a>
                     </div>
                     <!-- Tarjeta de inicio de sesión -->
                     <div class="container d-flex justify-content-center align-items-center" >
@@ -41,7 +41,7 @@
 
                 <!-- columna 2 -->
                 <div class="col-md-6">
-                    <img src="imagenes/logo/login.png" alt="" width="auto" height="100%">
+                    <img src="{% static 'app/imagenes/logo/login.png' %}" alt="" width="auto" height="100%">
                 </div>
             </div>
 
