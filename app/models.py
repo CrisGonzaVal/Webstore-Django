@@ -36,6 +36,7 @@ class Producto(models.Model):
     id_producto = models.AutoField(primary_key=True)
     nombre_prod = models.CharField(max_length=100)
     descripcion = models.TextField()
+    valor = models.IntegerField(default=0) # valor por defecto 0
     color = models.CharField(max_length=50)
     id_categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     id_marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
@@ -48,6 +49,9 @@ class Inventario(models.Model):
     cantidad = models.IntegerField()
     ubicacion = models.CharField(max_length=100)
     estatus = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.id_producto
 
     
 
