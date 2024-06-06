@@ -1,9 +1,10 @@
+import requests
 from django.shortcuts import render 
 
-# se crean las vistas
 
+# se crean las vistas
 def home(include):
-    return render(include, 'app/home.html')
+   return render(include, 'app/home.html')
 
 def login(include):
     return render(include, 'app/login.html')

@@ -1,7 +1,8 @@
 cmd:
 python --version
-pip install django
-django-admin startproject demo (se crea un proyecto con django)
+Python 3.11.3
+pip install django (instalacion django)
+django-admin startproject demo . (se crea un proyecto con django)
 dir (buscar la carpeta demo) 
 
 se crea una carpeta app

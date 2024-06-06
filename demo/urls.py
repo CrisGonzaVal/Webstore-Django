@@ -3,10 +3,15 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-#se crea la url para el admin django
+
 
 urlpatterns = [
+    
+    #se crea la url para el admin django
     path('admin/', admin.site.urls),
+
+    #conectar mapeo
+    #agregamos la ruta de la app
     path('',include('app.urls')),
 ]
 if settings.DEBUG:
