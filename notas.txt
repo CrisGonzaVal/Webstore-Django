@@ -30,3 +30,6 @@ pip install -r requirement.txt
 
 
 se crea la carpeta media
+
+
+pip install pillow
