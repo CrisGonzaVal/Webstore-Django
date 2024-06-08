@@ -1,4 +1,6 @@
 from django.db import models
+from autoslug import AutoSlugField
+
 
 # Se crean los modelos (tablas) desde aqui 
 
@@ -20,8 +22,10 @@ class Bodega(models.Model):
 class Categoria(models.Model):
     id_categoria = models.AutoField(primary_key=True)
     nombre_categoria = models.CharField(max_length=100)
+    slug = AutoSlugField(populate_from='nombre_categoria')
+    activo = models.BooleanField(default=True)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.nombre_categoria
 
 
