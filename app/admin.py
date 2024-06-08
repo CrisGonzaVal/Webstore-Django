@@ -4,6 +4,11 @@ from django.contrib import admin
 
 from.models import Categoria, Marca, Producto, Usuario, Cliente, Empleado, Inventario, Dimensiones, Venta, Historial, Fecha, Proveedores, OrdenCompra, Despacho, Direccion, Ciudad, Comuna, TipoPago, ComprobantePago, Cuenta, TipoUsuario
 
+
+class ProductoAdmin(admin.ModelAdmin):
+    list_display=["nombre", "precio", "nuevo", "marca"]
+
+    
 # Registrar modelos individuales
 admin.site.register(Categoria)
 admin.site.register(Marca)
