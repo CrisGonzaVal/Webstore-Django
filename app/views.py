@@ -4,11 +4,7 @@ from.models import Producto
 
 # se crean las vistas
 def home(request):
-   productos=Producto.objects.all()
-   data={
-       'productos': productos
-   }
-   return render(request, 'app/home.html', data)
+   return render(request, 'app/home.html')
 
 def login(request):
     return render(request, 'app/login.html')
@@ -20,7 +16,11 @@ def carro(request):
     return render(request, 'app/carro.html') 
 
 def catalogo(request):
-    return render(request, 'app/catalogo.html')  
+    productos=Producto.objects.all()
+    data={
+       'productos': productos
+    }
+    return render(request, 'app/catalogo.html',data)  
 
 def contactanos(request):
     return render(request, 'app/contactanos.html')  
