@@ -1,16 +1,16 @@
 from django.contrib import admin
+from.models import Categoria, Marca, Producto, Usuario, Cliente, Empleado, Inventario, Dimensiones, Venta, Historial, Fecha, Proveedores, OrdenCompra, Despacho, Direccion, Ciudad, Comuna, TipoPago, ComprobantePago, Cuenta, TipoUsuario
 
 # se registran los modelos (tablas) en el admin
 
-from.models import Categoria, Marca, Producto, Usuario, Cliente, Empleado, Inventario, Dimensiones, Venta, Historial, Fecha, Proveedores, OrdenCompra, Despacho, Direccion, Ciudad, Comuna, TipoPago, ComprobantePago, Cuenta, TipoUsuario
 
 
 # Registrar modelos individuales
 
-class ProductoAdmin(admin.ModelAdmin):
-    list_display = ["Nomber","Precio","Nuevo","Marca"]
+class ProductoAdmin(admin.ModelAdmin ):
+    list_display = ["Nomber", "Precio", "Nuevo", "Marca"]
     list_editable = ["Precio"]
-    search_fiels = ["Nombre"]
+    search_fields = ["Nombre"]
     list_filter=["Marca","Nuevo"]
     list_per_page = 2
 
