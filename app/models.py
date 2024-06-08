@@ -39,13 +39,15 @@ class Marca(models.Model):
 class Producto(models.Model):
     id_producto = models.AutoField(primary_key=True)
     nombre_prod = models.CharField(max_length=100)
+    imagen = models.CharField(max_length=200)
+    slug = AutoSlugField(populate_from='nombre_prod')
     descripcion = models.TextField()
     valor = models.IntegerField(default=0) # valor por defecto 0
     color = models.CharField(max_length=50)
     id_categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     id_marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
 
-    def __str__(self):
+    def __str__(self)  -> str:
         return self.nombre_prod
 
 class Inventario(models.Model):
