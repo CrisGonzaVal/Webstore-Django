@@ -28,6 +28,7 @@ instalar extension SQLITE y abrir la BD desde db.sqlite.py (ctrl + p)
 terminal:
 python manage.py createsuperuser (crear usuario admin)
 pip install -r requirement.txt
+pip install pillow (para instalar pillow)
 
 
 se crea la carpeta media

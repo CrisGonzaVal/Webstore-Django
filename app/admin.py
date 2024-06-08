@@ -6,13 +6,18 @@ from.models import Categoria, Marca, Producto, Usuario, Cliente, Empleado, Inven
 
 
 class ProductoAdmin(admin.ModelAdmin):
-    list_display=["nombre", "precio", "nuevo", "marca"]
+    list_display=["nombre_prod", "valor", "id_marca", "color"]
+    list_editable=["valor"]
+    search_fields=["nombre_prod"]
+    list_filter=["id_marca", "color"]
+    list_per_page=4
 
-    
+
+
 # Registrar modelos individuales
 admin.site.register(Categoria)
 admin.site.register(Marca)
-admin.site.register(Producto)
+admin.site.register(Producto, ProductoAdmin) #llamo la funcionalidad de filtros en el admin
 admin.site.register(Usuario)
 admin.site.register(Cliente)
 admin.site.register(Empleado)

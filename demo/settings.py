@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app', #aqui se aprega la app
+    'django.contrib.humanize', #para utilizar la etiqueta humanize
 ]
 
 MIDDLEWARE = [

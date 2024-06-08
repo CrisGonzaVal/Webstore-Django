@@ -1,3 +1,4 @@
+
 from django.db import models
 
 # Se crean los modelos (tablas) desde aqui 
