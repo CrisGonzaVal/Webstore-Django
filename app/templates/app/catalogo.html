@@ -16,9 +16,13 @@
                       <div class="card">
                           <div class="card-body">
                               {% if p.imagen %}
-                              <img class="img-fluid mx-auto d-block image" src="{{ p.imagen.url }}" alt="">    
+                              <img class="img-fluid mx-auto d-block image" src="{{ p.imagen.url }}" alt="{{ p.nombre_prod }}">
+                              {% else %}
+                                     <p>No hay imagen disponible</p>    
                               {% endif %}
                               <h5 class="card-title">{{ p.nombre_prod | title }}</h5>
+                              <p class="card-text">${{ p.valor | intcomma }}</p>
+                              <p class="card-text">${{ p.valor | intcomma }}</p>
                               <p class="card-text">${{ p.valor | intcomma }}</p>
                               <div class="text-center">
                                   <a href="#" class="btn btn-outline-light" >agregar al carro</a>
