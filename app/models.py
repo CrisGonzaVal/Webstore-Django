@@ -7,22 +7,22 @@ class Importadora(models.Model):
     rut_empresa = models.CharField(max_length=20, primary_key=True)
 
     def __str__(self):
-      return self.rut_empresa
+        return self.rut_empresa
 
 class Bodega(models.Model):
     id_bodega = models.AutoField(primary_key=True)
     rut_empresa = models.ForeignKey(Importadora, on_delete=models.CASCADE)
 
     def __str__(self):
-      return self.id_bodega
+        return self.id_bodega
 
 
 class Categoria(models.Model):
     id_categoria = models.AutoField(primary_key=True)
-    nombre = models.CharField(max_length=100)
+    nombre_categoria = models.CharField(max_length=100)
 
     def __str__(self):
-      return self.nombre
+        return self.nombre_categoria
 
 
 class Marca(models.Model):
@@ -30,7 +30,7 @@ class Marca(models.Model):
     nombre_m = models.CharField(max_length=100)
 
     def __str__(self):
-      return self.nombre_m
+        return self.nombre_m
 
 class Producto(models.Model):
     id_producto = models.AutoField(primary_key=True)
@@ -42,7 +42,7 @@ class Producto(models.Model):
     id_marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
 
     def __str__(self):
-      return self.nombre_prod
+        return self.nombre_prod
 
 class Inventario(models.Model):
     id_producto = models.OneToOneField(Producto, on_delete=models.CASCADE, primary_key=True)
@@ -93,7 +93,7 @@ class Credito(models.Model):
 
 class Proveedores(models.Model):
     id_proveedor = models.AutoField(primary_key=True)
-    nombre = models.CharField(max_length=100)
+    nombre_proveedor= models.CharField(max_length=100)
     rut = models.CharField(max_length=20)
 
 class OrdenCompra(models.Model):
@@ -114,7 +114,7 @@ class Direccion(models.Model):
 
 class Ciudad(models.Model):
     id = models.AutoField(primary_key=True)
-    nombre = models.CharField(max_length=100)
+    nombre_ciudad = models.CharField(max_length=100)
 
 class Comuna(models.Model):
     id = models.AutoField(primary_key=True)
@@ -123,14 +123,14 @@ class Comuna(models.Model):
 
 class TipoUsuario(models.Model):
     id_tipo = models.AutoField(primary_key=True)
-    nombre = models.CharField(max_length=50)
+    nombre_tipo = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.nombre    
+        return self.nombre_tipo    
 
 class Usuario(models.Model):
     id = models.AutoField(primary_key=True)
-    nombre = models.CharField(max_length=100)
+    nombre_usuario = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)
     edad = models.IntegerField()
     rut = models.CharField(max_length=12, unique=True)
@@ -139,14 +139,14 @@ class Usuario(models.Model):
     tipo_usuario = models.ForeignKey(TipoUsuario, on_delete=models.CASCADE)
 
     def __str__(self):
-      return self.nombre + " "+ self.apellido
+        return self.nombre_usuario + " "+ self.apellido
 
     
 class Cliente(models.Model):
-   usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE, primary_key=True)
+    usuario = models.OneToOneField(Usuario, on_delete=models.CASCADE, primary_key=True)
 
-   def __str__(self):
-      return self.usuario
+    def __str__(self):
+        return self.usuario
 
 
 class Empleado(models.Model):
@@ -154,7 +154,7 @@ class Empleado(models.Model):
     rol = models.CharField(max_length=50)
 
     def __str__(self):
-      return self.usuario
+        return self.usuario
 
 
 class Cuenta(models.Model):
