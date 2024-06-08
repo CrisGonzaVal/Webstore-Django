@@ -10,7 +10,7 @@ from.models import Categoria, Marca, Producto, Usuario, Cliente, Empleado, Inven
 class ProductoAdmin(admin.ModelAdmin):
     list_display = ["Nomber","Precio","Nuevo","Marca"]
     list_editable = ["Precio"]
-    search_fiels=["Nombre"]
+    search_fiels = ["Nombre"]
     list_filter=["Marca","Nuevo"]
     list_per_page = 2
 
