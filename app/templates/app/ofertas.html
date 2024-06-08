@@ -1,0 +1,75 @@
+{% extends 'app/base.html'%}
+
+{% load static %}
+
+{% block contenido %}
+    <main>
+        <!-- barra scroll -->
+        <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+            <!-- Ofertas -->
+        <!-- fila 1 de galeria -->
+        <div class="container">
+            <p><b>OFERTAS</b></p>
+            <div class="row">
+                <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            
+                            <img class="img-fluid mx-auto d-block image" src="{% static 'app/imagenes/productos/cargador.png' %}" alt="">    
+                            <h5 class="card-title"><b>20% OFF</b></h5>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-outline-light" >ver producto</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <br><br><br><br><br><br>
+                            <img class="img-fluid mx-auto d-block image" src="{% static 'app/imagenes/productos/cargadorauto.png' %}" alt="">    
+                            <br><br>
+                            <h5 class="card-title">50% OFF</h5>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-outline-light" >ver producto</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <br>
+                            <img class="img-fluid mx-auto d-block image" src="{% static 'app/imagenes/productos/mouse.png' %}" alt="">    
+                            <br>
+                            <h5 class="card-title">30% OFF</h5>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-outline-light" >ver producto</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-sm-3 mb-3 mb-sm-0">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <br><br>
+                            <img class="img-fluid mx-auto d-block image" src="{% static 'app/imagenes/productos/pendrive.png' %}" alt="">    
+                            <h5 class="card-title">50% OFF</h5>
+                            <div class="text-center">
+                                <a href="#" class="btn btn-outline-light" >ver producto</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+        </div>
+    </main>
+    <br><br>
+
+    
+    {% endblock %}

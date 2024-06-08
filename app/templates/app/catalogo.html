@@ -1,0 +1,65 @@
+{% extends 'app/base.html'%}
+
+{% load static %}
+
+{% block contenido %}
+
+    <main>
+        <!-- barra scroll -->
+        <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+            <!--Galeria Productos-->
+            <div class="container">  
+              <!-- fila 1 de galeria -->
+              <div class="row">
+                
+                {% load humanize %} <!--para ver los datos mas legibles-->
+                {% for p in productos %} <!--llama a todos los productos para mostrarlo-->
+                  <div class="col-sm-3 mb-3 mb-sm-0">
+                      <div class="card">
+                          <div class="card-body">
+                              {% if p.imagen %}
+                              <img class="img-fluid mx-auto d-block image" src="{{ p.imagen.url }}" alt="{{ p.nombre_prod }}">
+                              {% else %}
+                                     <p>No hay imagen disponible</p>    
+                              {% endif %}
+                              <h6 class="card-title">{{ p.nombre_prod | title }}</h5>
+                              <h5 class="card-text">{{ p.id_marca }}</p>
+                              <h4 class="card-text ">${{ p.valor | intcomma }}</p>
+                              <div class="text-center">
+                                  <a href="#" class="btn btn-outline-light" >agregar al carro</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                {% endfor %}  
+                  
+
+              </div>
+          </div>
+
+          <br><br>
+
+           <!-- paginacion -->
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
+        </div>
+    </main>
+    <br><br>
+
+    {% endblock %}

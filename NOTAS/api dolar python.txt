@@ -1,0 +1,23 @@
+#INTEGRÉ API DEL PESO CHILENO A DOLAR
+demo/app/views.py
+
+def home(request):
+    url = 'https://api.exchangerate-api.com/v4/latest/USD'
+    response = requests.get(url)
+
+    if response.status_code == 200:
+        data = response.json()
+        valor_dolar = data['rates']['CLP']
+    else:
+        valor_dolar = 'No disponible'
+
+    context = {
+        'valor_dolar': valor_dolar,
+    }
+    
+    return render(request, 'app/home.html', context)
+
+
+demo/app/tamplates/app/base.html
+
+<p>US$1 = CLP${{ valor_dolar }}</p>

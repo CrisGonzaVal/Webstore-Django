@@ -1,0 +1,148 @@
+{% extends 'app/base.html'%}
+
+{% load static %}
+
+{% block contenido %}
+
+    <main>
+        <!-- barra scroll -->
+        <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+          <!-- carrito de compra -->
+          <div class="container">
+            <!-- fila 1 -->
+            <div class="row">
+              <!-- columna 1 -->
+              <div class="col-md-8">
+                <div class="card">
+                  <div class="card-body">
+                    <b>TU CARRO</b> (3 Productos)
+                  </div>
+                </div>
+              </div>
+              <!-- columna 2 -->
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-body">
+                    <b>RESUMEN DE LA COMPRA</b>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <br>
+      
+            <!-- fila 2 -->
+            <div class="row">
+              <!-- columna 1 -->
+              <div class="col-md-8">
+                <div class="card">
+                  <div class="card-body">
+                    <!-- fila 1 items -->
+                    <div class="row">
+                      <div class="col-md-3">
+                        <img class="img-fluid mx-auto d-block image" src="{% static 'app/imagenes/productos/audifonos.png' %}">
+                      </div>
+                      <div class="col-md-3">
+                        <a href="#">Lorem Ipsum dolor</a>
+                        <div class="product-info">
+                          <div>Display: <span class="value">5 inch</span></div>
+                          <div>RAM: <span class="value">4GB</span></div>
+                          <div>Memory: <span class="value">32GB</span></div>
+                        </div>
+                      </div>
+                      <div class="col-md-2 quantity">
+                        <input id="quantity" type="number" value ="1" class="form-control quantity-input">
+                      </div>
+                      <div class="col-md-2">
+                        <button class="btn btn-link">Eliminar</button>
+                      </div>
+                      <div class="col-md-2">
+                        <span>$20.990</span>
+                      </div>
+                    </div>
+                    <br>
+                    <!-- fila 2 items -->
+                    <div class="row">
+                      <div class="col-md-3">
+                        <img class="img-fluid mx-auto d-block image" src="{% static 'app/imagenes/productos/ventilador.png' %}">
+                      </div>
+                      <div class="col-md-3">
+                        <a href="#">Lorem Ipsum dolor</a>
+                        <div class="product-info">
+                          <div>Display: <span class="value">5 inch</span></div>
+                          <div>RAM: <span class="value">4GB</span></div>
+                          <div>Memory: <span class="value">32GB</span></div>
+                        </div>
+                      </div>
+                      <div class="col-md-2 quantity">
+                        <input id="quantity" type="number" value ="1" class="form-control quantity-input">
+                      </div>
+                      <div class="col-md-2">
+                        <button class="btn btn-link">Eliminar</button>
+                      </div>
+                      <div class="col-md-2">
+                        <span>$20.990</span>
+                      </div>
+                    </div>
+                    <br>
+                    <!-- fila 3 items -->
+                    <div class="row">
+                      <div class="col-md-3">
+                        <img class="img-fluid mx-auto d-block image" src="{% static 'app/imagenes/productos/secador.png' %}">
+                      </div>
+                      <div class="col-md-3">
+                        <a href="#">Lorem Ipsum dolor</a>
+                        <div class="product-info">
+                          <div>Display: <span class="value">5 inch</span></div>
+                          <div>RAM: <span class="value">4GB</span></div>
+                          <div>Memory: <span class="value">32GB</span></div>
+                        </div>
+                      </div>
+                      <div class="col-md-2 quantity">
+                        <input id="quantity" type="number" value ="1" class="form-control quantity-input">
+                      </div>
+                      <div class="col-md-2">
+                        <button class="btn btn-link">Eliminar</button>
+                      </div>
+                      <div class="col-md-2">
+                        <span>$20.990</span>
+                      </div>
+                    </div>
+      
+                  </div>
+                </div>
+              </div>
+              <!-- columna 2 -->
+              <div class="col-md-4">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-8">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item"><b>Productos (3)</b></li>
+                          <li class="list-group-item"><b>Total:</b> </li>
+                        </ul>
+                      </div>
+                      <div class="col-md-4">
+                        <ul class="list-group list-group-flush">
+                          <li class="list-group-item"><b>$104.990</b></li>
+                          <li class="list-group-item"><b>$104.990</b></li>
+                        </ul>
+                      </div>  
+                    </div>
+                    <br>
+                    <button type="button" class="btn btn-primary btn-mg ">Continuar con el pago</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+    </main>
+
+
+
+    <br><br>
+
+    {% endblock %}

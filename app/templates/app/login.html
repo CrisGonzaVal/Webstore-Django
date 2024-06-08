@@ -1,0 +1,55 @@
+{% extends 'app/base.html'%}
+
+{% load static %}
+
+{% block contenido %}
+
+    <main style="margin-top: 5%;">
+        <!-- barra scroll -->
+        <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+            
+            <div class="row">
+                <!-- columna 1 -->
+                <div class="col-md-6">
+                    <!-- logo larrain -->
+                    <div class="text-center mt-3">
+                        <a href="{% url 'home' %}"><img src="{% static 'app/imagenes/logo/logotipo.png' %}" alt="logotipo" width="auto" height="150px"></a>
+                    </div>
+                    <!-- Tarjeta de inicio de sesión -->
+                    <div class="container d-flex justify-content-center align-items-center" >
+                        <div class="p-5 w-50">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Info@gmail.com">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="password" placeholder="Password">
+                                </div>
+                                <div class="text-center mt-4">
+                                    <a href="#" class="text-decoration-none small">¿Olvidaste la contraseña?</a>
+                                </div>
+                                <br>
+                                <div class="text-center mt-3">
+                                    <button type="submit" class="btn btn-primary w-50">Login</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- columna 2 -->
+                <div class="col-md-6">
+                    <img src="{% static 'app/imagenes/logo/login.png' %}" alt="" width="auto" height="100%">
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+    <br><br>
+
+
+
+    {% endblock %}

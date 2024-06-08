@@ -1,12 +1,34 @@
-from django.shortcuts import render
+
+from django.shortcuts import render 
+from.models import Producto
 
 # se crean las vistas
+def home(request):
+   return render(request, 'app/home.html')
 
-def home(include):
-    return render(include, 'app/home.html')
-
-def contacto(include):
-    return render(include, 'app/contacto.html')
+def login(request):
+    return render(request, 'app/login.html')
    
-def galeria(include):
-    return render(include, 'app/galeria.html')   
+def registro(request):
+    return render(request, 'app/registro.html')   
+
+def carro(request):
+    return render(request, 'app/carro.html') 
+
+def catalogo(request):
+    productos=Producto.objects.all()
+    data={
+       'productos': productos
+    }
+    return render(request, 'app/catalogo.html',data)  
+
+def contactanos(request):
+    return render(request, 'app/contactanos.html')  
+
+def ofertas(request):
+    return render(request, 'app/ofertas.html')  
+
+def proveedores(request):
+    return render(request, 'app/proveedores.html')   
+
+
