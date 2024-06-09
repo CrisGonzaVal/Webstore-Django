@@ -1,6 +1,20 @@
+/* Estilo para navbar fija */
+.navbar-fixed {
+   position: fixed;
+   top: 0;
+   width: 100%;
+   z-index: 1000;
+   background-color: white;
+   border-bottom: 1px solid #ccc;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-
-.navbar{
- background: transparent ;
- backdrop-filter: blur(100px);
+/* Estilo para navbar pegajosa */
+.navbar-sticky {
+   position: sticky;
+   top: 0;
+   z-index: 1000;
+   background-color: white;
+   border-bottom: 1px solid #ccc;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
