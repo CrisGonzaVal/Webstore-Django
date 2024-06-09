@@ -2,6 +2,7 @@
 .image {
     width: 200px; /* Define el ancho deseado */
     height: 200px; /* Define la altura deseada */
+    
 }
 
 /* se define el porte de las cartas de los productos */
@@ -10,4 +11,5 @@
     height: 400px; /* Define la altura deseada */
     margin-right: 20px; /* Espacio a la derecha de cada tarjeta */
     margin-bottom: 20px; /* Espacio debajo de cada tarjeta */
+    
 }
