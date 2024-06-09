@@ -40,6 +40,7 @@ class Producto(models.Model):
     color = models.CharField(max_length=50)
     id_categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     id_marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
+    imagen = models.ImageField(upload_to="producto",null=True)
 
     def __str__(self):
       return self.nombre_prod
