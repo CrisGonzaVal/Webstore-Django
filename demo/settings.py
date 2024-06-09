@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app', #aqui se aprega la app
+    'django.contrib.humanize', #para utilizar la etiqueta humanize
 ]
 
 MIDDLEWARE = [
@@ -121,9 +122,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 import os
-
+#url donde se guardaran las imagenes de la base de datos por medio el admin
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Default primary key field type

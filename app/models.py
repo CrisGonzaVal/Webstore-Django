@@ -1,3 +1,4 @@
+
 from django.db import models
 from autoslug import AutoSlugField
 
@@ -42,10 +43,11 @@ class Producto(models.Model):
     imagen = models.CharField(max_length=200)
     slug = AutoSlugField(populate_from='nombre_prod')
     descripcion = models.TextField()
-    valor = models.IntegerField(default=0) # valor por defecto 0
+    valor = models.DecimalField(max_digits=10, decimal_places=2, default=0.0) # valor por defecto 0
     color = models.CharField(max_length=50)
     id_categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     id_marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
+    imagen = models.ImageField(upload_to="producto/", null=True)
 
     def __str__(self)  -> str:
         return self.nombre_prod

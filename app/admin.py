@@ -1,13 +1,23 @@
 from django.contrib import admin
 
-# se registran los modelos (tablas) en el admin
+# se registran los modelos (tablas) para mostralo en el admin de Django
 
 from.models import Categoria, Marca, Producto, Usuario, Cliente, Empleado, Inventario, Dimensiones, Venta, Historial, Fecha, Proveedores, OrdenCompra, Despacho, Direccion, Ciudad, Comuna, TipoPago, ComprobantePago, Cuenta, TipoUsuario
+
+
+class ProductoAdmin(admin.ModelAdmin):
+    list_display=["nombre_prod", "valor", "id_marca", "color"]
+    list_editable=["valor"]
+    search_fields=["nombre_prod"]
+    list_filter=["id_marca", "color"]
+    list_per_page=4
+
+
 
 # Registrar modelos individuales
 admin.site.register(Categoria)
 admin.site.register(Marca)
-admin.site.register(Producto)
+admin.site.register(Producto, ProductoAdmin) #llamo la funcionalidad de filtros en el admin
 admin.site.register(Usuario)
 admin.site.register(Cliente)
 admin.site.register(Empleado)
