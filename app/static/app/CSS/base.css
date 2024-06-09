@@ -1,20 +1,17 @@
 /* Estilo para navbar fija */
-.navbar-fixed {
-   position: fixed;
-   top: 0;
+.navbar-sticky {
+
    width: 100%;
-   z-index: 1000;
-   background-color: white;
-   border-bottom: 1px solid #ccc;
-   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    background:white; /* Ajusta el color según sea necesario */
+    border-bottom: 1px solid #ccc; /* Opcional: para un borde inferior */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Opcional: sombra para mejor visibilidad */
 }
 
-/* Estilo para navbar pegajosa */
-.navbar-sticky {
-   position: sticky;
-   top: 0;
-   z-index: 1000;
-   background-color: white;
-   border-bottom: 1px solid #ccc;
-   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.bg-primary{
+   margin-top: 100px; /* Ajusta este valor según sea necesario */
 }
+
