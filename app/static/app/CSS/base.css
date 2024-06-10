@@ -5,7 +5,8 @@
    position: fixed;
     top: 0;
     z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
-    background:white; /* Ajusta el color según sea necesario */
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(120px);
     border-bottom: 1px solid #ccc; /* para un borde inferior */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /*sombra para mejor visibilidad */
 }
