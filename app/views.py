@@ -1,12 +1,10 @@
 
-
 from django.shortcuts import render 
-# from.models import Producto
-# import requests
+
 
 # se crean las vistas
-def home(request):
-    return render(request, 'app/home.html')
+def home(include):
+   return render(include, 'app/home.html')
 
 def login(request):
     return render(request, 'app/login.html')
@@ -17,8 +15,8 @@ def registro(request):
 def carro(request):
     return render(request, 'app/carro.html') 
 
-def catalogo(request):
-    return render(request, 'app/catalogo.html')  
+def catalogo(include):
+    return render(include, 'app/catalogo.html')  
 
 def contactanos(request):
     return render(request, 'app/contactanos.html')  
