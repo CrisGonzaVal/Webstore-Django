@@ -7,6 +7,40 @@
     width: 300px; /* Define el ancho deseado */
     height: 400px; /* Define la altura deseada */
     margin-right: 20px; /* Espacio a la derecha de cada tarjeta */
-    margin-bottom: 20px; /* Espacio debajo de cada tarjeta */
-    
+    margin-bottom: 20px; /* Espacio debajo de cada tarjeta */    
+    border: none;
 }
+
+/*cuando el cursor esta dentro de la tarjeta se muestra  la sombra*/
+.card:hover{
+    cursor: pointer;
+    box-shadow: inset 0 -3em 3em rgba(199, 199, 199, 0.1),
+    0 0  0 2px rgb(245, 245, 245),
+    0.3em 0.3em 1em rgba(0,0,0,0.3);
+  }
+
+.btn-outline-light {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+    background-color: #008bf8;
+    color: #fbfbfb;
+    font-size: 1rem;
+    padding: .5rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.3s ease-out;
+}
+
+/*cursor*/
+.card:hover .btn-outline-light {
+    transform: translate(-50%, -35%); /*posicion del boton*/
+    opacity: 1;
+    background-color: #008bf8;
+    color: #fbfbfb;
+   }
+   
+

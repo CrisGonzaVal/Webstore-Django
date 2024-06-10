@@ -4,14 +4,58 @@
    width: 100%;
    position: fixed;
     top: 0;
-    width: 100%;
     z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
     background:white; /* Ajusta el color según sea necesario */
-    border-bottom: 1px solid #ccc; /* Opcional: para un borde inferior */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Opcional: sombra para mejor visibilidad */
+    border-bottom: 1px solid #ccc; /* para un borde inferior */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /*sombra para mejor visibilidad */
 }
 
-.bg-primary{
-   margin-top: 100px; /* Ajusta este valor según sea necesario */
+.bg-primary{ 
+   margin-top: 100px; /* banner azul mas abajo */
 }
 
+
+/*efecto imput buscar */
+.input:focus, input:hover {
+   outline: none;
+   border-color: rgba(80, 98, 236, 0.4);
+   background-color: #fff;
+   box-shadow: 0 0 0 4px rgba(100, 76, 234, 0.1);
+}
+
+
+/*efectos menu nav*/
+.menuNav a{
+      color: #ffffff;
+      cursor: pointer;
+      position: relative;
+      border: none;
+      background: none;
+     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+      transition-duration: 400ms;
+      transition-property: color;
+    }
+
+.menuNav a:focus, .menuNav a:hover {
+      color: #fff;
+}
+
+.menuNav a:focus:after,
+.menuNav a:hover:after {
+      width: 100%;
+      left: 0%;
+}
+
+.menuNav a:after {
+   content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
