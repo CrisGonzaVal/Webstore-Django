@@ -33,4 +33,9 @@ pip install pillow (para instalar pillow)
 
 se crea la carpeta media
 
+<<<<<<< HEAD:notas.txt
+
+pip install pillow
+=======
 * para eliminar la base de datos se usa: rm db.sqlite3
+>>>>>>> cristian:NOTAS/notas.txt
