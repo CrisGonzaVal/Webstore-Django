@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(response => response.json())
         .then(data => {
             const valorDolar = data.rates.CLP;
-            document.getElementById('valor-dolar').innerText = `US$1 = CLP$${valorDolar}`;
+            document.getElementById('valor-dolar').innerText = '1 USD -> CLP$${valorDolar}';
         })
         .catch(error => {
             console.error('Error fetching the dollar value:', error);
-            document.getElementById('valor-dolar').innerText = 'US$1 = No disponible';
+            document.getElementById('valor-dolar').innerText = '1 USD -> No disponible';
         });
 });
