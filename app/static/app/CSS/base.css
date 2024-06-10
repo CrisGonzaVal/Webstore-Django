@@ -1,9 +1,6 @@
 /* Estilo para navbar fija */
 .navbar-sticky {
 
-<<<<<<< HEAD
-.navbar.navbar-expand-lg{
-=======
    width: 100%;
    position: fixed;
     top: 0;
@@ -16,7 +13,6 @@
 .bg-primary{ 
    margin-top: 100px; /* banner azul mas abajo */
 }
->>>>>>> cristian
 
 
 /*efecto imput buscar */
