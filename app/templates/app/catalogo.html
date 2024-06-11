@@ -74,9 +74,10 @@
                               {% else %}
                                      <p>No hay imagen disponible</p>    
                               {% endif %}
-                              <h6 class="card-title">{{ p.nombre_prod | title }}</h5>
-                              <h5 class="card-text">{{ p.id_marca }}</p>
-                              <h4 class="card-text ">${{ p.valor | intcomma }}</p>
+                              <h6 class="card-title">{{ p.nombre_prod | title }}</h6>
+                              <h5 class="card-text">{{ p.id_marca }}</h5>
+                              <p class="card-text" style="color: gray;">{{ p.cantidad_total}} en inventario</p>
+                              <h4 class="card-text ">${{ p.valor | intcomma }}</h4>
                               <div class="text-center">
                                   <a href="#" class="btn btn-outline-light" >agregar al carro</a>
                               </div>

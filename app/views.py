@@ -1,6 +1,8 @@
 
 from django.shortcuts import render 
-from.models import Producto
+from.models import Producto, Inventario
+from django.db.models import Sum
+
 
 # se crean las vistas
 def home(request):
@@ -16,7 +18,15 @@ def carro(request):
     return render(request, 'app/carro.html') 
 
 def catalogo(request):
+    # Obtener todos los productos
     productos=Producto.objects.all()
+
+    # Calcular la cantidad total de cada producto
+    for producto in productos:
+        cantidad_total = Inventario.objects.filter(id_producto=producto).aggregate(total=Sum('cantidad'))['total']
+        producto.cantidad_total = cantidad_total
+
+    # Pasar los productos con la cantidad total calculada al contexto
     data={
        'productos': productos
     }

@@ -52,11 +52,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'demo.urls'
-
+import os #se importa (admin)
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'app/templates')], #Asegúrate de que la carpeta de plantillas esté configurada en settings.py para modificar el admin (admin)
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,8 +120,12 @@ USE_TZ = True
 
 # se define la carpeta donde guardará las imagenes
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'app/static'),
+]
 
 import os
+
 #url donde se guardaran las imagenes de la base de datos por medio el admin
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
