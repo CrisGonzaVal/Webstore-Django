@@ -22,6 +22,7 @@ def catalogo(request):
     productos=Producto.objects.all()
 
     # Calcular la cantidad total de cada producto
+    # consulta usando python que es = select cantidad AS sum(cantidad_total) FROM Inventario WHERE id_producto = producto.id_producto
     for producto in productos:
         cantidad_total = Inventario.objects.filter(id_producto=producto).aggregate(total=Sum('cantidad'))['total']
         producto.cantidad_total = cantidad_total if cantidad_total is not None else 0
