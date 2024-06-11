@@ -5,7 +5,7 @@ image {
 }
 .row .card{
     width: 300px; /* Define el ancho deseado */
-    height: 400px; /* Define la altura deseada */
+    height: 500px; /* Define la altura deseada */
     margin-right: 20px; /* Espacio a la derecha de cada tarjeta */
     margin-bottom: 20px; /* Espacio debajo de cada tarjeta */    
     border: 2px solid rgba(0, 0, 0, 0.05);
@@ -32,7 +32,7 @@ image {
     left: 50%;
     bottom: 0;
     opacity: 0;
-    transition: 0.3s ease-out;
+    transition: 0.5s ease-out;
 }
 
 /*cursor*/
