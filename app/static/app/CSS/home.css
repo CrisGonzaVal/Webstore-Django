@@ -24,7 +24,7 @@ image {
     width: 60%;
     border-radius: 1rem;
     border: none;
-    background-color: #008bf8;
+    background-color: #1c7ce2;
     color: #fbfbfb;
     font-size: 1rem;
     padding: .5rem 1rem;
@@ -39,8 +39,10 @@ image {
 .row .card:hover .btn-outline-light {
     transform: translate(-50%, -35%); /*posicion del boton*/
     opacity: 1;
-    background-color: #008bf8;
+    background-color:#1c7ce2;
     color: #fbfbfb;
    }
    
-
+   .card .text-bg-primary{
+    background-color:#1c7ce2;
+   }
