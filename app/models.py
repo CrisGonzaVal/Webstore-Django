@@ -47,13 +47,14 @@ class Producto(models.Model):
       return self.nombre_prod
 
 class Inventario(models.Model):
-    id_producto = models.OneToOneField(Producto, on_delete=models.CASCADE, primary_key=True)
+    id_inventario = models.AutoField(primary_key=True,)
+    id_producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     cantidad = models.IntegerField()
     ubicacion = models.CharField(max_length=100)
     estatus = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.id_producto
+        return f"Inventario ID: {self.id_inventario} - Inventario ID: {self.id_producto.nombre_prod} - Cantidad: {self.cantidad} - Ubicación: {self.ubicacion}"
 
     
 
