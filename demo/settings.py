@@ -120,8 +120,12 @@ USE_TZ = True
 
 # se define la carpeta donde guardará las imagenes
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'app/static'),
+]
 
 import os
+
 #url donde se guardaran las imagenes de la base de datos por medio el admin
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
