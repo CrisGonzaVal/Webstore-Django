@@ -17,6 +17,7 @@ def registro(request):
 def carro(request):
     return render(request, 'app/carro.html') 
 
+#manipulo los modelos producto e inventario y lo muestro en la vista catalogo
 def catalogo(request):
     # Obtener todos los productos
     productos=Producto.objects.all()
