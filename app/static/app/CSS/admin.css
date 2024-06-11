@@ -6,3 +6,8 @@
 #header a {
     color: #FFFFFF !important;
 }
+
+.logotipo{
+    width: 200px; /* Define el ancho deseado */
+    filter: invert(100%) brightness(150%); /*el logotipo se deja blanco*/
+}
