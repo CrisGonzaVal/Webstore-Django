@@ -24,7 +24,7 @@ def catalogo(request):
     # Calcular la cantidad total de cada producto
     for producto in productos:
         cantidad_total = Inventario.objects.filter(id_producto=producto).aggregate(total=Sum('cantidad'))['total']
-        producto.cantidad_total = cantidad_total
+        producto.cantidad_total = cantidad_total if cantidad_total is not None else 0
 
     # Pasar los productos con la cantidad total calculada al contexto
     data={
