@@ -1,0 +1,11 @@
+<!--Este archivo es para modificar el admin de django raiz-->
+{% extends "admin/base_site.html" %}
+
+
+{% block extrahead %}
+{{ block.super }}
+
+{% load static %} 
+<link rel="stylesheet" type="text/css" href="{% static 'app/CSS/admin.css' %}">
+
+{% endblock %}
