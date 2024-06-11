@@ -63,3 +63,10 @@
   transition-property: width, left;
 }
 
+/*todos los dropdown se despliega cuando lo enfoca*/
+.dropdown:hover .dropdown-menu,
+        .dropdown:focus .dropdown-menu {
+            display: block;
+            max-height: 300px; /* Ajusta según el contenido */
+            opacity: 1;
+        }
