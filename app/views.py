@@ -18,7 +18,7 @@ def carro(request):
     return render(request, 'app/carro.html') 
 
 
-#manipulo los modelos producto e inventario y lo muestro en la vista catalogo
+#manipulo los modelos producto e inventario y lo muestro en la vista catalogo.html
 def catalogo(request):
     # Obtener todos los productos
     productos=Producto.objects.all()
