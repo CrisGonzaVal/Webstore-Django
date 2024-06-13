@@ -38,11 +38,6 @@ def proveedores(request):
     return render(request, 'app/proveedores.html')
 
 
-def agregar_producto_catalogo(request, producto_id):
-    carrito = Carrito(request)
-    producto = Producto.objects.get(id_producto=producto_id)
-    carrito.agregar(producto)
-    return redirect("carro")
 
 def agregar_producto(request, producto_id):
     carrito = Carrito(request)
