@@ -1,10 +1,9 @@
 
 from django.shortcuts import render 
-<<<<<<< HEAD
-=======
+
 from.models import Producto, Inventario
 from django.db.models import Sum
->>>>>>> webstore
+
 
 
 # se crean las vistas
@@ -20,10 +19,10 @@ def registro(request):
 def carro(request):
     return render(request, 'app/carro.html') 
 
-<<<<<<< HEAD
+
 def catalogo(include):
     return render(include, 'app/catalogo.html')  
-=======
+
 
 #manipulo los modelos producto e inventario y lo muestro en la vista catalogo.html
 def catalogo(request):
@@ -41,7 +40,7 @@ def catalogo(request):
        'productos': productos
     }
     return render(request, 'app/catalogo.html',data)  
->>>>>>> webstore
+
 
 def contactanos(request):
     return render(request, 'app/contactanos.html')  
