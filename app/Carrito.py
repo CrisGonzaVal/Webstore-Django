@@ -1,3 +1,5 @@
+from decimal import Decimal
+
 class Carrito:
     def __init__(self, request):
         self.session = request.session
