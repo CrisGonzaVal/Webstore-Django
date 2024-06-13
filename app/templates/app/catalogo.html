@@ -8,113 +8,109 @@
 <!-- barra filtros -->
 <br>
 <div class="navFiltro">
-  <div class="container">
-    <nav class="navbar navbar-expand-lg bg-body-secondary p-2">
+  <div class="container ">
+  <nav class="navbar navbar-expand-lg bg-body-secondary p-2 ">
       <div class="container justify-content-center">
-        <ul class="navbar-nav">
-          <li class="nav-item dropdown me-5">
-            <button class="btn dropdown-toggle navbar-brand" data-bs-toggle="dropdown" aria-expanded="false">
-              Marca
-            </button>
-            <ul class="dropdown-menu dropdown-menu-primary">
-              <li><a class="dropdown-item" href="#">xiaomi</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">huawei</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">opo</a></li>
-            </ul>
-          </li>
+          <ul class="navbar-nav">
+              <li class="nav-item dropdown me-5 ">
+                <button class="btn dropdown-toggle navbar-brand" data-bs-toggle="dropdown" aria-expanded="false">
+                  Marca
+                </button>
+                <ul class="dropdown-menu dropdown-menu-primary">
+                  <li><a class="dropdown-item" href="#">xiaomi</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">huawei</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">opo</a></li>
+                </ul>
+              </li>
+              
+              <li class="nav-item dropdown me-5">
+                  <button class="btn dropdown-toggle navbar-brand" data-bs-toggle="dropdown" aria-expanded="false">
+                    Categoria
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-primary">
+                    <li><a class="dropdown-item" href="#">Audio</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Computacion</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Electro Hogar</a></li>
+                  </ul>
+                </li>
 
-          <li class="nav-item dropdown me-5">
-            <button class="btn dropdown-toggle navbar-brand" data-bs-toggle="dropdown" aria-expanded="false">
-              Categoria
-            </button>
-            <ul class="dropdown-menu dropdown-menu-primary">
-              <li><a class="dropdown-item" href="#">Audio</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Computacion</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Electro Hogar</a></li>
-            </ul>
-          </li>
+                <li class="nav-item dropdown me-5">
+                  <button class="btn dropdown-toggle navbar-brand" data-bs-toggle="dropdown" aria-expanded="false">
+                    Precio
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-primary">
+                    <li><a class="dropdown-item" href="#">menor a mayor</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">mayor a menor</a></li>
+                  </ul>
+                </li>
 
-          <li class="nav-item dropdown me-5">
-            <button class="btn dropdown-toggle navbar-brand" data-bs-toggle="dropdown" aria-expanded="false">
-              Precio
-            </button>
-            <ul class="dropdown-menu dropdown-menu-primary">
-              <li><a class="dropdown-item" href="#">menor a mayor</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">mayor a menor</a></li>
-            </ul>
-          </li>
-
-          <a class="btn navbar-brand me-5" href="#" role="button">Help</a>
-        </ul>
+                <a class="btn navbar-brand me-5" href="#" role="button">Help</a> 
+            </ul> 
       </div>
-    </nav>
+  </nav>
   </div>
-</div>
+</div> 
 <br><br>
+    <main>
+        <!-- barra scroll -->
+        <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+            <!--Galeria Productos-->
+            <div class="container">  
+              <!-- fila 1 de galeria -->
+              <div class="row">
+                
+                {% load humanize %} <!--para ver los datos más legibles-->
+                {% for p in productos %} <!--llama a todos los productos para mostrarlo-->
+                  <div class="col-sm-3 mb-3 mb-sm-0">
+                      <div class="card">
+                          <div class="card-body">
+                              {% if p.imagen %}
+                              <img class="img-fluid mx-auto d-block image" src="{{ p.imagen.url }}" alt="{{ p.nombre_prod }}">
+                              {% else %}
+                              <p>No hay imagen disponible</p>
+                              {% endif %}
+                              <h6 class="card-title">{{ p.nombre_prod | title }}</h6>
+                              <h5 class="card-text">{{ p.id_marca }}</h5>
+                              <h4 class="card-text">${{ p.valor | intcomma }}</h4>
+                              <div class="text-center">
+                                  <a href="{% url 'agregar_producto' p.id_producto %}" class="btn btn-outline-light">Agregar al carro</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                {% endfor %}
 
-<main>
-  <!-- barra scroll -->
-  <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
-    <!-- Galeria Productos -->
-    <div class="container">
-      <!-- fila 1 de galeria -->
-      <div class="row">
-        {% load humanize %} <!-- para ver los datos más legibles -->
-        {% for p in productos %} <!-- llama a todos los productos para mostrarlo -->
-        <div class="col-sm-3 mb-3 mb-sm-0">
-          <div class="card">
-            <div class="card-body">
-              {% if p.imagen %}
-              <img class="img-fluid mx-auto d-block image" src="{{ p.imagen.url }}" alt="{{ p.nombre_prod }}">
-              {% else %}
-              <p>No hay imagen disponible</p>
-              {% endif %}
-              <h6 class="card-title">{{ p.nombre_prod | title }}</h6>
-              <h5 class="card-text">{{ p.id_marca }}</h5>
-              <h4 class="card-text">${{ p.valor | intcomma }}</h4>
-              <div class="text-center">
-                <a href="{% url 'agregar_producto' p.id %}" class="btn btn-outline-light">agregar al carro</a>
               </div>
-            </div>
           </div>
+
+          <br><br>
+
+          <!-- paginación -->
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link" href="#">1</a></li>
+              <li class="page-item"><a class="page-link" href="#">2</a></li>
+              <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+
         </div>
-        {% endfor %}
-      </div>
-    </div>
-
+    </main>
     <br><br>
-
-    <!-- paginación -->
-    <nav aria-label="Page navigation example">
-      <ul class="pagination justify-content-center">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-          </a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-
-    <!-- Div para mostrar el total del carrito -->
-    <div class="container mt-5">
-      <h4>Total del Carrito: ${{ total_carrito | intcomma }}</h4>
-    </div>
-
-  </div>
-</main>
-<br><br>
 
 {% endblock %}
