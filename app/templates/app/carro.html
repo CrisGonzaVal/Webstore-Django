@@ -50,12 +50,12 @@
                                     </div>
                                 </div>
                                 <div class="col-md-2 quantity">
-                                    <a href="{% url 'restar_producto' item.producto_id %}" class="btn btn-link">-</a>
+                                    <a href="{% url 'restar_producto' item.producto_id %}" class="btn btn-outline-secondary btn-sm">-</a>
                                     <span>{{ item.cantidad }}</span>
-                                    <a href="{% url 'agregar_producto' item.producto_id %}" class="btn btn-link">+</a>
+                                    <a href="{% url 'agregar_producto' item.producto_id %}" class="btn btn-outline-secondary btn-sm">+</a>
                                 </div>
                                 <div class="col-md-2">
-                                    <a href="{% url 'eliminar_producto' item.producto_id %}" class="btn btn-link">Eliminar</a>
+                                    <a href="{% url 'eliminar_producto' item.producto_id %}" class="btn btn-outline-danger btn-sm">Eliminar</a>
                                 </div>
                                 <div class="col-md-2">
                                     <span>${{ item.acumulado | intcomma }}</span>
