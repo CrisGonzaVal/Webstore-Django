@@ -1,4 +1,6 @@
 from decimal import Decimal
+from .Carrito import Carrito
+
 
 def total_carrito(request):
     total = Decimal('0.00')
@@ -9,3 +11,7 @@ def total_carrito(request):
     return {"total_carrito": total}
 
 
+def carrito_total(request):
+    carrito = Carrito(request)
+    total_items = sum(item['cantidad'] for item in carrito.carrito.values())
+    return {'total_carrito': total_items}
