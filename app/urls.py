@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import home, carro, catalogo, contactanos, login, ofertas, proveedores, registro, agregar_producto, eliminar_producto, restar_producto, limpiar_carrito, agregar_producto_catalogo
+from .views import create_order, capture_order
 
 urlpatterns = [
     path('', home, name='home'),
@@ -17,3 +18,11 @@ urlpatterns = [
     path('agregar_catalogo/<int:producto_id>/', agregar_producto_catalogo, name='agregar_producto_catalogo'),
 ]
 
+from django.urls import path
+from .views import create_order, capture_order
+
+urlpatterns = [
+    # otras rutas
+    path('api/orders', create_order, name='create_order'),
+    path('api/orders/<order_id>/capture', capture_order, name='capture_order'),
+]
