@@ -5,7 +5,7 @@ from.models import Categoria, Marca, Producto, Usuario, Cliente, Empleado, Inven
 
 
 
-
+# filtro en el admin
 class ProductoAdmin(admin.ModelAdmin):
     list_display=["nombre_prod", "valor", "id_marca", "color"]
     list_editable=["valor"]
@@ -39,3 +39,8 @@ admin.site.register(TipoPago)
 admin.site.register(ComprobantePago)
 admin.site.register(Cuenta)
 admin.site.register(TipoUsuario)
+
+#se modifica titulos del admin
+admin.site.site_header = 'Administrador Larrain Webstore' #nombre del encabezado
+admin.site.index_title = 'Panel de control Larrain Webstore' #nombre del título
+admin.site.site_title = 'Administrador Larrain Webstore'

@@ -1,5 +1,10 @@
 
 from django.shortcuts import render 
+<<<<<<< HEAD
+=======
+from.models import Producto, Inventario
+from django.db.models import Sum
+>>>>>>> webstore
 
 
 # se crean las vistas
@@ -15,8 +20,28 @@ def registro(request):
 def carro(request):
     return render(request, 'app/carro.html') 
 
+<<<<<<< HEAD
 def catalogo(include):
     return render(include, 'app/catalogo.html')  
+=======
+
+#manipulo los modelos producto e inventario y lo muestro en la vista catalogo.html
+def catalogo(request):
+    # Obtener todos los productos
+    productos=Producto.objects.all()
+
+    # Calcular la cantidad total de cada producto
+    # consulta usando python que es = select cantidad AS sum(cantidad_total) FROM Inventario WHERE id_producto = producto.id_producto
+    for producto in productos:
+        cantidad_total = Inventario.objects.filter(id_producto=producto).aggregate(total=Sum('cantidad'))['total']
+        producto.cantidad_total = cantidad_total if cantidad_total is not None else 0
+
+    # Pasar los productos con la cantidad total calculada al contexto
+    data={
+       'productos': productos
+    }
+    return render(request, 'app/catalogo.html',data)  
+>>>>>>> webstore
 
 def contactanos(request):
     return render(request, 'app/contactanos.html')  

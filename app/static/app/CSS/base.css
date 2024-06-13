@@ -4,9 +4,11 @@
    width: 100%;
    position: fixed;
     top: 0;
-    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    z-index: 1000; /* Asegúrse de que esté por encima de otros elementos */
     background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(120px); /*mayor el valor, es mas espeso el fondo*/
+
+    backdrop-filter: blur(130px);
+
     border-bottom: 1px solid #ccc; /* para un borde inferior */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /*sombra para mejor visibilidad */
 }
@@ -24,7 +26,9 @@
    box-shadow: 0 0 0 4px rgba(100, 76, 234, 0.1);
 }
 
-
+.menuNav{
+   background-color: #1c7ce2;
+}
 /*efectos menu nav*/
 .menuNav a{
       color: #ffffff;
@@ -60,3 +64,11 @@
   transition-duration: 400ms;
   transition-property: width, left;
 }
+
+/*todos los dropdown se despliega cuando lo enfoca*/
+.dropdown:hover .dropdown-menu,
+        .dropdown:focus .dropdown-menu {
+            display: block;
+            max-height: 300px; /* Ajusta según el contenido */
+            opacity: 1;
+        }
