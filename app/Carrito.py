@@ -15,13 +15,16 @@ class Carrito:
                 "nombre": producto.nombre_prod,
                 "acumulado": float(producto.valor),  # Convierte Decimal a float para serialización
                 "cantidad": 1,
+                "imagen": producto.imagen.url if producto.imagen else "",
+                "color": producto.color,
+                "id_marca": producto.id_marca.nombre_m
             }
         else:
             self.carrito[id]["cantidad"] += 1
             self.carrito[id]["acumulado"] += float(producto.valor)
         self.guardar_carrito()
-
     def guardar_carrito(self):
+        
         self.session["carrito"] = self.carrito
         self.session.modified = True
 
