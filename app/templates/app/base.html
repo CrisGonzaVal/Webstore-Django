@@ -18,7 +18,7 @@
         <!-- barra encabezado -->
       <div class="navbar-sticky">   
         <div class="container">
-            <nav class="navbar navbar-expand-lg">
+            <nav class="navbar navbar-expand-sm">
                 <div class="container-fluid">
                     <a  href="{% url 'home' %}"><img src="{% static '/app/imagenes/logo/logotipo.png' %}" alt="logotipo" width="auto" height="80px"></a>
                     <form class="d-flex w-50" role="search">
@@ -46,7 +46,7 @@
     
         <!-- menu de navegacion -->
         <div class="menuNav">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-4">
+            <nav class="navbar navbar-expand-sm navbar-dark bg-primary p-4">
                 <div class="container ">
                     <a class="navbar-brand" href="{% url 'home' %}">Home</a>
                     <a class="navbar-brand" href="{% url 'ofertas' %}">Ofertas</a>
@@ -66,7 +66,7 @@
         {% endblock %}
       <!-- pie de pagina -->
     <footer>
-      <nav class="navbar navbar-expand-lg bg-body-secondary p-4">
+      <nav class="navbar navbar-expand-sm bg-body-secondary p-4">
           <div class="container-fluid">
               <small>&copy;<b>2024 Blocks, Inc. All rights reserved. </b></small>
               <ul class="navbar-nav">
