@@ -1,10 +1,5 @@
-#se crean los urls de cada vista (html)
-
 from django.urls import path
-from .views import (
-    home, carro, catalogo, contactanos, login, ofertas, proveedores, registro,
-    agregar_producto, eliminar_producto, restar_producto, limpiar_carrito, 
-)
+from .views import home, carro, catalogo, contactanos, login, ofertas, proveedores, registro, agregar_producto, eliminar_producto, restar_producto, limpiar_carrito, agregar_producto_catalogo
 
 urlpatterns = [
     path('', home, name='home'),
@@ -19,5 +14,6 @@ urlpatterns = [
     path('eliminar/<int:producto_id>/', eliminar_producto, name='eliminar_producto'),
     path('restar/<int:producto_id>/', restar_producto, name='restar_producto'),
     path('limpiar/', limpiar_carrito, name='limpiar_carrito'),
+    path('agregar_catalogo/<int:producto_id>/', agregar_producto_catalogo, name='agregar_producto_catalogo'),
 ]
 

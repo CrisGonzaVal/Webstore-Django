@@ -78,7 +78,7 @@
                               <h5 class="card-text">{{ p.id_marca }}</h5>
                               <h4 class="card-text">${{ p.valor | intcomma }}</h4>
                               <div class="text-center">
-                                  <a href="{% url 'agregar_producto' p.id_producto %}" class="btn btn-outline-light">Agregar al carro</a>
+                                <a href="{% url 'agregar_producto_catalogo' p.id_producto %}" class="btn btn-outline-light">Agregar al carro</a>
                               </div>
                           </div>
                       </div>
