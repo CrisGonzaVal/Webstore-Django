@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Producto
 from .Carrito import Carrito  
+from decimal import Decimal
 
 # se crean las vistas
 def home(request):
@@ -55,4 +56,13 @@ def limpiar_carrito(request):
     return redirect("catalogo")
 
 
+
+
+def carro(request):
+    carrito = Carrito(request)
+    context = {
+        'carrito': carrito.carrito,
+        'total_carrito': sum(Decimal(str(item['acumulado'])) for item in carrito.carrito.values())
+    }
+    return render(request, 'app/carro.html', context)
 
