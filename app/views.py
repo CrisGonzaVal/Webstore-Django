@@ -36,7 +36,7 @@ def agregar_producto(request, producto_id):
     carrito = Carrito(request)
     producto = Producto.objects.get(id_producto=producto_id)  
     carrito.agregar(producto)
-    return redirect("carro")
+    return redirect("catalogo")
 
 def eliminar_producto(request, producto_id):
     carrito = Carrito(request)
