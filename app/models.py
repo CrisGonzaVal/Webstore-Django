@@ -8,14 +8,14 @@ class Importadora(models.Model):
     rut_empresa = models.CharField(max_length=20, primary_key=True)
 
     def __str__(self):
-      return self.rut_empresa
+        return self.rut_empresa
 
 class Bodega(models.Model):
     id_bodega = models.AutoField(primary_key=True)
     rut_empresa = models.ForeignKey(Importadora, on_delete=models.CASCADE)
 
     def __str__(self):
-      return self.id_bodega
+        return self.id_bodega
 
 
 class Categoria(models.Model):
@@ -23,7 +23,7 @@ class Categoria(models.Model):
     nombre = models.CharField(max_length=100)
 
     def __str__(self):
-      return self.nombre
+        return self.nombre
 
 
 class Marca(models.Model):
@@ -31,7 +31,7 @@ class Marca(models.Model):
     nombre_m = models.CharField(max_length=100)
 
     def __str__(self):
-      return self.nombre_m
+        return self.nombre_m
 
 class Producto(models.Model):
     id_producto = models.AutoField(primary_key=True)
@@ -44,7 +44,7 @@ class Producto(models.Model):
     imagen = models.ImageField(upload_to="producto/", null=True)
 
     def __str__(self):
-      return self.nombre_prod
+        return self.nombre_prod
 
 class Inventario(models.Model):
     id_producto = models.OneToOneField(Producto, on_delete=models.CASCADE, primary_key=True)
