@@ -1,8 +1,12 @@
+from django.contrib import admin
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from .views import home, carro, catalogo, contactanos, login, ofertas, proveedores, registro, agregar_producto, eliminar_producto, restar_producto, limpiar_carrito, agregar_producto_catalogo
 from .views import create_order, capture_order
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', home, name='home'),
     path('carro/', carro, name='carro'),
     path('catalogo/', catalogo, name='catalogo'),
@@ -16,13 +20,6 @@ urlpatterns = [
     path('restar/<int:producto_id>/', restar_producto, name='restar_producto'),
     path('limpiar/', limpiar_carrito, name='limpiar_carrito'),
     path('agregar_catalogo/<int:producto_id>/', agregar_producto_catalogo, name='agregar_producto_catalogo'),
-]
-
-from django.urls import path
-from .views import create_order, capture_order
-
-urlpatterns = [
-    # otras rutas
     path('api/orders', create_order, name='create_order'),
     path('api/orders/<order_id>/capture', capture_order, name='capture_order'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
