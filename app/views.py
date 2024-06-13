@@ -11,7 +11,7 @@ def login(request):
     return render(request, 'app/login.html')
 
 def registro(request):
-    return render(request, 'app/registro.html')
+    return render(request, 'app/registro.html')   
 
 def carro(request):
     carrito = Carrito(request)
@@ -26,44 +26,42 @@ def catalogo(request):
     data = {
         'productos': productos
     }
-    return render(request, 'app/catalogo.html', data)
+    return render(request, 'app/catalogo.html', data)  
 
 def contactanos(request):
-    return render(request, 'app/contactanos.html')
+    return render(request, 'app/contactanos.html')  
 
 def ofertas(request):
-    return render(request, 'app/ofertas.html')
+    return render(request, 'app/ofertas.html')  
 
 def proveedores(request):
-    return render(request, 'app/proveedores.html')
-
-
+    return render(request, 'app/proveedores.html')   
 
 def agregar_producto(request, producto_id):
     carrito = Carrito(request)
     producto = Producto.objects.get(id_producto=producto_id)
     carrito.agregar(producto)
-    return redirect("carro")  
-
-def eliminar_producto(request, producto_id):
-    carrito = Carrito(request)
-    producto = Producto.objects.get(id_producto=producto_id)
-    carrito.eliminar(producto)
-    return redirect("carro")  
-
-def restar_producto(request, producto_id):
-    carrito = Carrito(request)
-    producto = Producto.objects.get(id_producto=producto_id)
-    carrito.disminuir(producto)
-    return redirect("carro") 
-
-def limpiar_carrito(request):
-    carrito = Carrito(request)
-    carrito.limpiar()
-    return redirect("carro") 
+    return redirect("carro")
 
 def agregar_producto_catalogo(request, producto_id):
     carrito = Carrito(request)
     producto = Producto.objects.get(id_producto=producto_id)
     carrito.agregar(producto)
-    return redirect("catalogo")  
+    return redirect("catalogo")
+
+def eliminar_producto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Producto.objects.get(id_producto=producto_id)
+    carrito.eliminar(producto)
+    return redirect("carro")
+
+def restar_producto(request, producto_id):
+    carrito = Carrito(request)
+    producto = Producto.objects.get(id_producto=producto_id)
+    carrito.disminuir(producto)
+    return redirect("carro")
+
+def limpiar_carrito(request):
+    carrito = Carrito(request)
+    carrito.limpiar()
+    return redirect("carro")
