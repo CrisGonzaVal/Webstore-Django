@@ -47,15 +47,12 @@
         <!-- menu de navegacion -->
         <div class="menuNav">
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-4">
-                <div class="container">
-                    <a class="navbar-brand" href="{% url 'home' %}">Home</a>
-                    <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button> -->
-                    <a class="navbar-brand" href="{% url 'ofertas' %}">Ofertas</a>
-                    <a class="navbar-brand" href="{% url 'catalogo' %}">Catalogo</a>
-                    <a class="navbar-brand" href="{% url 'proveedores' %}">Proveedores</a>
-                    <a class="navbar-brand" href="{% url 'contactanos' %}">Contactanos</a>
+                <div class="container justify-content-center">
+                    <ul class="navbar-nav">
+                       <li class="nav-item mx-5"><a class="navbar-brand" href="{% url 'home' %}">Home</a></li>
+                       <li class="nav-item mx-5"><a class="navbar-brand" href="{% url 'catalogo' %}">Catalogo</a></li>
+                       <li class="nav-item mx-5"><a class="navbar-brand" href="{% url 'ofertas' %}">Ofertas</a></li>
+                </ul>
 
                 </div>
               </nav>

@@ -39,7 +39,11 @@
      transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
       transition-duration: 400ms;
       transition-property: color;
+      
     }
+    
+  
+
 
 .menuNav a:focus, .menuNav a:hover {
       color: #fff;
@@ -72,3 +76,8 @@
             max-height: 300px; /* Ajusta según el contenido */
             opacity: 1;
         }
+
+.navbar-item{
+   margin-right:10px;
+}
+

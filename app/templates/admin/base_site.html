@@ -10,6 +10,15 @@
 {% endblock %}
 
 
+{% block footer %} 
+{{ block.super }}
+<!-- Botón Volver -->
+<div id="back-button-container">
+    <a href="{% url 'home' %}" class="back-button" style="position: fixed;">Volver</a>
+</div>
+{% endblock %}
+
+
 
 
 <!--modificaciones estilo del admin-->
