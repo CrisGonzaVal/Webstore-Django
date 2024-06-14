@@ -98,55 +98,60 @@
 
 <br><br>
 
-<!-- PayPal SDK Script -->
-<script src="https://www.paypal.com/sdk/js?client-id=AYF9tOdw59SscCwlc6HI7acjGVe70kfccLbUQiuRaaoCCz8lGBDqp2MpQzzWpxxISO-DykG2fLZmI_rt"></script>
 <script>
-    const cartItems = JSON.parse('{{ carrito_items|escapejs }}');
+    document.addEventListener('DOMContentLoaded', function () {
+        const cartItems = JSON.parse('{{ carrito_items|escapejs }}');
 
-    window.paypal.Buttons({
-        style: {
-            shape: 'rect',
-            layout: 'vertical',
-            color: 'gold',
-            label: 'paypal',
-        },
-        createOrder: async function(data, actions) {
-            return fetch('/api/orders', {
-                method: 'post',
-                headers: {
-                    'content-type': 'application/json'
-                },
-                body: JSON.stringify({
-                    cart: cartItems
-                })
-            }).then(function(res) {
-                return res.json();
-            }).then(function(orderData) {
-                if (orderData.id) {
-                    return orderData.id;
-                } else {
-                    throw new Error('Order creation failed.');
-                }
-            });
-        },
-        onApprove: async function(data, actions) {
-            return fetch(`/api/orders/${data.orderID}/capture`, {
-                method: 'post',
-                headers: {
-                    'content-type': 'application/json'
-                }
-            }).then(function(res) {
-                return res.json();
-            }).then(function(orderData) {
-                if (orderData.purchase_units) {
-                    console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-                    const transaction = orderData.purchase_units[0].payments.captures[0];
-                    alert(`Transaction ${transaction.status}: ${transaction.id}`);
-                } else {
-                    throw new Error('Capture failed.');
-                }
-            });
-        }
-    }).render('#paypal-button-container');
+        window.paypal.Buttons({
+            style: {
+                shape: 'rect',
+                layout: 'vertical',
+                color: 'gold',
+                label: 'paypal',
+            },
+            createOrder: function(data, actions) {
+                return fetch('/api/orders', {
+                    method: 'post',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        cart: cartItems
+                    })
+                }).then(function(res) {
+                    return res.json();
+                }).then(function(orderData) {
+                    if (orderData.id) {
+                        return orderData.id;
+                    } else {
+                        throw new Error('Order creation failed.');
+                    }
+                }).catch(function(err) {
+                    console.error('Create order error:', err);
+                });
+            },
+            onApprove: function(data, actions) {
+                return fetch(`/api/orders/${data.orderID}/capture`, {
+                    method: 'post',
+                    headers: {
+                        'content-type': 'application/json'
+                    }
+                }).then(function(res) {
+                    return res.json();
+                }).then(function(orderData) {
+                    if (orderData.purchase_units) {
+                        console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                        const transaction = orderData.purchase_units[0].payments.captures[0];
+                        alert(`Transaction ${transaction.status}: ${transaction.id}`);
+                    } else {
+                        throw new Error('Capture failed.');
+                    }
+                }).catch(function(err) {
+                    console.error('Capture order error:', err);
+                });
+            }
+        }).render('#paypal-button-container');
+    });
 </script>
+
 {% endblock %}
