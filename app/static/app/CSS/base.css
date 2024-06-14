@@ -1,17 +1,13 @@
 /* Estilo para navbar fija */
 .navbar-sticky {
-   width: 100%;
-   position: fixed;
-   top: 0;
-   z-index: 1000; /* Asegúrse de que esté por encima de otros elementos */
+   
+   
+   /* Asegúrse de que esté por encima de otros elementos */
+   z-index: 1000; 
    background-color: rgba(255, 255, 255, 0.5);
    backdrop-filter: blur(130px);
    border-bottom: 1px solid #ccc; /* para un borde inferior */
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /*sombra para mejor visibilidad */
-}
-
-.bg-primary{ 
-   margin-top: 100px; /* banner azul mas abajo */
 }
 
 
@@ -27,8 +23,8 @@
 /*efectos menu nav*/
 .menuNav a{
    color: #ffffff;
-   cursor: pointer;
-   position: relative;
+   /* cursor: pointer; */
+   /* position: relative; */
    border:none;
    background: none;
    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -39,23 +35,19 @@
     
   
 .menuNav a:focus, .menuNav a:hover {
-      color: #fff;
+   color: #fff;
 }
 
-.menuNav a:focus:after,
-.menuNav a:hover:after {
-   width: 100%;
-   left: 0%;
-}
+
 
 .menuNav a:after {
-   content: "";
-   pointer-events: none;
+   /* content: ""; */
+   /* pointer-events: none;
    bottom: -2px;
    left: 50%;
    position: absolute;
    width: 0%;
-   height: 2px;
+   height: 2px; */
    background-color: #fff;
    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
    transition-duration: 400ms;
@@ -65,44 +57,64 @@
 /*todos los dropdown se despliega cuando lo enfoca*/
 .dropdown:hover .dropdown-menu,
 .dropdown:focus .dropdown-menu {
-   display: block;
-   max-height: 300px; /* Ajusta según el contenido */
+   /* display: block;
+   max-height: 300px;  */
    opacity: 1;
 }
 
 
 
-.navbar-item{
+/* .navbar-item{
    margin-right:10px;
   
 }
 
+.bg-primary{ 
+   margin-top: 100px; 
+}
+
+.menuNav a:focus:after,
+.menuNav a:hover:after {
+   width: 100%;
+   left: 0%;
+} */
+
+
 
 
 .navbar-sticky {
-   margin: 0;
-   padding: 0;
-   display: flex;
-   justify-content: space-between; /* Alineación entre extremos */
+   top: 0;
+   width: 100%;
+   position: fixed;
+   display: inline-block;
+   justify-content: space-between; 
 
 }
+
+
+.menuNav{
+   width: 100%;
+   position: static;
+   display:inline-block;
+   justify-content: space-between; 
+
+}
+
+
 
 
 .menuNav ul{
    list-style-type: none;
-   margin-top: 0;
-   padding: 0;
-   display: flex;
-   justify-content: space-between; /* Alineación entre extremos */
+   display:inline-flex;
+   justify-content: space-between; 
 
 }
 
 footer ul{
+   width: 30%;
    list-style-type: none;
-   margin: 0;
-   padding: 0;
    display: flex;
-   justify-content: space-between; /* Alineación entre extremos */
+   justify-content: space-between;
 
 }
 
