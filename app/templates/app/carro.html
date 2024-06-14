@@ -99,7 +99,7 @@
 <br><br>
 
 <!-- PayPal SDK Script -->
-<script src="https://www.paypal.com/sdk/js?client-id=AYF9tOdw59SscCwlc6HI7acjGVe70kfccLbUQiuRaaoCCz8lGBDqp2MpQzzWpxxISO-DykG2fLZmI_rt"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID"></script>
 <script>
     window.paypal.Buttons({
         style: {
@@ -108,60 +108,37 @@
             color: 'gold',
             label: 'paypal',
         },
-        createOrder: async function() {
-            try {
-                const response = await fetch('/api/orders', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        cart: [
-                            // Aquí puedes pasar los productos y cantidades del carrito.
-                            // Ajusta esta parte según tus necesidades.
-                            { id: 'PRODUCT_ID', quantity: 'PRODUCT_QUANTITY' },
-                        ],
-                    }),
-                });
-
-                const orderData = await response.json();
-
-                if (orderData.id) {
-                    return orderData.id;
-                }
-                const errorDetail = orderData?.details?.[0];
-                const errorMessage = errorDetail
-                    ? `${errorDetail.issue} ${errorDetail.description} (${orderData.debug_id})`
-                    : JSON.stringify(orderData);
-
-                throw new Error(errorMessage);
-            } catch (error) {
-                console.error(error);
-            }
+        createOrder: async function(data, actions) {
+            return fetch('/api/orders', {
+                method: 'post',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify({
+                    cart: [
+                        { id: 'PRODUCT_ID', quantity: 'PRODUCT_QUANTITY' },
+                    ]
+                })
+            }).then(function(res) {
+                return res.json();
+            }).then(function(orderData) {
+                return orderData.id;
+            });
         },
         onApprove: async function(data, actions) {
-            try {
-                const response = await fetch(`/api/orders/${data.orderID}/capture`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                });
-
-                const orderData = await response.json();
-
-                if (orderData.details && orderData.details[0].issue === 'INSTRUMENT_DECLINED') {
-                    return actions.restart();
-                } else if (orderData.details && orderData.details[0]) {
-                    throw new Error(`${orderData.details[0].description} (${orderData.debug_id})`);
-                } else {
-                    // Muestra un mensaje de éxito
-                    console.log('Transaction successful', orderData);
+            return fetch(`/api/orders/${data.orderID}/capture`, {
+                method: 'post',
+                headers: {
+                    'content-type': 'application/json'
                 }
-            } catch (error) {
-                console.error(error);
-            }
-        },
+            }).then(function(res) {
+                return res.json();
+            }).then(function(orderData) {
+                console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                const transaction = orderData.purchase_units[0].payments.captures[0];
+                alert(`Transaction ${transaction.status}: ${transaction.id}`);
+            });
+        }
     }).render('#paypal-button-container');
 </script>
 {% endblock %}
