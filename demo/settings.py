@@ -133,6 +133,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # PayPal settings
-PAYPAL_CLIENT_ID = 'AYF9tOdw59SscCwlc6HI7acjGVe70kfccLbUQiuRaaoCCz8lGBDqp2MpQzzWpxxISO-DykG2fLZmI_rt'
-PAYPAL_CLIENT_SECRET = 'EJnjXZ18oNzc2q_C0HeLRdS7SLuJ_g922Hn6L0vtHpUkhd__fJUzEbRTP4mTOZ4qVEVmNdGaT_zHtXAJ'
+PAYPAL_CLIENT_ID = 'AbTNaxU3ExF7fl-Ic5e3aBs49-36S6o1m8zThj270D9kzbF05cpjsabs_7n0SwrxxKXdtgZTIoPsnYfn'
+PAYPAL_CLIENT_SECRET = 'EM4FtE79uMW0c3S_fwqOhfp0jezMu7hy9m2DxeAMhQdSVQbvr5Bk5GBRSPpPPpaR53UOTlS11zgIjsrC'
 PAYPAL_BASE_URL = "https://api-m.sandbox.paypal.com"
