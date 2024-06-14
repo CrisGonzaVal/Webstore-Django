@@ -16,13 +16,10 @@ from decimal import Decimal
 
 
 # se crean las vistas
-<<<<<<< HEAD
-def home(include):
-   return render(include, 'app/home.html')
-=======
+
 def home(request):
    return render(request, 'app/home.html',)
->>>>>>> cristian
+
 
 def login(request):
     return render(request, 'app/login.html')
