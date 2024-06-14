@@ -135,4 +135,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # PayPal settings
 PAYPAL_CLIENT_ID = 'AYF9tOdw59SscCwlc6HI7acjGVe70kfccLbUQiuRaaoCCz8lGBDqp2MpQzzWpxxISO-DykG2fLZmI_rt'
 PAYPAL_CLIENT_SECRET = 'EJnjXZ18oNzc2q_C0HeLRdS7SLuJ_g922Hn6L0vtHpUkhd__fJUzEbRTP4mTOZ4qVEVmNdGaT_zHtXAJ'
-PAYPAL_BASE_URL = "https://www.sandbox.paypal.com/signin"
+PAYPAL_BASE_URL = "https://api-m.sandbox.paypal.com"
