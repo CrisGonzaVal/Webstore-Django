@@ -21,25 +21,12 @@ def registro(request):
 
 def carro(request):
     carrito = Carrito(request)
-    carrito_items = [
-        {
-            'id': key,
-            'nombre': item['nombre'],
-            'cantidad': item['cantidad'],
-            'acumulado': str(item['acumulado']),
-            'imagen': item['imagen'],
-            'id_marca': item['id_marca'],
-            'color': item['color'],
-            'valor': str(item['valor'])
-        }
-        for key, item in carrito.carrito.items()
-    ]
     context = {
         'carrito': carrito.carrito,
-        'carrito_items': json.dumps(carrito_items),  # Convert to JSON string
         'total_carrito': sum(Decimal(str(item['acumulado'])) for item in carrito.carrito.values())
     }
     return render(request, 'app/carro.html', context)
+
 def catalogo(request):
     productos = Producto.objects.all()
     data = {
