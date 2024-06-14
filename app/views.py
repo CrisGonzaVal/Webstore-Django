@@ -9,7 +9,7 @@ from decimal import Decimal
 
 # se crean las vistas
 def home(request):
-   return render(request, 'app/home.html')
+   return render(request, 'app/home.html',)
 
 def login(request):
     return render(request, 'app/login.html')
@@ -23,7 +23,7 @@ def carro(request):
         'carrito': carrito.carrito,
         'total_carrito': sum(Decimal(str(item['acumulado'])) for item in carrito.carrito.values())
     } 
-    return render(request, 'app/carro.html', context) 
+    return render(request,'app/carro.html', context) 
 
 
 #manipulo los modelos producto e inventario y lo muestro en la vista catalogo.html
@@ -59,11 +59,17 @@ def catalogo(request):
     categorias = Categoria.objects.all()
     marcas = Marca.objects.all()
 
+     # almacenas el numero de productos del carrito de compras
+    carrito = Carrito(request)
+
     # Pasar los productos con la cantidad total calculada al contexto
     data={
        'productos': productos,
        'categorias': categorias,
-       'marcas': marcas
+       'marcas': marcas,
+
+       'carrito': carrito.carrito,
+       'total_carrito': sum(Decimal(str(item['acumulado'])) for item in carrito.carrito.values())
     }
     return render(request, 'app/catalogo.html',data)  
 
