@@ -122,7 +122,11 @@
             }).then(function(res) {
                 return res.json();
             }).then(function(orderData) {
-                return orderData.id;
+                if (orderData.id) {
+                    return orderData.id;
+                } else {
+                    throw new Error('Order creation failed.');
+                }
             });
         },
         onApprove: async function(data, actions) {
@@ -134,12 +138,15 @@
             }).then(function(res) {
                 return res.json();
             }).then(function(orderData) {
-                console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-                const transaction = orderData.purchase_units[0].payments.captures[0];
-                alert(`Transaction ${transaction.status}: ${transaction.id}`);
+                if (orderData.purchase_units) {
+                    console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                    const transaction = orderData.purchase_units[0].payments.captures[0];
+                    alert(`Transaction ${transaction.status}: ${transaction.id}`);
+                } else {
+                    throw new Error('Capture failed.');
+                }
             });
         }
     }).render('#paypal-button-container');
 </script>
 {% endblock %}
-

@@ -30,7 +30,7 @@ def carro(request):
             'imagen': item['imagen'],
             'id_marca': item['id_marca'],
             'color': item['color'],
-            'valor': str(item['valor'])
+            'valor': str(item.get('valor', '0'))  # Usar get para evitar KeyError
         }
         for key, item in carrito.carrito.items()
     ]
@@ -86,43 +86,48 @@ def limpiar_carrito(request):
     carrito.limpiar()
     return redirect("carro")
 
-
 @csrf_exempt
 def create_order(request):
     try:
-        url = 'https://api-m.sandbox.paypal.com/v2/checkout/orders'
-        headers = {
-            'Content-Type': 'application/json',
-            'Authorization': f'Bearer {generate_access_token()}',
-        }
-        payload = {
-            'intent': 'CAPTURE',
-            'purchase_units': [
-                {
-                    'amount': {
-                        'currency_code': 'USD',
-                        'value': '100',  # This value should be dynamic
+        if request.method == 'POST':
+            body = json.loads(request.body)
+            cart = body.get('cart', [])
+            total_value = sum(Decimal(item['acumulado']) for item in cart)
+
+            url = 'https://api-m.sandbox.paypal.com/v2/checkout/orders'
+            headers = {
+                'Content-Type': 'application/json',
+                'Authorization': f'Bearer {generate_access_token()}',
+            }
+            payload = {
+                'intent': 'CAPTURE',
+                'purchase_units': [
+                    {
+                        'amount': {
+                            'currency_code': 'USD',
+                            'value': str(total_value),
+                        },
                     },
-                },
-            ],
-        }
-        response = requests.post(url, headers=headers, data=json.dumps(payload))
-        data = response.json()
-        return JsonResponse(data, status=response.status_code)
+                ],
+            }
+            response = requests.post(url, headers=headers, data=json.dumps(payload))
+            data = response.json()
+            return JsonResponse(data, status=response.status_code)
     except Exception as e:
         return JsonResponse({'error': str(e)}, status=500)
 
 @csrf_exempt
 def capture_order(request, order_id):
     try:
-        url = f'https://api-m.sandbox.paypal.com/v2/checkout/orders/{order_id}/capture'
-        headers = {
-            'Content-Type': 'application/json',
-            'Authorization': f'Bearer {generate_access_token()}',
-        }
-        response = requests.post(url, headers=headers)
-        data = response.json()
-        return JsonResponse(data, status=response.status_code)
+        if request.method == 'POST':
+            url = f'https://api-m.sandbox.paypal.com/v2/checkout/orders/{order_id}/capture'
+            headers = {
+                'Content-Type': 'application/json',
+                'Authorization': f'Bearer {generate_access_token()}',
+            }
+            response = requests.post(url, headers=headers)
+            data = response.json()
+            return JsonResponse(data, status=response.status_code)
     except Exception as e:
         return JsonResponse({'error': str(e)}, status=500)
 
