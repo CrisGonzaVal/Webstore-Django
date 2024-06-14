@@ -1,10 +1,10 @@
 #se crean los urls de cada vista (html)
 
 from django.urls import path
-<<<<<<< HEAD
-from.views import home, carro, catalogo, contactanos, login, ofertas, proveedores, registro
 
-=======
+from.views import home, carro, catalogo, login, ofertas, registro
+
+
 from.views import home
 from.views import carro
 from.views import catalogo
@@ -12,7 +12,7 @@ from.views import login
 from.views import ofertas
 from.views import registro
 from.views import agregar_producto, eliminar_producto, restar_producto, limpiar_carrito, agregar_producto_catalogo
->>>>>>> webstore
+
 
 urlpatterns = [
     path('', home, name='home'),

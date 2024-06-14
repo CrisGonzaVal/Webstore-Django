@@ -1,17 +1,17 @@
 
-<<<<<<< HEAD
+
 from django.shortcuts import render 
 
 from.models import Producto, Inventario
 from django.db.models import Sum
-=======
+
 from django.shortcuts import render , redirect
 from.models import Producto, Inventario, Categoria, Marca
 from django.db.models import Sum, Q
 
 from .Carrito import Carrito
 from decimal import Decimal
->>>>>>> webstore
+
 
 
 
@@ -80,11 +80,10 @@ def catalogo(request):
     return render(request, 'app/catalogo.html',data)  
 
 
-<<<<<<< HEAD
+
 def contactanos(request):
     return render(request, 'app/contactanos.html')  
-=======
->>>>>>> webstore
+
 
 def ofertas(request):
     return render(request, 'app/ofertas.html')  
