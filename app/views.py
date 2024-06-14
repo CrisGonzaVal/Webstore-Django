@@ -7,6 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 import requests
 import json
+import base64
 
 # Se crean las vistas
 def home(request):
