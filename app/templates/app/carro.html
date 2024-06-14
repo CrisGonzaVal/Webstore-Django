@@ -130,6 +130,23 @@
                         console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
                         const transaction = orderData.purchase_units[0].payments.captures[0];
                         alert(`Transaction ${transaction.status}: ${transaction.id}`);
+
+                        // Limpiar el carrito después de la compra exitosa
+                        return fetch('/limpiar_carrito_despues_compra/', {
+                            method: 'post',
+                            headers: {
+                                'X-CSRFToken': '{{ csrf_token }}', // Asegúrate de incluir el token CSRF
+                                'content-type': 'application/json'
+                            }
+                        }).then(function(res) {
+                            if (res.ok) {
+                                console.log('Carrito limpiado después de la compra');
+                                // Opcional: Redirigir al usuario a una página de agradecimiento o de resumen de compra
+                                window.location.href = '/gracias/';
+                            } else {
+                                console.error('Error al limpiar el carrito');
+                            }
+                        });
                     } else {
                         throw new Error('Capture failed.');
                     }

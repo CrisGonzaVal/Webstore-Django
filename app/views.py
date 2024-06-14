@@ -154,3 +154,16 @@ def capture_order(request, order_id):
             return JsonResponse(data, status=response.status_code)
     except Exception as e:
         return JsonResponse({'error': str(e)}, status=500)
+
+@csrf_exempt
+def limpiar_carrito_despues_compra(request):
+    if request.method == 'POST':
+        carrito = Carrito(request)
+        carrito.limpiar()
+        return JsonResponse({'status': 'Carrito limpiado después de la compra'}, status=200)
+    else:
+        return JsonResponse({'error': 'Método no permitido'}, status=405)
+
+
+def gracias(request):
+    return render(request, 'app/gracias.html')
