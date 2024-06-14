@@ -109,6 +109,12 @@ def generate_access_token():
         raise ValueError(f"Failed to retrieve access token: {response.text}")
 
 
+    if response.status_code == 200:
+        return response.json()['access_token']
+    else:
+        raise ValueError(f"Failed to retrieve access token: {response.text}")
+
+
 @csrf_exempt
 def create_order(request):
     try:
