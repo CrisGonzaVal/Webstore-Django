@@ -7,7 +7,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 import requests
 import json
-import base64
 
 # Se crean las vistas
 def home(request):
@@ -86,12 +85,9 @@ def limpiar_carrito(request):
     carrito.limpiar()
     return redirect("carro")
 
-
+# Usar el token de acceso generado manualmente
 def generate_access_token():
-    # Token de acceso generado manualmente
     return 'access_token$sandbox$5dvrwstjb4sp4ctt$80521938925e74fcc992270df112c054'
-
-
 
 @csrf_exempt
 def create_order(request):
