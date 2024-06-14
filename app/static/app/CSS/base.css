@@ -84,11 +84,8 @@
 
 .navbar-sticky {
    top: 0;
-   width: 100%;
    position: fixed;
-   display: inline-block;
    justify-content: space-between; 
-
 }
 
 
@@ -97,7 +94,7 @@
    position: static;
    display:inline-block;
    justify-content: space-between; 
-
+   background-position-x: calc(100vw - 800px);v
 }
 
 
