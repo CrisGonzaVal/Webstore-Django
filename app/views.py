@@ -91,22 +91,23 @@ def generate_access_token():
     client_secret = settings.PAYPAL_CLIENT_SECRET
     auth = f"{client_id}:{client_secret}"
     auth_encoded = base64.b64encode(auth.encode()).decode('utf-8')
-    
+
     headers = {
         'Authorization': f'Basic {auth_encoded}',
         'Content-Type': 'application/x-www-form-urlencoded'
     }
-    
+
     response = requests.post(
         f"{settings.PAYPAL_BASE_URL}/v1/oauth2/token",
         headers=headers,
         data={'grant_type': 'client_credentials'}
     )
-    
+
     if response.status_code == 200:
         return response.json()['access_token']
     else:
         raise ValueError(f"Failed to retrieve access token: {response.text}")
+
 
 @csrf_exempt
 def create_order(request):
