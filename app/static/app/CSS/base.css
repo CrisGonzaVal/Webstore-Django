@@ -1,16 +1,13 @@
 /* Estilo para navbar fija */
 .navbar-sticky {
-
    width: 100%;
    position: fixed;
-    top: 0;
-    z-index: 1000; /* Asegúrse de que esté por encima de otros elementos */
-    background-color: rgba(255, 255, 255, 0.5);
-
-    backdrop-filter: blur(130px);
-
-    border-bottom: 1px solid #ccc; /* para un borde inferior */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /*sombra para mejor visibilidad */
+   top: 0;
+   z-index: 1000; /* Asegúrse de que esté por encima de otros elementos */
+   background-color: rgba(255, 255, 255, 0.5);
+   backdrop-filter: blur(130px);
+   border-bottom: 1px solid #ccc; /* para un borde inferior */
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /*sombra para mejor visibilidad */
 }
 
 .bg-primary{ 
@@ -29,51 +26,49 @@
 
 /*efectos menu nav*/
 .menuNav a{
-      color: #ffffff;
-      cursor: pointer;
-      position: relative;
-      border:none;
-      background: none;
-     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-      transition-duration: 400ms;
-      transition-property: color;
-      
-    }
+   color: #ffffff;
+   cursor: pointer;
+   position: relative;
+   border:none;
+   background: none;
+   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+   transition-duration: 400ms;
+   transition-property: color;
+
+}
     
   
-
-
 .menuNav a:focus, .menuNav a:hover {
       color: #fff;
 }
 
 .menuNav a:focus:after,
 .menuNav a:hover:after {
-      width: 100%;
-      left: 0%;
+   width: 100%;
+   left: 0%;
 }
 
 .menuNav a:after {
    content: "";
-  pointer-events: none;
-  bottom: -2px;
-  left: 50%;
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  background-color: #fff;
-  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition-duration: 400ms;
-  transition-property: width, left;
+   pointer-events: none;
+   bottom: -2px;
+   left: 50%;
+   position: absolute;
+   width: 0%;
+   height: 2px;
+   background-color: #fff;
+   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+   transition-duration: 400ms;
+   transition-property: width, left;
 }
 
 /*todos los dropdown se despliega cuando lo enfoca*/
 .dropdown:hover .dropdown-menu,
-        .dropdown:focus .dropdown-menu {
-            display: block;
-            max-height: 300px; /* Ajusta según el contenido */
-            opacity: 1;
-        }
+.dropdown:focus .dropdown-menu {
+   display: block;
+   max-height: 300px; /* Ajusta según el contenido */
+   opacity: 1;
+}
 
 
 
@@ -85,7 +80,6 @@
 
 
 .navbar-sticky {
-   
    margin: 0;
    padding: 0;
    display: flex;
@@ -95,7 +89,6 @@
 
 
 .menuNav ul{
-   
    list-style-type: none;
    margin-top: 0;
    padding: 0;
