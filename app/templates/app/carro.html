@@ -109,15 +109,14 @@
             label: 'paypal',
         },
         createOrder: async function(data, actions) {
+            const cart = JSON.parse('{{ carrito_items|safe }}');  // Retrieve cart items from the context
             return fetch('/api/orders', {
                 method: 'post',
                 headers: {
                     'content-type': 'application/json'
                 },
                 body: JSON.stringify({
-                    cart: [
-                        { id: 'PRODUCT_ID', quantity: 'PRODUCT_QUANTITY' },
-                    ]
+                    cart: cart  // Pass the cart items to the backend
                 })
             }).then(function(res) {
                 return res.json();
