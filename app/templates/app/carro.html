@@ -1,16 +1,12 @@
 {% extends 'app/base.html' %}
-
 {% load static %}
 {% load humanize %}
 
 {% block contenido %}
 <main>
     <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
-        <!-- carrito de compra -->
         <div class="container">
-            <!-- fila 1 -->
             <div class="row">
-                <!-- columna 1 -->
                 <div class="col-md-8">
                     <div class="card">
                         <div class="card-body">
@@ -18,7 +14,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- columna 2 -->
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
@@ -27,17 +22,12 @@
                     </div>
                 </div>
             </div>
-
             <br>
-
-            <!-- fila 2 -->
             <div class="row">
-                <!-- columna 1 -->
                 <div class="col-md-8">
                     <div class="card">
                         <div class="card-body">
                             {% for key, item in carrito.items %}
-                            <!-- fila item -->
                             <div class="row">
                                 <div class="col-md-3">
                                     <img class="img-fluid mx-auto d-block image" src="{{ item.imagen }}" alt="{{ item.nombre }}">
@@ -66,7 +56,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- columna 2 -->
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
@@ -86,7 +75,6 @@
                             <br>
                             <a href="{% url 'limpiar_carrito' %}" class="btn btn-danger btn-mg">Limpiar Carrito</a>
                             <br><br>
-                            <!-- Paypal Button -->
                             <div id="paypal-button-container"></div>
                         </div>
                     </div>
@@ -95,15 +83,8 @@
         </div>
     </div>
 </main>
-
 <br><br>
-
-<!-- PayPal SDK Script -->
 <script src="https://www.paypal.com/sdk/js?client-id=AYF9tOdw59SscCwlc6HI7acjGVe70kfccLbUQiuRaaoCCz8lGBDqp2MpQzzWpxxISO-DykG2fLZmI_rt&currency=USD"></script>
-
-<!-- PayPal Button Container -->
-<div id="paypal-button-container"></div>
-
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const cartItems = JSON.parse('{{ carrito_items|escapejs }}');
@@ -159,8 +140,4 @@
         }).render('#paypal-button-container');
     });
 </script>
-</script>
-
 {% endblock %}
-
-
