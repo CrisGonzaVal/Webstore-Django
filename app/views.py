@@ -2,14 +2,14 @@ from django.shortcuts import render, redirect
 from .models import Producto
 from .Carrito import Carrito
 from decimal import Decimal
-
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 import requests
 import json
+import base64
 
-# se crean las vistas
+# Se crean las vistas
 def home(request):
     return render(request, 'app/home.html')
 
@@ -17,7 +17,7 @@ def login(request):
     return render(request, 'app/login.html')
 
 def registro(request):
-    return render(request, 'app/registro.html')   
+    return render(request, 'app/registro.html')
 
 def carro(request):
     carrito = Carrito(request)
@@ -46,16 +46,16 @@ def catalogo(request):
     data = {
         'productos': productos
     }
-    return render(request, 'app/catalogo.html', data)  
+    return render(request, 'app/catalogo.html', data)
 
 def contactanos(request):
-    return render(request, 'app/contactanos.html')  
+    return render(request, 'app/contactanos.html')
 
 def ofertas(request):
-    return render(request, 'app/ofertas.html')  
+    return render(request, 'app/ofertas.html')
 
 def proveedores(request):
-    return render(request, 'app/proveedores.html')   
+    return render(request, 'app/proveedores.html')
 
 def agregar_producto(request, producto_id):
     carrito = Carrito(request)
@@ -85,6 +85,28 @@ def limpiar_carrito(request):
     carrito = Carrito(request)
     carrito.limpiar()
     return redirect("carro")
+
+def generate_access_token():
+    client_id = settings.PAYPAL_CLIENT_ID
+    client_secret = settings.PAYPAL_CLIENT_SECRET
+    auth = f"{client_id}:{client_secret}"
+    auth_encoded = base64.b64encode(auth.encode()).decode('utf-8')
+    
+    headers = {
+        'Authorization': f'Basic {auth_encoded}',
+        'Content-Type': 'application/x-www-form-urlencoded'
+    }
+    
+    response = requests.post(
+        f"{settings.PAYPAL_BASE_URL}/v1/oauth2/token",
+        headers=headers,
+        data={'grant_type': 'client_credentials'}
+    )
+    
+    if response.status_code == 200:
+        return response.json()['access_token']
+    else:
+        raise ValueError(f"Failed to retrieve access token: {response.text}")
 
 @csrf_exempt
 def create_order(request):
@@ -130,13 +152,3 @@ def capture_order(request, order_id):
             return JsonResponse(data, status=response.status_code)
     except Exception as e:
         return JsonResponse({'error': str(e)}, status=500)
-
-def generate_access_token():
-    client_id = settings.PAYPAL_CLIENT_ID
-    client_secret = settings.PAYPAL_CLIENT_SECRET
-    auth = (client_id, client_secret)
-    headers = {'Content-Type': 'application/x-www-form-urlencoded'}
-    payload = {'grant_type': 'client_credentials'}
-    response = requests.post('https://api-m.sandbox.paypal.com/v1/oauth2/token', headers=headers, data=payload, auth=auth)
-    data = response.json()
-    return data['access_token']
