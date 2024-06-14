@@ -26,15 +26,13 @@
    box-shadow: 0 0 0 4px rgba(100, 76, 234, 0.1);
 }
 
-.menuNav{
-   background-color: #1c7ce2;
-}
+
 /*efectos menu nav*/
 .menuNav a{
       color: #ffffff;
       cursor: pointer;
       position: relative;
-      border: none;
+      border:none;
       background: none;
      transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
       transition-duration: 400ms;
@@ -81,4 +79,38 @@
 
 .navbar-item{
    margin-right:10px;
+  
 }
+
+
+
+.navbar-sticky {
+   
+   margin: 0;
+   padding: 0;
+   display: flex;
+   justify-content: space-between; /* Alineación entre extremos */
+
+}
+
+
+.menuNav ul{
+   
+   list-style-type: none;
+   margin-top: 0;
+   padding: 0;
+   display: flex;
+   justify-content: space-between; /* Alineación entre extremos */
+
+}
+
+footer ul{
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   justify-content: space-between; /* Alineación entre extremos */
+
+}
+
+
