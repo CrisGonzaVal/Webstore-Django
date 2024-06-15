@@ -18,28 +18,49 @@
 
         <!-- barra encabezado -->
       <div class="navbar-sticky">   
-        <div class="container">
+        <div class="containe">
             <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                    <a  href="{% url 'home' %}"><img src="{% static '/app/imagenes/logo/logotipo.png' %}" alt="logotipo" width="auto" height="80px"></a>
-                    <form class="d-flex w-50" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Tenemos lo que usted necesita" aria-label="Search">
-                        <button class="btn btn-primary" type="submit">Buscar</button>
-                    </form>
-                    <a href=""><img class="campana" src="{% static '/app/imagenes/logo/campana.png' %}" alt="notificacion" width="auto" height="30px"><span class=" top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span></a>
-                    <a href="{% url 'carro' %}"><img src="{% static '/app/imagenes/logo/carrito-de-compras.png' %}" alt="carro" width="auto" height="40px"><span class=" top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ carrito|length }}</span></a>
-                    <div class="dropdown">
-                        <img data-bs-toggle="dropdown" src="{% static '/app/imagenes/logo/acceso.png' %}" alt="acceso" width="auto" height="40px">
-                        <ul class="dropdown-menu dropdown-menu-primary ">
-                            <li><a class="dropdown-item" href="{% url 'login' %}">Iniciar sesión</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="{% url 'registro' %}">Registrarse</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="http://127.0.0.1:8000/admin/">Empleados</a></li>
+                <div class="container">
+                    <a class="logotipo" href="{% url 'home' %}"><img src="{% static '/app/imagenes/logo/logotipo.png' %}" alt="logotipo" width="auto" height="80px"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <form class="d-flex w-40" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Tenemos lo que usted necesita" aria-label="Search">
+                            <button class="btn btn-primary" type="submit">Buscar</button>
+                        </form>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">
+                                    <img class="campana" src="{% static '/app/imagenes/logo/campana.png' %}" alt="notificacion" width="auto" height="30px">
+                                    <span class=" top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{% url 'carro' %}">
+                                    <img src="{% static '/app/imagenes/logo/carrito-de-compras.png' %}" alt="carro" width="auto" height="40px">
+                                    <span class=" top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ carrito|length }}</span>
+                                </a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img data-bs-toggle="dropdown" src="{% static '/app/imagenes/logo/acceso.png' %}" alt="acceso" width="auto" height="40px">
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-primary ">
+                                    <li><a class="dropdown-item" href="{% url 'login' %}">Iniciar sesión</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="{% url 'registro' %}">Registrarse</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="http://127.0.0.1:8000/admin/">Empleados</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item" href="#">
+                                <!--VISUALIZACION DEL API VALOR DOLAR-->
+                                <h6 id="valor-dolar"></h6>
+                            </li>
                         </ul>
                     </div>
-                    <!--VISUALIZACION DEL API VALOR DOLAR-->
-                    <h6 id="valor-dolar"></h6>
                 </div>
               </nav>
         </div>
@@ -47,8 +68,8 @@
     <br><br><br><br>
         <!-- menu de navegacion -->
         <div class="menuNav">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-primary p-4">
-                <div class="container justify-content-center">
+            <nav class="navbar navbar-expand-sm navbar-dark bg-primary p-2">
+                <div class="container-fluid justify-content-center">
                     <ul class="navbar">
                        <li class="nav mx-4"><a class="navbar-brand" href="{% url 'home' %}">Home</a></li>
                        <li class="nav mx-4"><a class="navbar-brand" href="{% url 'catalogo' %}">Catalogo</a></li>
@@ -68,7 +89,7 @@
         {% endblock %}
       <!-- pie de pagina -->
     <footer>
-      <nav class="navbar navbar-expand-lg bg-body-secondary">
+      <nav class="navbar navbar-expand-sm bg-body-secondary">
           <div class="container-fluid">
               <small>&copy;<b>2024 Blocks, Inc. All rights reserved. </b></small>
               <ul class="navbar">
