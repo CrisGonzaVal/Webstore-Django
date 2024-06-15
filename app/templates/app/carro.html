@@ -13,7 +13,7 @@
                 <div class="col-md-8">
                     <div class="card" style="justify-content: space-between">
                         <div class="card-body">
-                            <b>TU CARRO</b> ({{ carrito|length }} Productos)
+                            <b>TU CARRO</b> ({{ cantidad_total_productos }} Productos)
                         </div>
                     </div>
                 </div>
@@ -77,6 +77,8 @@
                             </div>
                             <br>
                             <br><br>
+
+
                             <div id="paypal-button-container">
                                 <!--API  PAY PAL-->
                                     <script src="https://www.paypal.com/sdk/js?client-id=AbTNaxU3ExF7fl-Ic5e3aBs49-36S6o1m8zThj270D9kzbF05cpjsabs_7n0SwrxxKXdtgZTIoPsnYfn&currency=USD"></script>
@@ -86,6 +88,11 @@
                                       </script>
                                     <script src="{% static '/app/JS/paypal.js' %}"></script> <!-- JS de paypal API -->
                             </div>
+
+
+
+
+                            
                         </div>
                     </div>
                 </div>
