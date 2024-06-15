@@ -43,20 +43,3 @@
     color: #fbfbfb;
    }
    
-
-
-
-
-
-.navFiltro{
-    width: 100%;
-    position: static;
-    display: inline-block;
-    justify-content: space-between;
-}
-
-.navFiltro ul{
-    list-style-type: none;
-    display:inline-flex;
-    justify-content: space-between;
-}
