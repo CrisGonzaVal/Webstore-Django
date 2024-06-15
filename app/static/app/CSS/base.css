@@ -37,13 +37,13 @@
 
 
 .menuNav a:after {
-   /* content: "";
+   content: "";
    pointer-events: none;
    bottom: -2px;
    left: 50%;
    position: absolute;
    width: 0%;
-   height: 2px; */
+   height: 2px;
    background-color: #fff;
    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
    transition-duration: 400ms;
@@ -51,68 +51,28 @@
 }
 
 /*todos los dropdown se despliega cuando lo enfoca*/
- /* .dropdown:hover .dropdown-menu,
+ .dropdown:hover .dropdown-menu,
 .dropdown:focus .dropdown-menu {
    display: block;
    max-height: 300px; 
    opacity: 1;
-} */
+}
 
 
-/*
+/* 
 .navbar-item{
    margin-right:10px;
   
 }
 
-.bg-primary{ 
-   margin-top: 100px; 
-}
 
 .menuNav a:focus:after,
 .menuNav a:hover:after {
    width: 100%;
    left: 0%;
-} */
+}  */
 
 
-
-/* 
-.navbar-sticky {
-   width: 100%;
-   top: 0;
-   position: fixed;
-   display: inline-block;
-   justify-content: space-between; 
- 
-}
-
-
-.menuNav{
-   width: 100%;
-   position: static;
-   display: inline-block;
-   justify-content: space-between; 
-   
-}
-
-
-
-
-.menuNav ul{
-   list-style-type: none;
-   display:inline-flex;
-   justify-content: space-between; 
-
-}
-
-footer ul{
-   width: 30%;
-   list-style-type: none;
-   display: inline-block;
-   justify-content: space-between;
-
-} */
 
 
 
@@ -125,12 +85,11 @@ footer ul{
 }
 
 .navbar-sticky ul{
-   width: 40%;
-   padding: 5px;
+   width: 50%;
 }
 
 .navbar-sticky li{
-   width: 40%;
+   width: 100%;
 
 }
 
@@ -150,7 +109,9 @@ form{
    
 }
 
-
+.navbar-brand{
+   font-size: ;
+}
 
 
 .menuNav ul{
@@ -161,9 +122,9 @@ form{
 }
 
 footer ul{
-   width: 30%;
+   width: 25%;
    list-style-type: none;
-   display: inline-block;
+   display: inline-block ;
    justify-content: space-between;
 
 }
