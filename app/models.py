@@ -1,4 +1,3 @@
-
 from django.db import models
 
 # Se crean los modelos (tablas) desde aqui 
@@ -33,15 +32,6 @@ class Marca(models.Model):
     def __str__(self):
       return self.nombre_m
 
-
-class Dimension(models.Model):
-    id_dimension = models.AutoField(primary_key=True,)
-    alto = models.FloatField()
-    largo = models.FloatField()
-    ancho = models.FloatField()
-    peso = models.FloatField()
-    
-    
 class Producto(models.Model):
     id_producto = models.AutoField(primary_key=True)
     nombre_prod = models.CharField(max_length=100)
@@ -51,7 +41,6 @@ class Producto(models.Model):
     id_categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     id_marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
     imagen = models.ImageField(upload_to="producto/", null=True)
-    dimensión = models.ForeignKey(Dimension, on_delete=models.CASCADE)
 
     def __str__(self):
       return self.nombre_prod
@@ -68,23 +57,27 @@ class Inventario(models.Model):
 
     
 
+class Dimensiones(models.Model):
+    id_producto = models.OneToOneField(Producto, on_delete=models.CASCADE, primary_key=True)
+    alto = models.FloatField()
+    largo = models.FloatField()
+    ancho = models.FloatField()
+    peso = models.FloatField()
+
 class Historial(models.Model):
     id_registro = models.AutoField(primary_key=True)
     id_producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     accion = models.TextField()
-
-
-class Venta(models.Model):
-    id_venta = models.AutoField(primary_key=True)
-    id_producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
 
 class Fecha(models.Model):
     id_fecha = models.AutoField(primary_key=True)
     anio = models.IntegerField()
     mes = models.IntegerField()
     dia = models.IntegerField()
-    venta = models.ForeignKey(Venta, on_delete=models.CASCADE)
 
+class Venta(models.Model):
+    id_venta = models.AutoField(primary_key=True)
+    id_producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
 
 class ComprobantePago(models.Model):
     id_comprobante = models.AutoField(primary_key=True)
@@ -114,26 +107,21 @@ class Despacho(models.Model):
     id_venta = models.ForeignKey(Venta, on_delete=models.CASCADE)
     estatus = models.CharField(max_length=50)
 
-class Ciudad(models.Model):
-    id = models.AutoField(primary_key=True)
-    nombre = models.CharField(max_length=100)
-
-    
-class Comuna(models.Model):
-    id = models.AutoField(primary_key=True)
-    nombre_comuna = models.CharField(max_length=100)
-    id_ciudad = models.ForeignKey(Ciudad, on_delete=models.CASCADE)
-
 class Direccion(models.Model):
     id = models.AutoField(primary_key=True)
     tipo = models.CharField(max_length=50)
     calle = models.CharField(max_length=100)
     numero = models.IntegerField()
     id_despacho = models.ForeignKey(Despacho, on_delete=models.CASCADE)
-    comuna = models.ForeignKey(Comuna, on_delete=models.CASCADE)
 
+class Ciudad(models.Model):
+    id = models.AutoField(primary_key=True)
+    nombre = models.CharField(max_length=100)
 
-
+class Comuna(models.Model):
+    id = models.AutoField(primary_key=True)
+    nombre_comuna = models.CharField(max_length=100)
+    id_ciudad = models.ForeignKey(Ciudad, on_delete=models.CASCADE)
 
 class TipoUsuario(models.Model):
     id_tipo = models.AutoField(primary_key=True)
@@ -145,13 +133,12 @@ class TipoUsuario(models.Model):
 class Usuario(models.Model):
     id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=100)
-    apellidos = models.CharField(max_length=100)
-    rut = models.CharField(max_length=14, unique=True)
+    apellido = models.CharField(max_length=100)
     edad = models.IntegerField()
+    rut = models.CharField(max_length=12, unique=True)
+    dv = models.CharField(max_length=1)
     email = models.CharField(max_length=100)
     tipo_usuario = models.ForeignKey(TipoUsuario, on_delete=models.CASCADE)
-    direccion = models.ForeignKey(Direccion, on_delete=models.CASCADE)
-    
 
     def __str__(self):
       return self.nombre + " "+ self.apellido
