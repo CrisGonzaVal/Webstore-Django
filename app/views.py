@@ -16,11 +16,15 @@ import base64
 def cantidad_carrito(request):
     carrito = Carrito(request)
     total_carrito = sum(Decimal(str(item['acumulado'])) for item in carrito.carrito.values())
+
+    # Calcular la cantidad total de productos en el carrito
+    cantidad_total_productos = sum(item['cantidad'] for item in carrito.carrito.values())
     
     # Contexto común para todas las vistas
     contexto_comun = {
         'carrito': carrito.carrito,
         'total_carrito': total_carrito,
+        'cantidad_total_productos': cantidad_total_productos,  # Agrega la cantidad total
     }
     
     return contexto_comun
