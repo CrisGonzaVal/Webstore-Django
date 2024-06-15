@@ -1,24 +1,20 @@
 {% extends 'app/base.html' %}
-
 {% load static %}
 {% load humanize %}
 
 {% block contenido %}
+<br>
 <main>
     <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
-        <!-- carrito de compra -->
         <div class="container">
-            <!-- fila 1 -->
             <div class="row">
-                <!-- columna 1 -->
                 <div class="col-md-8">
-                    <div class="card">
+                    <div class="card" style="justify-content: space-between">
                         <div class="card-body">
                             <b>TU CARRO</b> ({{ carrito|length }} Productos)
                         </div>
                     </div>
                 </div>
-                <!-- columna 2 -->
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
@@ -27,17 +23,12 @@
                     </div>
                 </div>
             </div>
-
             <br>
-
-            <!-- fila 2 -->
             <div class="row">
-                <!-- columna 1 -->
                 <div class="col-md-8">
                     <div class="card">
                         <div class="card-body">
                             {% for key, item in carrito.items %}
-                            <!-- fila item -->
                             <div class="row">
                                 <div class="col-md-3">
                                     <img class="img-fluid mx-auto d-block image" src="{{ item.imagen }}" alt="{{ item.nombre }}">
@@ -66,7 +57,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- columna 2 -->
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
@@ -79,87 +69,32 @@
                                 </div>
                                 <div class="col-md-4">
                                     <ul class="list-group list-group-flush">
-                                        <li class="list-group-item"><b>${{ total_carrito | intcomma }}</b></li>
+                                        <li class="list-group-item"><br><br><b>${{ total_carrito | intcomma }}</b></li>
                                     </ul>
                                 </div>
                             </div>
                             <br>
-                            <a href="{% url 'limpiar_carrito' %}" class="btn btn-danger btn-mg">Limpiar Carrito</a>
                             <br><br>
-                            <!-- Paypal Button -->
-                            <div id="paypal-button-container"></div>
-                            <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID"></script>
-                        <script>
-                            window.paypal.Buttons({
-                            style: {
-                                shape: 'rect',
-                                layout: 'vertical',
-                                color: 'gold',
-                                label: 'paypal',
-                            },
-                            createOrder: async function() {
-                                try {
-                                const response = await fetch('/api/orders', {
-                                    method: 'POST',
-                                    headers: {
-                                    'Content-Type': 'application/json',
-                                    },
-                                    body: JSON.stringify({
-                                    cart: [
-                                        // Aquí puedes pasar los productos y cantidades del carrito.
-                                        // Ajusta esta parte según tus necesidades.
-                                        { id: 'PRODUCT_ID', quantity: 'PRODUCT_QUANTITY' },
-                                    ],
-                                    }),
-                                });
-
-                                const orderData = await response.json();
-
-                                if (orderData.id) {
-                                    return orderData.id;
-                                }
-                                const errorDetail = orderData?.details?.[0];
-                                const errorMessage = errorDetail
-                                    ? `${errorDetail.issue} ${errorDetail.description} (${orderData.debug_id})`
-                                    : JSON.stringify(orderData);
-
-                                throw new Error(errorMessage);
-                                } catch (error) {
-                                console.error(error);
-                                }
-                            },
-                            onApprove: async function(data, actions) {
-                                try {
-                                const response = await fetch(`/api/orders/${data.orderID}/capture`, {
-                                    method: 'POST',
-                                    headers: {
-                                    'Content-Type': 'application/json',
-                                    },
-                                });
-
-                                const orderData = await response.json();
-
-                                if (orderData.details && orderData.details[0].issue === 'INSTRUMENT_DECLINED') {
-                                    return actions.restart();
-                                } else if (orderData.details && orderData.details[0]) {
-                                    throw new Error(`${orderData.details[0].description} (${orderData.debug_id})`);
-                                } else {
-                                    // Muestra un mensaje de éxito
-                                    console.log('Transaction successful', orderData);
-                                }
-                                } catch (error) {
-                                console.error(error);
-                                }
-                            },
-                            }).render('#paypal-button-container');
-                            </script>
+                            <div id="paypal-button-container">
+                                <!--API  PAY PAL-->
+                                    <script src="https://www.paypal.com/sdk/js?client-id=AbTNaxU3ExF7fl-Ic5e3aBs49-36S6o1m8zThj270D9kzbF05cpjsabs_7n0SwrxxKXdtgZTIoPsnYfn&currency=USD"></script>
+                                      <script>
+                                         // Insertar la variable de carrito en el JavaScript
+                                          window.cartItems = JSON.parse('{{ carrito_items|escapejs }}');
+                                      </script>
+                                    <script src="{% static '/app/JS/paypal.js' %}"></script> <!-- JS de paypal API -->
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <br>
+            <a href="{% url 'limpiar_carrito' %}" class="btn btn-danger" >Limpiar Carrito</a>
         </div>
     </div>
 </main>
-
 <br><br>
+
+
+
 {% endblock %}
