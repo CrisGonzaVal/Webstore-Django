@@ -1,11 +1,11 @@
 /* Estilo para navbar fija */
 .navbar-sticky {
-   z-index: 1000; 
+   z-index: 1000;
    background-color: rgba(255, 255, 255, 0.5);
    backdrop-filter: blur(130px);
    border-bottom: 1px solid #ccc;
-   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
-} 
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
 
 /*efecto imput buscar */
@@ -29,8 +29,8 @@
    transition-property: color;
 
 }
-    
-  
+
+
 .menuNav a:focus, .menuNav a:hover {
    color: #fff;
 }
@@ -54,15 +54,15 @@
  .dropdown:hover .dropdown-menu,
 .dropdown:focus .dropdown-menu {
    display: block;
-   max-height: 300px; 
+   max-height: 300px;
    opacity: 1;
 }
 
 
-/* 
+/*
 .navbar-item{
    margin-right:10px;
-  
+
 }
 
 
@@ -81,7 +81,7 @@
    top: 0;
    position: fixed;
    display: inline-block;
-   justify-content: space-between; 
+   justify-content: space-between;
 }
 
 .navbar-sticky ul{
@@ -105,26 +105,25 @@ form{
    width: 100%;
    position: static;
    display: inline-block;
-   justify-content: space-between; 
-   
+   justify-content: space-between;
+
 }
 
 .navbar-brand{
-   font-size: ;
+   font-size:x-large;
 }
 
 
 .menuNav ul{
    list-style-type: none;
    display:inline-flex;
-   justify-content: space-between; 
+   justify-content: space-between;
 
 }
 
 footer ul{
-   width: 25%;
+   width: 30%;
    list-style-type: none;
-   display: inline-block ;
+   display: flex ;
    justify-content: space-between;
-
 }
