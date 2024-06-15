@@ -1,5 +1,5 @@
 from django.contrib import admin
-from.models import Categoria, Marca, Producto, Usuario, Cliente, Empleado, Inventario, Dimensiones, Venta, Historial, Fecha, Proveedores, OrdenCompra, Despacho, Direccion, Ciudad, Comuna, TipoPago, ComprobantePago, Cuenta, TipoUsuario
+from.models import Categoria, Marca, Producto, Usuario, Cliente, Empleado, Inventario, Dimension, Venta, Historial, Fecha, Proveedores, OrdenCompra, Despacho, Direccion, Ciudad, Comuna, TipoPago, ComprobantePago, Cuenta, TipoUsuario
 
 # se registran los modelos (tablas) para mostralo en el admin de Django
 
@@ -25,7 +25,7 @@ admin.site.register(Usuario)
 admin.site.register(Cliente)
 admin.site.register(Empleado)
 admin.site.register(Inventario)
-admin.site.register(Dimensiones)
+admin.site.register(Dimension)
 admin.site.register(Venta)
 admin.site.register(Historial)
 admin.site.register(Fecha)
