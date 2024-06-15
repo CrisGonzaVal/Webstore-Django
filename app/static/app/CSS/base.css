@@ -1,14 +1,11 @@
 /* Estilo para navbar fija */
 .navbar-sticky {
-   
-   
-   /* Asegúrse de que esté por encima de otros elementos */
    z-index: 1000; 
    background-color: rgba(255, 255, 255, 0.5);
    backdrop-filter: blur(130px);
-   border-bottom: 1px solid #ccc; /* para un borde inferior */
-   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /*sombra para mejor visibilidad */
-}
+   border-bottom: 1px solid #ccc;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+} 
 
 
 /*efecto imput buscar */
@@ -23,8 +20,8 @@
 /*efectos menu nav*/
 .menuNav a{
    color: #ffffff;
-   /* cursor: pointer; */
-   /* position: relative; */
+   /* cursor: pointer;
+   position: relative; */
    border:none;
    background: none;
    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -39,10 +36,9 @@
 }
 
 
-
 .menuNav a:after {
-   /* content: ""; */
-   /* pointer-events: none;
+   /* content: "";
+   pointer-events: none;
    bottom: -2px;
    left: 50%;
    position: absolute;
@@ -55,16 +51,16 @@
 }
 
 /*todos los dropdown se despliega cuando lo enfoca*/
-.dropdown:hover .dropdown-menu,
+ .dropdown:hover .dropdown-menu,
 .dropdown:focus .dropdown-menu {
-   /* display: block;
-   max-height: 300px;  */
+   display: block;
+   max-height: 300px; 
    opacity: 1;
 }
 
 
-
-/* .navbar-item{
+/*
+.navbar-item{
    margin-right:10px;
   
 }
@@ -83,18 +79,21 @@
 
 
 .navbar-sticky {
+   width: 100%;
    top: 0;
    position: fixed;
+   display: inline-block;
    justify-content: space-between; 
+ 
 }
 
 
 .menuNav{
    width: 100%;
    position: static;
-   display:inline-block;
+   display: inline-block;
    justify-content: space-between; 
-   background-position-x: calc(100vw - 800px);v
+   
 }
 
 
@@ -110,9 +109,7 @@
 footer ul{
    width: 30%;
    list-style-type: none;
-   display: flex;
+   display: inline-block;
    justify-content: space-between;
 
 }
-
-
