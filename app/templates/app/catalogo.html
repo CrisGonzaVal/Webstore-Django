@@ -61,6 +61,40 @@
     </nav>
   </div>
 </div> 
+<<<<<<< HEAD
+=======
+<br> <br>
+    <main>
+        <!-- barra scroll -->
+        <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+            <!--Galeria Productos-->
+            <div class="container">  
+              <!-- fila 1 de galeria -->
+              <div class="row">
+                
+                {% load humanize %} <!--para ver los datos mas legibles-->
+                {% for p in productos %} <!--llama a todos los productos para mostrarlo-->
+                  <div class="col-sm-3 mb-3 mb-sm-0">
+                      <div class="card">
+                          <div class="card-body">
+                              {% if p.imagen %}
+                              <img class="img-fluid mx-auto d-block image" src="{{ p.imagen.url }}" alt="{{ p.nombre_prod }}">
+                              {% else %}
+                                     <p>No hay imagen disponible</p>    
+                              {% endif %}
+                              <h6 class="card-title">{{ p.nombre_prod | title }}</h6>
+                              <h5 class="card-text">{{ p.id_marca }}</h5>
+                              <p class="card-text" style="color: gray;">{{ p.cantidad_total}} en inventario</p>
+                              <h4 class="card-text ">${{ p.valor | intcomma }}</h4>
+                              <div class="text-center">
+                                  <a  href="{% url 'agregar_producto_catalogo' p.id_producto %}" class="btn btn-outline-light" >agregar al carro</a>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                {% endfor %}  
+                  
+>>>>>>> webstore
 
 <br><br>
 
