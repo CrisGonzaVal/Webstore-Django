@@ -3,12 +3,13 @@
 {% load humanize %}
 
 {% block contenido %}
+<br>
 <main>
     <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <div class="card">
+                    <div class="card" style="justify-content: space-between">
                         <div class="card-body">
                             <b>TU CARRO</b> ({{ carrito|length }} Productos)
                         </div>
@@ -68,29 +69,32 @@
                                 </div>
                                 <div class="col-md-4">
                                     <ul class="list-group list-group-flush">
-                                        <li class="list-group-item"><b>${{ total_carrito | intcomma }}</b></li>
+                                        <li class="list-group-item"><br><br><b>${{ total_carrito | intcomma }}</b></li>
                                     </ul>
                                 </div>
                             </div>
                             <br>
-                            <a href="{% url 'limpiar_carrito' %}" class="btn btn-danger btn-mg">Limpiar Carrito</a>
                             <br><br>
-                            <div id="paypal-button-container"></div>
+                            <div id="paypal-button-container">
+                                <!--API  PAY PAL-->
+                                    <script src="https://www.paypal.com/sdk/js?client-id=AbTNaxU3ExF7fl-Ic5e3aBs49-36S6o1m8zThj270D9kzbF05cpjsabs_7n0SwrxxKXdtgZTIoPsnYfn&currency=USD"></script>
+                                      <script>
+                                         // Insertar la variable de carrito en el JavaScript
+                                          window.cartItems = JSON.parse('{{ carrito_items|escapejs }}');
+                                      </script>
+                                    <script src="{% static '/app/JS/paypal.js' %}"></script> <!-- JS de paypal API -->
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <br>
+            <a href="{% url 'limpiar_carrito' %}" class="btn btn-danger" >Limpiar Carrito</a>
         </div>
     </div>
 </main>
 <br><br>
 
 
-<!--API  PAY PAL-->
-<script src="https://www.paypal.com/sdk/js?client-id=AbTNaxU3ExF7fl-Ic5e3aBs49-36S6o1m8zThj270D9kzbF05cpjsabs_7n0SwrxxKXdtgZTIoPsnYfn&currency=USD"></script>
-<script>
-    // Insertar la variable de carrito en el JavaScript
-    window.cartItems = JSON.parse('{{ carrito_items|escapejs }}');
-</script>
-<script src="{% static '/app/JS/paypal.js' %}"></script> <!-- JS de paypal API -->
+
 {% endblock %}
