@@ -73,15 +73,18 @@ class Historial(models.Model):
     id_producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     accion = models.TextField()
 
+
+class Venta(models.Model):
+    id_venta = models.AutoField(primary_key=True)
+    id_producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
+
 class Fecha(models.Model):
     id_fecha = models.AutoField(primary_key=True)
     anio = models.IntegerField()
     mes = models.IntegerField()
     dia = models.IntegerField()
+    venta = models.ForeignKey(Venta, on_delete=models.CASCADE)
 
-class Venta(models.Model):
-    id_venta = models.AutoField(primary_key=True)
-    id_producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
 
 class ComprobantePago(models.Model):
     id_comprobante = models.AutoField(primary_key=True)
