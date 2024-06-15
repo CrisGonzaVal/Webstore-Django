@@ -1,13 +1,13 @@
-document.getElementById('botonAlCarro').addEventListener('click', function() {
+document.getElementById('botonAlCarrito').addEventListener('click', function() {
             // Cambiar el color del botón al hacer clic
             this.classList.toggle('active');
 
             // Cambiar el contenido del enlace
-            var link = document.getElementById('buttonLink');
+            var link = document.getElementById('botonLink');
             if (this.classList.contains('active')) {
-                link.textContent = 'Producto en el ';
+                link.textContent = 'Se cargó en el Carro ';
             } else {
-                link.textContent = 'Haz clic aquí';
+                link.textContent = 'Agregar al carro';
             }
 
             // Detener la acción de navegación por defecto del enlace
