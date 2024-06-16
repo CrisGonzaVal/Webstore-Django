@@ -85,8 +85,11 @@
                               <p class="card-text" style="color: gray;">{{ p.cantidad_total}} en inventario</p>
                               <h4 class="card-text ">${{ p.valor | intcomma }}</h4>
                               <div class="text-center">
-                                  <a href="{% url 'agregar_producto_catalogo' p.id_producto %}" class="btn btn-outline-light" >agregar al carro</a>
+                                  <a id="addToCart{{ p.id_producto }}" href="{% url 'agregar_producto_catalogo' p.id_producto %}" class="btn btn-outline-light" >agregar al carro</a>
                               </div>
+                              <div id="popupMessage{{ p.id_producto }}" class="popup hidden">
+                                <p>Producto agregado al carrito</p>
+                            </div>
                           </div>
                       </div>
                   </div>
@@ -120,5 +123,5 @@
         </div>
     </main>
     <br><br>
-
+    <script src="{% static '/app/JS/mensajeCarro.js' %}"></script>
     {% endblock %}
