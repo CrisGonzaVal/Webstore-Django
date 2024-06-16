@@ -26,26 +26,26 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <form class="d-flex w-40" role="search">
+                            <form class="d-flex" role="search">
                                 <input class="form-control me-2" type="search" placeholder="Tenemos lo que usted necesita" aria-label="Search">
                                 <button class="btn btn-primary" type="submit">Buscar</button>
                             </form>
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="#">
-                                        <img class="campana" src="{% static '/app/imagenes/logo/campana.png' %}" alt="notificacion" width="auto" height="30px">
+                                        <img class="campana" src="{% static '/app/imagenes/logo/campana.png' %}" alt="notificacion" width="auto" height="25px">
                                         <span class=" top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="{% url 'carro' %}">
-                                        <img src="{% static '/app/imagenes/logo/carrito-de-compras.png' %}" alt="carro" width="auto" height="40px">
+                                        <img src="{% static '/app/imagenes/logo/carrito-de-compras.png' %}" alt="carro" width="auto" height="35px">
                                         <span class=" top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ carrito|length }}</span>
                                     </a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img data-bs-toggle="dropdown" src="{% static '/app/imagenes/logo/acceso.png' %}" alt="acceso" width="auto" height="40px">
+                                        <img data-bs-toggle="dropdown" src="{% static '/app/imagenes/logo/acceso.png' %}" alt="acceso" width="auto" height="35px">
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-primary ">
                                         <li><a class="dropdown-item" href="{% url 'login' %}">Iniciar sesión</a></li>
@@ -94,19 +94,19 @@
                 <small>&copy;<b>2024 Blocks, Inc. All rights reserved. </b></small>
                 <ul class="navbar">
                     <li class="nav-item dropdown ">
-                        <a target="_blank" href="https://www.facebook.com"><img src="{% static '/app/imagenes/logo/facebook.png' %}" alt="facebook" width="auto" height="40px"></a>
+                        <a target="_blank" href="https://www.facebook.com"><img src="{% static '/app/imagenes/logo/facebook.png' %}" alt="facebook" width="auto" height="35px"></a>
                     </li>
 
                     <li class="nav-item dropdown ">
-                        <a target="_blank" href="https://www.twitter.com"><img src="{% static '/app/imagenes/logo/twiter.png' %}" alt="twitter" width="auto" height="40px"></a>
+                        <a target="_blank" href="https://www.twitter.com"><img src="{% static '/app/imagenes/logo/twiter.png' %}" alt="twitter" width="auto" height="35px"></a>
                     </li>
 
                     <li class="nav-item dropdown ">
-                        <a target="_blank" href="https://www.instagram.com"><img src="{% static '/app/imagenes/logo/instagram.png' %}" alt="instagram" width="auto" height="40px"></a>
+                        <a target="_blank" href="https://www.instagram.com"><img src="{% static '/app/imagenes/logo/instagram.png' %}" alt="instagram" width="auto" height="35px"></a>
                     </li>
 
                     <li class="nav-item dropdown ">
-                        <a target="_blank" href="https://www.linkedin.com"><img src="{% static '/app/imagenes/logo/linkedin.png' %}" alt="linkedin" width="auto" height="40px"></a>
+                        <a target="_blank" href="https://www.linkedin.com"><img src="{% static '/app/imagenes/logo/linkedin.png' %}" alt="linkedin" width="auto" height="35px"></a>
                     </li>
                 </ul>
             </div>

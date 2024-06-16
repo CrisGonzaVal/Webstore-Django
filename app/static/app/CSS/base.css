@@ -89,21 +89,33 @@
 }
 
 .navbar-sticky ul{
-   width: 50%;
+   width: 40%;
+   margin-left: 5%;
 }
 
 .navbar-sticky li{
-   width: 100%;
+   width: 30%;
 
 }
 
 form{
-   width: 60%;
+   width: 50%;
+   margin-left: 5%;
+   height: 35px;
+   
 }
+
+form button{
+   align-content: center ;
+}
+
 
 .logotipo{
    width: 20%;
 }
+
+
+
 
 /* ajustes de la barra de navegación */
 .menuNav{
@@ -144,9 +156,27 @@ form{
 
 
 /* ajustes del pie de pagina */
-footer ul{
-   width: 30%;
-   list-style-type: none;
-   display: inline-block ;
-   justify-content: space-between;
+footer{
+   width: 100%;
+   position: static;
+   display: block;
+
 }
+
+footer ul{
+   width: 35%;
+   height: 40px;
+   margin-bottom: 0;
+   align-content: center ;
+   list-style-type: none;
+   display: flex ;
+
+   
+
+}
+
+footer li{
+   width: 25%;
+}
+
+
