@@ -89,7 +89,7 @@
 }
 
 .navbar-sticky ul{
-   width: 40%;
+   width: 50%;
    margin-left: 5%;
 }
 
@@ -124,35 +124,35 @@ form button{
    position: static;
    display: inline-block;
    justify-content:center;
+   
 
 
 }
 
 /* centrar contenido */
 .menuNav ul{
-   width: 50%;
+   width: 100%;
    height: 40px;
-   align-content: center ;
-
-}
-
-/* espaciado entre palabras */
-.menuNav li{
-   width: 10%;
-
-}
-
-.navbar-brand{
-   font-size: x-large;
-}
-
-
-.menuNav ul{
+   align-content: center;
    list-style-type: none;
    display: inline-flex;
    justify-content: space-between;
-
 }
+
+
+/* espaciado entre margenes */
+.menuNav li{
+   width: 25%;
+   justify-content: center;
+ 
+}
+
+.navbar-brand{
+   font-size: large;
+}
+
+
+
 
 
 /* ajustes del pie de pagina */
