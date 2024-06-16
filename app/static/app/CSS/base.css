@@ -1,5 +1,8 @@
 /* Estilo para navbar fija */
 .navbar-sticky {
+   width: 100%;
+   top: 0;
+   position: fixed;
    z-index: 1000;
    background-color: rgba(255, 255, 255, 0.5);
    backdrop-filter: blur(130px);
@@ -20,8 +23,8 @@
 /*efectos menu nav*/
 .menuNav a{
    color: #ffffff;
-   /* cursor: pointer;
-   position: relative; */
+   cursor: pointer;
+   position: relative;
    border:none;
    background: none;
    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -37,13 +40,13 @@
 
 
 .menuNav a:after {
-   /* content: "";
+   content: "";
    pointer-events: none;
    bottom: -2px;
    left: 50%;
    position: absolute;
    width: 0%;
-   height: 2px; */
+   height: 2px;
    background-color: #fff;
    transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
    transition-duration: 400ms;
@@ -59,30 +62,27 @@
 }
 
 
-<<<<<<< HEAD
-/* .navbar-item{
+
+.navbar-item{
    margin-right:10px;
 
-} */
+}
 
 
-/* .menuNav a:focus:after,
+.menuNav a:focus:after,
 .menuNav a:hover:after {
    width: 100%;
    left: 0%;
-}  */
+} 
 
 
 
 
 
-.navbar-sticky {
-   width: 100%;
-   top: 0;
-   position: fixed;
+/* .navbar-sticky {
    display: inline-block;
    justify-content: space-between;
-}
+} */
 
 .navbar-sticky ul{
    width: 50%;
@@ -127,6 +127,3 @@ footer ul{
    display: flex ;
    justify-content: space-between;
 }
-=======
- 
->>>>>>> webstore
