@@ -1,5 +1,7 @@
 /* Estilo para navbar fija */
 .navbar-sticky {
+   width: 100%;
+   top: 0;
    position: fixed;
    z-index: 1000;
    background-color: rgba(255, 255, 255, 0.5);
@@ -76,13 +78,23 @@
 
 
 
+
+/* CAMBIOS */
+
+
+/* ajustes del baner */
+.navbar-sticky {
+   width: 100%;
+   top: 0;
+}
+
 .navbar-sticky ul{
    width: 50%;
 }
 
 .navbar-sticky li{
    width: 100%;
-   
+
 }
 
 form{
@@ -93,10 +105,28 @@ form{
    width: 20%;
 }
 
+/* ajustes de la barra de navegación */
 .menuNav{
    width: 100%;
+   margin-top: 100px;
    position: static;
-   justify-content: space-between;
+   display: inline-block;
+   justify-content:center;
+
+
+}
+
+/* centrar contenido */
+.menuNav ul{
+   width: 50%;
+   height: 40px;
+   align-content: center ;
+
+}
+
+/* espaciado entre palabras */
+.menuNav li{
+   width: 10%;
 
 }
 
@@ -107,11 +137,13 @@ form{
 
 .menuNav ul{
    list-style-type: none;
-   display:inline-flex;
+   display: inline-flex;
    justify-content: space-between;
 
 }
 
+
+/* ajustes del pie de pagina */
 footer ul{
    width: 30%;
    list-style-type: none;
