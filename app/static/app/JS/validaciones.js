@@ -140,3 +140,17 @@ function validacionLogin()
 
 }
 
+
+function validacionGeneral()
+{  
+   if(validaRut() == true && validarCorreo() == true && compararPass() == true ){
+      document.getElementById("button").disabled = false;
+      
+     }
+     else
+     {
+        document.getElementById("button").disabled = true;
+       
+     }
+}
+

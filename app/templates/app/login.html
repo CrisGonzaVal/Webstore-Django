@@ -22,11 +22,13 @@
                         <form onmouseover="validacionLogin()">
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email Address</label>
-                                <input type="email" class="form-control" id="email" placeholder="Info@gmail.com">
+                                <input type="email" class="form-control" id="email" placeholder="Info@gmail.com" required>
+                                <small  id="emailError" style="display: none;"></small>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" placeholder="Password">
+                                <input type="password" class="form-control" id="password" placeholder="Password" required>
+                                <small  id="passError" style="display: none;"></small>
                             </div>
                             <div class="text-center mt-4">
                                 <a href="#" class="text-decoration-none small">¿Olvidaste la contraseña?</a>
