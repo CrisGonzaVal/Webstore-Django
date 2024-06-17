@@ -1,10 +1,4 @@
 
-
-from django.shortcuts import render 
-
-from.models import Producto, Inventario
-from django.db.models import Sum
-
 from django.shortcuts import render , redirect
 from.models import Producto, Inventario, Categoria, Marca
 from django.db.models import Sum, Q
