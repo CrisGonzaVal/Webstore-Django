@@ -9,16 +9,16 @@
 
 <main>
   <!-- aqui esta barra filtros -->
-  <div class="navFiltro">
+  <div class="navFiltro ">
     <div class="container ">
-      <nav class="navbar navbar-expand-sm bg-body-secondary p-2 ">
-        <div class="container justify-content-center">
-            <ul class="navbar-nav">
+      <nav class="navbar navbar-expand-lg bg-body-secondary justify-content-center">
+        
+            <ul class="navbar-nav ">
 
               <!-- Marca -->
                 <li class="nav-item dropdown">
                   <button class="btn dropdown-toggle navbar-brand" data-bs-toggle="dropdown" aria-expanded="false">
-                    Marca
+                    <b>Marca</b>
                   </button>
                   <ul class="dropdown-menu dropdown-menu-primary">
                 {% for marca in marcas %}
@@ -33,7 +33,7 @@
               <!-- Categoria --> 
                 <li class="nav-item dropdown">
                     <button class="btn dropdown-toggle navbar-brand" data-bs-toggle="dropdown" aria-expanded="false">
-                      Categoria
+                      <b>Categoria</b>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-primary">
                       {% for categoria in categorias %}
@@ -48,7 +48,7 @@
                   <!-- Precio -->
                   <li class="nav-item dropdown">
                     <button class="btn dropdown-toggle navbar-brand" data-bs-toggle="dropdown" aria-expanded="false">
-                      Precio
+                      <b>Precio</b>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-primary">
                       <li><a class="dropdown-item" href="{% url 'catalogo' %}?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}precio=asc">Menor a Mayor</a></li>
@@ -58,7 +58,7 @@
                   </li>
                   
               </ul> 
-        </div>
+        
       </nav>
     </div>
   </div> 
