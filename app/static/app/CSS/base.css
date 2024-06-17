@@ -94,7 +94,7 @@
 }
 
 .navbar-sticky li{
-   width: 30%;
+   width: 100%;
 
 }
 
@@ -157,6 +157,7 @@ form button{
 /* ajustes del pie de pagina */
 footer{
    width: 100%;
+   margin-bottom: 0;
    position: static;
    display: block;
 

@@ -3,17 +3,20 @@
 {% load static %}
 
 {% block contenido %}
+<script src="{% static '/app/JS/validaciones.js' %}" defer></script>
 
-<main style="margin-top: 5%;">
-    
+<br>
+<main>
+ 
+<div class="container">    
     <div class="row">
         
         <!-- columna 1 -->
-        <div class="col-md-6">
+        <div class="col-8">
             
             <!-- Formulario de Registro con etiquetas alineadas a la izquierda -->
             <div class="container d-flex justify-content-center align-items-center">
-                <div class="w-50 text-center">  
+                <div class="w-100 text-center">  
                     <form id="registerForm">
                         <div style="color: grey;" >
                             <h2 style="font-size: 260%;">Registro de Cliente</h2> <br>
@@ -95,14 +98,14 @@
         </div>
 
         <!-- columna 2 -->
-        <div class="col-md-6">
-            <img src="{% static 'app/IMAGENES/logo/registro.png'%}" alt="" width="auto" height="70%">
+        <div class="col-4">
+            <img src="{% static 'app/IMAGENES/logo/registro.png'%}" alt="" width="auto" height="800px">
         </div>
     
     </div>
-
+</div>
         
 </main>
-<br><br>
+<br><br><br><br><br><br><br><br>
 
 {% endblock %}

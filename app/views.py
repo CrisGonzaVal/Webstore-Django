@@ -1,7 +1,7 @@
 
 from django.shortcuts import render , redirect
 from.models import Producto, Inventario, Categoria, Marca
-from django.db.models import Sum, Q
+from django.db.models import Sum
 
 from .Carrito import Carrito
 from decimal import Decimal

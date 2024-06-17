@@ -3,51 +3,54 @@
 {% load static %}
 
 {% block contenido %}
+<script src="{% static '/app/JS/validaciones.js' %}" defer></script>
 
-<main style="margin-top: 5%;">
-       
-    <div class="row">
-        <!-- columna 1 -->
-        <div class="col-md-6">
-            <!-- logo larrain -->
-            <div class="text-center mt-3">
-                <a href="{% url 'home' %}"><img src="{% static 'app/imagenes/logo/logotipo.png' %}" alt="logotipo" width="auto" height="150px"></a>
-            </div>
-            <!-- Tarjeta de inicio de sesión -->
-            <div class="container d-flex justify-content-center align-items-center" >
-                <div class="p-5 w-50">
-                    <form>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email Address</label>
-                            <input type="email" class="form-control" id="email" placeholder="Info@gmail.com">
-                        </div>
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Password">
-                        </div>
-                        <div class="text-center mt-4">
-                            <a href="#" class="text-decoration-none small">¿Olvidaste la contraseña?</a>
-                        </div>
-                        <br>
-                        <div class="text-center mt-3">
-                            <button type="submit" class="btn btn-primary w-50">Login</button>
-                        </div>
-                    </form>
+
+<br>
+<main>
+    <div class="container">   
+        <div class="row">
+            <!-- columna 1 -->
+            <div class="col-md-8">
+                <!-- logo larrain -->
+                <div class="text-center">
+                    <a href="{% url 'home' %}"><img src="{% static 'app/imagenes/logo/logotipo.png' %}" alt="logotipo" width="auto" height="150px"></a>
+                </div>
+                <!-- Tarjeta de inicio de sesión -->
+                <div class="d-flex justify-content-center align-items-center" >
+                    <div class="p-5 w-100">
+                        <form onmouseover="validacionLogin()">
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" placeholder="Info@gmail.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password">
+                            </div>
+                            <div class="text-center mt-4">
+                                <a href="#" class="text-decoration-none small">¿Olvidaste la contraseña?</a>
+                            </div>
+                            <br>
+                            <div class="text-center mt-3">
+                                <button type="submit" class="btn btn-primary w-50" onmouseover="validacionLogin()" onclick="enviarFormulario()">Login</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- columna 2 -->
-        <div class="col-md-6">
-            <img src="{% static 'app/imagenes/logo/login.jpg' %}" alt="" width="auto" height="80%">
-        </div>
+            <!-- columna 2 -->
+            <div class="col-md-4">
+                <img src="{% static 'app/imagenes/logo/login.jpg' %}" alt="" width="auto" height="500px">
+            </div>
 
+        </div>
     </div>
-  
 </main>
 
-<br><br>
+<br><br><br><br><br><br>
 
 
 
-    {% endblock %}
+{% endblock %}
