@@ -35,7 +35,7 @@
                   </button>
                   <ul class="dropdown-menu dropdown-menu-primary">
                     {% for categoria in categorias %}
-                      <li><a class="dropdown-item" href="{% url 'catalogo' %}?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}categoria={{ categoria.nombre }}">{{ categoria.nombre }}</a></li>
+                      <li><a class="dropdown-item"  href="{% url 'catalogo' %}?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}categoria={{ categoria.nombre }}">{{ categoria.nombre }}</a></li>
                         {% if not forloop.last %}
                         <li><hr class="dropdown-divider"></li>
                         {% endif %}
