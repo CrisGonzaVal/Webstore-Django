@@ -9,6 +9,7 @@
     margin-right: 20px; /* Espacio a la derecha de cada tarjeta */
     margin-bottom: 20px; /* Espacio debajo de cada tarjeta */    
     border: 2px solid rgba(0, 0, 0, 0.05);
+    position: relative; /* Importante para la posición absoluta del botón */
 }
 
 /*cuando el cursor esta dentro de la tarjeta se muestra  la sombra*/
@@ -20,8 +21,8 @@
   }
 
 .row .btn-outline-light {
+    width: 100%;
     transform: translate(-50%, 125%);
-    width: 60%;
     border-radius: 10px;
     border: none;
     background-color: #008bf8;
@@ -32,7 +33,7 @@
     left: 50%;
     bottom: 0;
     opacity: 0;
-    transition: 0.5s ease-out;
+    transition: 0.2s ease-out;
 }
 
 /*cursor*/
