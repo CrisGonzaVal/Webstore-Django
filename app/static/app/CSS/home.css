@@ -38,9 +38,9 @@ image {
 
 /*cursor*/
 .row .card:hover .btn-outline-light {
-    transform: translate(-50%, -35%); /*posicion del boton*/
+    transform: translate(-50%, -3%); /*posicion del boton*/
     opacity: 1;
-    background-color:#1c7ce2 !important;
+    background-color: #008bf8 !important;
     color: #fbfbfb;
    }
    
