@@ -26,7 +26,7 @@
     transform: translate(-50%, 125%);
     border-radius: 10px;
     border: none;
-    background-color: #008bf8;
+    background-color: #008bf8 !important;
     color: #fbfbfb;
     font-size: large;
     padding: .8rem 1rem;
@@ -41,7 +41,7 @@
 .row .card:hover .btn-outline-light {
     transform: translate(-50%, -3%); /*posicion del boton*/
     opacity: 1;
-    background-color: #008bf8;
+    background-color: #008bf8 !important;
     color: #fbfbfb;
    }
 
@@ -52,7 +52,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #008bf8;
+    background-color: #008bf8 !important;
     color: white;
     padding: 20px;
     border-radius: 5px;
