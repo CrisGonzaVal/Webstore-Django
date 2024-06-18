@@ -3,29 +3,29 @@
 function validacion() {
     //IMPUT
     
-    var nombre = document.getElementById("nombre");
-    var apellido = document.getElementById("apellido");
+    var nombre = document.getElementById('nombre');
+    var apellido = document.getElementById('apellido');
     var rut = document.getElementById('rut');
-    var edad = document.getElementById("edad");
+    var edad = document.getElementById('edad');
     var correo = document.getElementById('direccion');
     var correo = document.getElementById('email');
     var pass = document.getElementById('password');
     var confirmPass = document.getElementById('confirmPassword');
-    var celular = document.getElementById("celular");
+    var celular = document.getElementById('celular');
 
     //MENSAJES ERROR
     
     var nombreError = document.getElementById('nombreError');
     var nombreError = document.getElementById('apellidoError');
     var rutError = document.getElementById('rutError');
-    var rutLongError = document.getElementById("longError");
+    var rutLongError = document.getElementById('longError');
     var edadError = document.getElementById('edadError');
     var edadError = document.getElementById('direccionError');
     var emailError = document.getElementById('emailError');
     var passError = document.getElementById('passError');
     var passError2 = document.getElementById('passError2');
     var celularError = document.getElementById('celularError');
-    var button = document.getElementById("button");
+    var button = document.getElementById('button');
 
       var valiLongRut = validarLongitudRut();
       var rutValido = validarRut();
@@ -41,6 +41,14 @@ function validacion() {
         return true;
       }
     
+
+      if (nombre.value === null || nombre.value === ''){
+        mensajeError.push('Ingresa tu nombre');
+      }
+
+      if (apellido.value === null || apellido.value === ''){
+        mensajeError.push('Ingresa tu apellido');
+      }
 
     // VALIDACIONES DE CAMPOS
     function validarLongitudRut() {
