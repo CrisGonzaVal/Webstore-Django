@@ -61,7 +61,7 @@ function validacion() {
     if (nombre.value === null || nombre.value === ''){
       nombreError.style.display = 'block';
       nombreError.className = "text-danger";
-      nombreError.textContent = "Ingresa tu nombre.";
+      nombreError.textContent = "Ingrese su nombre.";
       return false;
     } else {
       nombreError.style.display = 'none';
@@ -74,7 +74,7 @@ function validacion() {
     if (apellido.value === null || apellido.value === ''){
       apellidoError.style.display = 'block';
       apellidoError.className = "text-danger";
-      apellidoError.textContent = "Ingresa tus apellidos.";
+      apellidoError.textContent = "Ingrese sus apellidos.";
       return false;
     } else {
       apellidoError.style.display = 'none';
@@ -88,7 +88,7 @@ function validacion() {
     if (edad.value === null || edad.value === ''){
       edadError.style.display = 'block';
       edadError.className = "text-danger";
-      edadError.textContent = "Selecciona tu edad.";
+      edadError.textContent = "Seleccione su edad.";
       return false;
     } else {
       edadError.style.display = 'none';
@@ -103,7 +103,7 @@ function validacion() {
     if (direccion.value === null || direccion.value === ''){
       direccionError.style.display = 'block';
       direccionError.className = "text-danger";
-      direccionError.textContent = "Ingresa tu direccion.";
+      direccionError.textContent = "Ingrese su direccion.";
       return false;
     } else {
       direccionError.style.display = 'none';
@@ -117,7 +117,7 @@ function validacion() {
     if (region.value === null || region.value === ''){
       regionError.style.display = 'block';
       regionError.className = "text-danger";
-      regionError.textContent = "Seleccionar tu región.";
+      regionError.textContent = "Seleccione su región.";
       return false;
     } else {
       regionError.style.display = 'none';
@@ -131,7 +131,7 @@ function validacion() {
     if (comuna.value === null || comuna.value === ''){
       comunaError.style.display = 'block';
       comunaError.className = "text-danger";
-      comunaError.textContent = "Selecciona tu comuna.";
+      comunaError.textContent = "Seleccione su comuna.";
       return false;
     } else {
       comunaError.style.display = 'none';
@@ -145,7 +145,7 @@ function validacion() {
     if (celular.value === null || celular.value === ''){
       celularError.style.display = 'block';
       celularError.className = "text-danger";
-      celularError.textContent = "Ingresar tu celular.";
+      celularError.textContent = "Ingrese su celular.";
       return false;
     } else {
       celularError.style.display = 'none';
@@ -160,7 +160,7 @@ function validacion() {
     if (pass.value === null || pass.value === ''){
       passError.style.display = 'block';
       passError.className = "text-danger";
-      passError.textContent = "Ingresar una contraseña válida.";
+      passError.textContent = "Por favor, ingrese una contraseña válida.";
       return false;
     } else {
       passError.style.display = 'none';
