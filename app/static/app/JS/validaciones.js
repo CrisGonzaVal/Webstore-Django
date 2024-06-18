@@ -6,6 +6,7 @@ var rut = document.getElementById('rut');
 var edad = document.getElementById('edad');
 var correo = document.getElementById('direccion');
 var comuna = document.getElementById('comuna');
+var region = document.getElementById('region');
 var correo = document.getElementById('email');
 var pass = document.getElementById('password');
 var confirmPass = document.getElementById('confirmPassword');
@@ -20,6 +21,7 @@ var rutLongError = document.getElementById('longError');
 var edadError = document.getElementById('edadError');
 var edadError = document.getElementById('direccionError');
 var comunaError = document.getElementById('comunaError');
+var regionError = document.getElementById('regionError');
 var emailError = document.getElementById('emailError');
 var passError = document.getElementById('passError');
 var passError2 = document.getElementById('passError2');
@@ -37,6 +39,7 @@ function validacion() {
   var rutValido = validarRut();
   var valiEdad = validarEdad();
   var valiDireccion = validarDireccion();
+  var valiRegion = validarRegion();
   var valiComuna = validarComuna();
   var valiCelular = validarCelular();
   var correoValido = validarCorreo();
@@ -44,8 +47,8 @@ function validacion() {
   var passValida = compararPass();
   validaCampos();
 
-  if (!rutValido || !correoValido || !passValida || !valiLongRut || !valiNombre || !valiApellido || valiDireccion
-    || !valiEdad || !valiComuna || !valiCelular || !valiContraseña) {
+  if (!rutValido || !correoValido || !passValida || !valiLongRut || !valiNombre || !valiApellido || !valiEdad
+    || !valiDireccion || !valiRegion || !valiComuna || !valiCelular || !valiContraseña) {
     button.disabled = true;
     return false;
   } else {
@@ -95,6 +98,7 @@ function validacion() {
 
   }
 
+  
   function validarDireccion(){
     if (direccion.value === null || direccion.value === ''){
       direccionError.style.display = 'block';
@@ -109,15 +113,15 @@ function validacion() {
 
   }
 
-  function validarDireccion(){
-    if (direccion.value === null || direccion.value === ''){
-      direccionError.style.display = 'block';
-      direccionError.className = "text-danger";
-      direccionError.textContent = "Ingresa tu direccion.";
+  function validarRegion(){
+    if (region.value === null || region.value === ''){
+      regionError.style.display = 'block';
+      regionError.className = "text-danger";
+      regionError.textContent = "Seleccionar tu región.";
       return false;
     } else {
-      direccionError.style.display = 'none';
-      direccionError.className = "text-success";
+      regionError.style.display = 'none';
+      regionError.className = "text-success";
       return true;
     } 
 

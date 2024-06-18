@@ -63,7 +63,11 @@
                     
                     <!-- Region -->
                     <div class="mt-3">
-                        <input type="text" class="form-control" id="region" placeholder="Región Metropolitana" required>
+                        <select class="form-control" id="region" required>
+                            <option value="">Seleccione Región</option>
+                            <option value="Masculino">Metropolitana</option>
+                        </select>
+                        <small  id="regionError" style="display: none;"></small>
                     </div>
                     
                     <!-- Comuna -->
@@ -105,12 +109,11 @@
                     <!-- Botón de Guardar-->
                     <button type="submit" class="btn btn-primary w-100" id="button" data-bs-toggle="modal" data-bs-target="#miModal" data-bs-dismiss="modal" onmouseover="validacionGeneral()">Registrarse</button>                       
                 </form>
-            </div>       
-
-          
+            </div>                 
 
         </div>
     </div>
+
 
     <!-- Modal -->
     <div class="modal fade" id="miModal" tabindex="-1"  aria-hidden="true" aria-labelledby="modalTitle" data-bs-backdrop="static" data-bs-keyboard="false"  >
