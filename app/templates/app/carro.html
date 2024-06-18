@@ -4,20 +4,21 @@
 
 {% block contenido %}
 
-<br>
+<link rel="stylesheet" href="{% static '/app/CSS/carro.css' %}"> 
+
 
 <main>
     
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-lg-8">
                 <div class="card" style="justify-content: space-between">
                     <div class="card-body">
                         <b>TU CARRO</b> ({{ cantidad_total_productos }} Productos)
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-lg-4">
                 <div class="card">
                     <div class="card-body">
                         <b>RESUMEN DE LA COMPRA</b>
@@ -27,30 +28,30 @@
         </div>
         <br>
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-lg-8">
                 <div class="card">
                     <div class="card-body">
                         {% for key, item in carrito.items %}
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-lg-3">
                                 <img class="img-fluid mx-auto d-block image" src="{{ item.imagen }}" alt="{{ item.nombre }}">
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-lg-3">
                                 <a href="#">{{ item.nombre }}</a>
                                 <div class="product-info">
                                     <div>Color: <span class="value">{{ item.color }}</span></div>
                                     <div>Marca: <span class="value">{{ item.id_marca }}</span></div>
                                 </div>
                             </div>
-                            <div class="col-md-2 quantity">
+                            <div class="col-lg-2 quantity">
                                 <a href="{% url 'restar_producto' item.producto_id %}" class="btn btn-outline-secondary btn-sm">-</a>
                                 <span>{{ item.cantidad }}</span>
                                 <a href="{% url 'agregar_producto' item.producto_id %}" class="btn btn-outline-secondary btn-sm">+</a>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-lg-2">
                                 <a href="{% url 'eliminar_producto' item.producto_id %}" class="btn btn-outline-danger btn-sm">Eliminar</a>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-lg-2">
                                 <span>${{ item.acumulado | intcomma }}</span>
                             </div>
                         </div>
@@ -59,17 +60,17 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-lg-4">
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-8">
+                            <div class="col-lg-8">
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item"><b>Productos ({{ carrito|length }})</b></li>
                                     <li class="list-group-item"><b>Total:</b></li>
                                 </ul>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-lg-4">
                                 <ul class="list-group list-group-flush">
                                     <li class="list-group-item"><br><br><b>${{ total_carrito | intcomma }}</b></li>
                                 </ul>
