@@ -2,29 +2,29 @@
 // VALIDACIONES REGISTRO}
 function validacion() {
     //IMPUT
+    
+    var nombre = document.getElementById("nombre");
+    var apellido = document.getElementById("apellido");
     var rut = document.getElementById('rut');
-    var nombre = document.getElementById("fullName");
-    var fecha = document.getElementById("fechaNacimiento");
     var edad = document.getElementById("edad");
-    var genero = document.getElementById("genero");
+    var correo = document.getElementById('direccion');
     var correo = document.getElementById('email');
     var pass = document.getElementById('password');
     var confirmPass = document.getElementById('confirmPassword');
     var celular = document.getElementById("celular");
-    var profesion = document.getElementById("profesion");
 
     //MENSAJES ERROR
+    
+    var nombreError = document.getElementById('nombreError');
+    var nombreError = document.getElementById('apellidoError');
     var rutError = document.getElementById('rutError');
     var rutLongError = document.getElementById("longError");
-    var nombreError = document.getElementById('nombreError');
-    var fechaError = document.getElementById('fechaError');
     var edadError = document.getElementById('edadError');
-    var generoError = document.getElementById('GeneroError');
+    var edadError = document.getElementById('direccionError');
     var emailError = document.getElementById('emailError');
     var passError = document.getElementById('passError');
     var passError2 = document.getElementById('passError2');
     var celularError = document.getElementById('celularError');
-    var profesionError = document.getElementById('profesionError');
     var button = document.getElementById("button");
 
       var valiLongRut = validarLongitudRut();
@@ -97,13 +97,13 @@ function validacion() {
         return true;
       }
     }
-    function vacio(campo)
- {
-   if(campo == ""){
-    return true}
-   else{
-    return false}  
- }
+    
+    function vacio(campo)  {
+      if(campo == ""){
+        return true}
+      else{
+        return false}  
+  }
 
     
  
