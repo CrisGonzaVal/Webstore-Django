@@ -22,6 +22,7 @@
 
 .row .btn-outline-light {
     width: 100%;
+    height: 30%;
     transform: translate(-50%, 125%);
     border-radius: 10px;
     border: none;
