@@ -113,9 +113,6 @@ function validacion() {
         return false}  
   }
 
-    
- 
-
 
   function validaCampos()
   {
@@ -147,7 +144,6 @@ function validacionLogin()
   }
 
 }
-
 
 function validacionGeneral()
 {  
