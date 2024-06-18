@@ -16,7 +16,7 @@
 
             <!-- Formulario de Registro con etiquetas alineadas a la izquierda -->
             <div class="container">  
-                <form id="registerForm ">
+                <form id="registerForm " onmouseover = "validacion()">
                     <div class="text-center" style="color: grey;" >
                         <h2 style="font-size: 260%;">Registro de Cliente</h2> <br>
                     </div>
@@ -29,7 +29,6 @@
                     <!-- Apellidos -->
                     <div class="mt-3">
                         <input type="text" class="form-control" id="apellido" placeholder="Apellidos" required>
-                        
                         <small  id="apellidoError" style="display: none;"></small>
                     </div>
                     
@@ -46,6 +45,8 @@
                             <input type="number" class="form-control col-sm-4" id="edad" placeholder="Edad" required min="18" max="100">
                             <small  id="edadError" style="display: none;"></small>
                         </div> 
+                        
+                        
                     </div>
                     
                     <div class="row mt-3">
@@ -74,6 +75,7 @@
                             <option value="Otro">Santiago</option>
                         </select>
                     </div>
+                    <small  id="comunaError" style="display: none;"></small>
                     
                     <!-- Telefono -->
                     <div class="mt-3">
@@ -101,7 +103,7 @@
                     <br>
                     
                     <!-- Botón de Guardar-->
-                    <button type="submit" class="btn btn-primary w-100" id="button" data-bs-toggle="modal" data-bs-target="#miModal" data-bs-dismiss="modal" onmouseover="validacion()">Registrarse</button>                       
+                    <button type="submit" class="btn btn-primary w-100" id="button" data-bs-toggle="modal" data-bs-target="#miModal" data-bs-dismiss="modal" onmouseover="validacionGeneral()">Registrarse</button>                       
                 </form>
             </div>       
 
