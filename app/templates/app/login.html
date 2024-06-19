@@ -19,7 +19,7 @@
                 <!-- Tarjeta de inicio de sesión -->
                 <div class=" w-100" id="formulario" >
                     
-                        <form onmouseover="validacionLogin()" >
+                        <form id="registerForm " onmouseover = "validacion()" >
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email Address</label>
                                 <input type="email" class="form-control" id="email" placeholder="Info@gmail.com" required>
@@ -35,7 +35,7 @@
                             </div>
                             <br>
                             <div class="text-center mt-3">
-                                <button type="submit" class="btn btn-primary w-50" onmouseover="validacionLogin()" onclick="enviarFormulario()">Login</button>
+                                <button type="submit" class="btn btn-primary w-50" onmouseover="validacionLogin()", "validacion()">Login</button>
                             </div>
                         </form>
                     
