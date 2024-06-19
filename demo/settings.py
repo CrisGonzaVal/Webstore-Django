@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app', #aqui se aprega la app
+    'django.contrib.humanize', #para utilizar la etiqueta humanize
 ]
 
 MIDDLEWARE = [
@@ -51,11 +52,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'demo.urls'
-
+import os #se importa (admin)
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'app/templates')], #Asegúrate de que la carpeta de plantillas esté configurada en settings.py para modificar el admin (admin)
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -63,6 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'app.context_processor.carrito_context', #(carrito de compra)
             ],
         },
     },
@@ -119,14 +121,23 @@ USE_TZ = True
 
 # se define la carpeta donde guardará las imagenes
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'app/static'),
+]
 
 import os
 
+#url donde se guardaran las imagenes de la base de datos por medio el admin
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# PayPal settings
+PAYPAL_CLIENT_ID = 'AbTNaxU3ExF7fl-Ic5e3aBs49-36S6o1m8zThj270D9kzbF05cpjsabs_7n0SwrxxKXdtgZTIoPsnYfn'
+PAYPAL_CLIENT_SECRET = 'EM4FtE79uMW0c3S_fwqOhfp0jezMu7hy9m2DxeAMhQdSVQbvr5Bk5GBRSPpPPpaR53UOTlS11zgIjsrC'
+PAYPAL_BASE_URL = "https://api-m.sandbox.paypal.com"

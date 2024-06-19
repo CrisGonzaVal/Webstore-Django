@@ -36,23 +36,24 @@ class Producto(models.Model):
     id_producto = models.AutoField(primary_key=True)
     nombre_prod = models.CharField(max_length=100)
     descripcion = models.TextField()
-    valor = models.IntegerField(default=0) # valor por defecto 0
+    valor = models.DecimalField(max_digits=10, decimal_places=2, default=0.0) # valor por defecto 0
     color = models.CharField(max_length=50)
     id_categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
     id_marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
-    imagen = models.ImageField(upload_to="producto",null=True)
+    imagen = models.ImageField(upload_to="producto/", null=True)
 
     def __str__(self):
       return self.nombre_prod
 
 class Inventario(models.Model):
-    id_producto = models.OneToOneField(Producto, on_delete=models.CASCADE, primary_key=True)
+    id_inventario = models.AutoField(primary_key=True,)
+    id_producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     cantidad = models.IntegerField()
     ubicacion = models.CharField(max_length=100)
     estatus = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.id_producto
+        return f"Inventario ID: {self.id_inventario} - Inventario ID: {self.id_producto.nombre_prod} - Cantidad: {self.cantidad} - Ubicación: {self.ubicacion}"
 
     
 

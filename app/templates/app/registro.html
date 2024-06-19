@@ -3,111 +3,136 @@
 {% load static %}
 
 {% block contenido %}
+<script src="{% static '/app/JS/validaciones.js' %}" defer></script>
+<link rel="stylesheet" href="{% static '/app/CSS/registro.css' %}"> 
 
-    <main style="margin-top: 5%;">
-        <!-- barra scroll -->
-        <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
 
-            <div class="row">
-                <!-- columna 1 -->
-                <div class="col-md-6">
-                    
-                        <!-- Formulario de Registro con etiquetas alineadas a la izquierda -->
-                        <div class="container d-flex justify-content-center align-items-center">
-                            <div class="w-50 text-center">  
-                                <form id="registerForm">
-                                    <div style="color: grey;" >
-                                        <h2 style="font-size: 260%;">Registro de Cliente</h2> 
-                                    </div>
-                                    <!-- Nombre -->
-                                    <div>
-                                        <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
-                                    </div>
-                                    <br>
-                                    <!-- Apellidos -->
-                                    <div>
-                                        <input type="text" class="form-control" id="apellidos" placeholder="Apellidos" required>
-                                    </div>
-                                    <br>
-                                    
-                                    <div class="row">
-                                        <!-- Rut -->
-                                        <div class="col-sm-7">
-                                            <input type="text" class="form-control col-sm-5" id="rut" placeholder="Rut/Pasaporte" required>
-                                        </div>
-                                        <!-- Edad -->
-                                        <div class="col-sm-5">
-                                            <input type="number" class="form-control col-sm-4" id="edad" placeholder="Edad" required min="18" max="70">
-                                        </div> 
-                                    </div>
-                                    <br>
-                                    <div class="row">
-                                        <!-- Direccion -->
-                                        <div class="col-sm-7">
-                                            <input type="text" class="form-control" id="direccion" placeholder="Dirección" required>
-                                        </div>
-                                        <!-- Numero -->
-                                        <div class="col-sm-5">
-                                            <input type="number" class="form-control" id="numero" placeholder="Numero" required>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <!-- Region -->
-                                    <div>
-                                        <input type="text" class="form-control" id="region" placeholder="Región Metropolitana" required>
-                                    </div>
-                                    <br>
-                                    <!-- Comuna -->
-                                    <div>
-                                        <select class="form-control" id="comuna" required>
-                                            <option value="">Seleccione Comuna</option>
-                                            <option value="Masculino">Maipu</option>
-                                            <option value="Femenino">Cerillos</option>
-                                            <option value="Otro">Santiago</option>
-                                        </select>
-                                    </div>
-                                    <br>
-                                    <!-- Telefono -->
-                                    <div>
-                                            <input type="text" class="form-control" id="telefono" placeholder="9-12345678" required>
-                                    </div> 
-                                    <br>
-                                    <!-- Correo Electrónico -->
-                                    <div>
-                                        <input type="email" class="form-control" id="email" placeholder="Info@gmail.com" required>
-                                    </div>  
-                                    <br>
-                                    <!-- Contraseña -->
-                                    <div>
-                                        <input type="password" class="form-control" id="password" placeholder="Password" required>
-                                    </div>
-                                    <br>
-                                    <!-- Confirmación de Contraseña -->
-                                    <div>
-                                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirmar Password" onblur="compararPass();" required>
-                                    </div>
-                                    
-                                    <br>
-                                    <!-- Botón de Guardar-->
-                                    <button type="submit" class="btn btn-primary w-100" id="button" >Registrarse</button>
-                                   
-                                </form>
-                            </div>
-                    
+<main>
+    
+    <div class="container-sm">   
+        <img class="rounded float-end" src="{% static 'app/IMAGENES/logo/registro.png'%}" alt="" width="auto" height="600px" >
+
+        <div class="clearfix"> 
+
+            <!-- Formulario de Registro con etiquetas alineadas a la izquierda -->
+            <div class="container">  
+                <form id="registerForm " onmouseover = "validacion()">
+                    <div class="text-center" style="color: grey;" >
+                        <h2 style="font-size: 260%;">Registro de Cliente</h2> <br>
                     </div>
-                </div>
+                    <!-- Nombre -->
+                    <div >
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+                        <small  id="nombreError" style="display: none;"></small>
+                    </div>
+                    
+                    <!-- Apellidos -->
+                    <div class="mt-3">
+                        <input type="text" class="form-control" id="apellido" placeholder="Apellidos" required>
+                        <small  id="apellidoError" style="display: none;"></small>
+                    </div>
+                    
+                    
+                    <div class="row mt-3">
+                        <!-- Rut -->
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control col-sm-5" id="rut" placeholder="Rut/Pasaporte" required>
+                            <small class="form-text text-danger" id="longError" style="display: none;"></small>
+                            <small  id="rutError" style="display: none;"></small>
+                        </div>
+                        <!-- Edad -->
+                        <div class="col-sm-5">
+                            <input type="number" class="form-control col-sm-4" id="edad" placeholder="Edad" required min="18" max="100">
+                            <small  id="edadError" style="display: none;"></small>
+                        </div> 
+                        
+                        
+                    </div>
+                    
+                    <div class="row mt-3">
+                        <!-- Direccion -->
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" id="direccion" placeholder="Dirección" required>
+                            <small  id="direccionError" style="display: none;"></small>
+                        </div>
+                        <!-- Numero -->
+                        <div class="col-sm-5">
+                            <input type="number" class="form-control" id="numero" placeholder="Numero" required>
+                        </div>
+                    </div>
+                    
+                    <!-- Region -->
+                    <div class="mt-3">
+                        <select class="form-control" id="region" required>
+                            <option value="">Seleccione Región</option>
+                            <option value="Masculino">Metropolitana</option>
+                        </select>
+                        <small  id="regionError" style="display: none;"></small>
+                    </div>
+                    
+                    <!-- Comuna -->
+                    <div class="mt-3">
+                        <select class="form-control" id="comuna" required>
+                            <option value="">Seleccione Comuna</option>
+                            <option value="Masculino">Maipu</option>
+                            <option value="Femenino">Cerillos</option>
+                            <option value="Otro">Santiago</option>
+                        </select>
+                    </div>
+                    <small  id="comunaError" style="display: none;"></small>
+                    
+                    <!-- Telefono -->
+                    <div class="mt-3">
+                        <input type="text" class="form-control" id="celular" placeholder="9-12345678" required>
+                        <small  id="celularError" style="display: none;"></small>
+                    </div> 
+                    
+                    <!-- Correo Electrónico -->
+                    <div class="mt-3">
+                        <input type="email" class="form-control" id="email" placeholder="Info@gmail.com" required>
+                        <small  id="emailError" style="display: none;"></small>
+                    </div>  
+                    
+                    <!-- Contraseña -->
+                    <div class="mt-3"> 
+                        <input type="password" class="form-control" id="password" placeholder="Password" required>
+                        <small  id="passError" style="display: none;"></small>
+                    </div>
+                    
+                    <!-- Confirmación de Contraseña -->
+                    <div class="mt-3">
+                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirmar Password" onblur="compararPass();" required>
+                        <small  id="passError2" style="display: none;"></small>
+                    </div>
+                    <br>
+                    
+                    <!-- Botón de Guardar-->
+                    <button type="submit" class="btn btn-primary w-100" id="button" data-bs-toggle="modal" data-bs-target="#miModal" data-bs-dismiss="modal" onmouseover="validacionGeneral()">Registrarse</button>                       
+                </form>
+            </div>                 
 
-                <!-- columna 2 -->
-                <div class="col-md-6">
-                    <img src="{% static 'app/imagenes/logo/registro.png' %}" alt="" width="auto" height="90%">
-                </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="miModal" tabindex="-1"  aria-hidden="true" aria-labelledby="modalTitle" data-bs-backdrop="static" data-bs-keyboard="false"  >
+        <div class="modal-dialog  modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modalTitle">Mensaje</h1>
             </div>
+            <div class="modal-body">
+                <p>El registro se ha completado en forma exitosa</p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+        
+</main >
 
-            
-
-
-        </div>    
-    </main>
-    <br><br>
 
 {% endblock %}
