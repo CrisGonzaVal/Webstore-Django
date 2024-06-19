@@ -1,7 +1,7 @@
 
 from django.shortcuts import render , redirect
 from.models import Producto, Inventario, Categoria, Marca
-from django.db.models import Sum, Q
+from django.db.models import Sum
 
 from .Carrito import Carrito
 from decimal import Decimal
@@ -29,13 +29,17 @@ def cantidad_carrito(request):
     
     return contexto_comun
 
+
+
 # se crean las vistas
+
 def home(request):
    # Obtener el contexto común
     contexto_carrito = cantidad_carrito(request)
     
     # Renderizar la plantilla 'carro.html' con el contexto extendido
     return render(request, 'app/home.html', contexto_carrito)
+
 
 def login(request):
 
@@ -76,6 +80,10 @@ def carro(request):
     
     # Renderizar la plantilla 'carro.html' con el contexto extendido
     return render(request, 'app/carro.html', contexto_carrito)
+
+def catalogo(include):
+    return render(include, 'app/catalogo.html')  
+
 
 #manipulo los modelos producto e inventario y lo muestro en la vista catalogo.html
 def catalogo(request):
@@ -121,6 +129,10 @@ def catalogo(request):
      })
     return render(request, 'app/catalogo.html',contexto_carrito)  
 
+
+
+def contactanos(request):
+    return render(request, 'app/contactanos.html')  
 
 
 def ofertas(request):
