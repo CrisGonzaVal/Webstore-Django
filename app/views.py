@@ -3,7 +3,6 @@ from django.shortcuts import render , redirect
 from.models import Producto, Inventario, Categoria, Marca
 from django.db.models import Sum, Q
 
-<<<<<<< HEAD
 from .Carrito import Carrito
 from decimal import Decimal
 
@@ -105,36 +104,7 @@ def catalogo(request):
     for producto in productos:
         cantidad_total = Inventario.objects.filter(id_producto=producto).aggregate(total=Sum('cantidad'))['total']
         producto.cantidad_total = cantidad_total if cantidad_total is not None else 0
-=======
-from django.shortcuts import render 
-# from.models import Producto
-# import requests
 
-# se crean las vistas
-def home(request):
-    return render(request, 'app/home.html')
-
-def login(request):
-    return render(request, 'app/login.html')
-   
-def registro(request):
-    return render(request, 'app/registro.html')   
-
-def carro(request):
-    return render(request, 'app/carro.html') 
-
-def catalogo(request):
-    return render(request, 'app/catalogo.html')  
-
-def contactanos(request):
-    return render(request, 'app/contactanos.html')  
-
-def ofertas(request):
-    return render(request, 'app/ofertas.html')  
-
-def proveedores(request):
-    return render(request, 'app/proveedores.html')   
->>>>>>> karina
 
 
         # Obtener listas para los filtros
