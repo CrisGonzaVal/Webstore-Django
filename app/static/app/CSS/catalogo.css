@@ -7,8 +7,7 @@
 .row .card {
     width: 300px; /* Define el ancho deseado */
     height: 450px; /* Define la altura deseada */
-    margin-right: 10px; /* Espacio a la derecha de cada tarjeta */
-    margin-left: 20px;
+    margin-right: 1px; /* Espacio a la derecha de cada tarjeta */
     margin-bottom: 20px; /* Espacio debajo de cada tarjeta */
     border: 2px solid rgba(0, 0, 0, 0.05);
 
