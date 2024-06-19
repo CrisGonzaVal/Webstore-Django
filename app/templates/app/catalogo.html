@@ -89,6 +89,9 @@
                     <div class="text-center">
                         <a href="{% url 'agregar_producto_catalogo' p.id_producto %}" class="btn btn-outline-light" >agregar al carro</a>
                     </div>
+                    <div id="popupMessage{{ p.id_producto }}" class="popup hidden">
+                      <p>Producto agregado al carrito</p>
+                  </div>
                 </div>
             </div>
         </div>
