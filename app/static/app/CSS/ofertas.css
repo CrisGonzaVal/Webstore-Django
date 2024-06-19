@@ -1,22 +1,17 @@
-
 .row .image {
     width: 200px; /* Define el ancho deseado */
     height: 200px; /* Define la altura deseada */
 
 }
 .row .card {
-    width: 300px; /* Define el ancho deseado */
-    height: 450px; /* Define la altura deseada */
-    margin-right: 10px; /* Espacio a la derecha de cada tarjeta */
-    margin-left: 20px;
+    width: 250px; /* Define el ancho deseado */
+    height: 400px; /* Define la altura deseada */
+    margin-right: 0px; /* Espacio a la derecha de cada tarjeta */
+    margin-left: 0px;
     margin-bottom: 20px; /* Espacio debajo de cada tarjeta */
     border: 2px solid rgba(0, 0, 0, 0.05);
-<<<<<<< HEAD
-    position: relative; /* Importante para la posición absoluta del botón */
-=======
     text-align: center;
 
->>>>>>> karina
 }
 
 /*cuando el cursor esta dentro de la tarjeta se muestra  la sombra*/
@@ -28,8 +23,8 @@
   }
 
 .row .btn-outline-light {
-    width: 100%;
     transform: translate(-50%, 125%);
+    width: 60%;
     border-radius: 10px;
     border: none;
     background-color: #008bf8;
@@ -40,7 +35,7 @@
     left: 50%;
     bottom: 0;
     opacity: 0;
-    transition: 0.2s ease-out;
+    transition: 0.5s ease-out;
 }
 
 /*cursor*/
