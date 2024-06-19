@@ -16,24 +16,9 @@ class ProductoAdmin(admin.ModelAdmin):
 
 
 # Registrar modelos individuales
-
-<<<<<<< HEAD
-class ProductoAdmin(admin.ModelAdmin ):
-    list_display = ["Nombrer", "Precio", "Nuevo", "Marca"]
-    list_editable = ["Precio"]
-    search_fields = ["Nombre"]
-    list_filter=["Marca","Nuevo"]
-    list_per_page = 2
-
-admin.site.register(Categoria)
-admin.site.register(Marca)
-#admin.site.register(Producto, ProductoAdmin) #llamo la funcionalidad de filtros en el admin
-=======
-
 admin.site.register(Categoria)
 admin.site.register(Marca)
 admin.site.register(Producto, ProductoAdmin) #llamo la funcionalidad de filtros en el admin
->>>>>>> karina
 admin.site.register(Usuario)
 admin.site.register(Cliente)
 admin.site.register(Empleado)

@@ -3,21 +3,10 @@
 {% load static %}
 
 {% block contenido %}
-<<<<<<< HEAD
-<link rel="stylesheet" href="{% static '/app/CSS/catalogo.css' %}">
-
-<!-- aqui esta barra filtros -->
-
-<div class="navFiltro">
- <div class="container ">
-  <nav class="navbar navbar-expand-lg bg-body-secondary p-2 ">
-      <div class="container justify-content-center">
-          <ul class="navbar-nav">
-=======
 
 <link rel="stylesheet" href="{% static '/app/CSS/catalogo.css' %}">
 
->>>>>>> karina
+
 
 <main>
   <!-- aqui esta barra filtros -->
@@ -33,15 +22,11 @@
                     <b>Marca</b>
                   </button>
                   <ul class="dropdown-menu dropdown-menu-primary">
-<<<<<<< HEAD
-                    {% for categoria in categorias %}
-                      <li><a class="dropdown-item"  href="{% url 'catalogo' %}?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}categoria={{ categoria.nombre }}">{{ categoria.nombre }}</a></li>
-                        {% if not forloop.last %}
-=======
+
                 {% for marca in marcas %}
                     <li><a class="dropdown-item" href="{% url 'catalogo' %}?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}marca={{ marca.nombre_m }}">{{ marca.nombre_m }}</a></li>
                     {% if not forloop.last %}
->>>>>>> karina
+
                         <li><hr class="dropdown-divider"></li>
                     {% endif %}
                 {% endfor %}
@@ -63,20 +48,17 @@
                     </ul>
                   </li>
 
-<<<<<<< HEAD
-                <!-- Precio -->
-                <li class="nav-item dropdown me-5">
-                  <button class="btn dropdown-toggle navbar-brand" data-bs-toggle="dropdown" aria-expanded="false">
-                    Precio
-                  </button>
-                  <ul class="dropdown-menu dropdown-menu-primary">
-                    <li><a class="dropdown-item" href="{% url 'catalogo' %}?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}precio=asc">Menor a Mayor</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="{% url 'catalogo' %}?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}precio=desc">Mayor a Menor</a></li>
-                </ul>
-                </li>
-
-                <a class="btn navbar-brand me-5" href="#" role="button">Help</a> 
+                  <!-- Precio -->
+                  <li class="nav-item dropdown">
+                    <button class="btn dropdown-toggle navbar-brand" data-bs-toggle="dropdown" aria-expanded="false">
+                      <b>Precio</b>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-primary">
+                      <li><a class="dropdown-item" href="{% url 'catalogo' %}?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}precio=asc">Menor a Mayor</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="{% url 'catalogo' %}?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}precio=desc">Mayor a Menor</a></li>
+                    </ul>
+                  </li>
             </ul> 
       </div>
   </nav>
@@ -116,21 +98,7 @@
                       </div>
                   </div>
                 {% endfor %}  
-=======
-                  <!-- Precio -->
-                  <li class="nav-item dropdown">
-                    <button class="btn dropdown-toggle navbar-brand" data-bs-toggle="dropdown" aria-expanded="false">
-                      <b>Precio</b>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-primary">
-                      <li><a class="dropdown-item" href="{% url 'catalogo' %}?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}precio=asc">Menor a Mayor</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="{% url 'catalogo' %}?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}precio=desc">Mayor a Menor</a></li>
-                    </ul>
-                  </li>
->>>>>>> karina
-                  
-              </ul> 
+                
         
       </nav>
     </div>
@@ -164,9 +132,6 @@
             </div>
         </div>
       {% endfor %} 
-    
-    </div>
-  </div>
 
   <br><br>
 
@@ -190,7 +155,8 @@
   </nav>
   
 
-</main>
+  </main>
     
     <script src="{% static '/app/JS/mensajeCarro.js' %}"></script>
-    {% endblock %}
+
+{% endblock %}
