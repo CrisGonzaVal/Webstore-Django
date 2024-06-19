@@ -20,6 +20,10 @@
 }
 
 
+.menuNav{
+   background-color: #1c7ce2 !important;
+}
+
 /*efectos menu nav*/
 .menuNav a{
    color: #ffffff;

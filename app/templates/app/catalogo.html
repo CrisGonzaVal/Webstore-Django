@@ -21,9 +21,11 @@
                     <b>Marca</b>
                   </button>
                   <ul class="dropdown-menu dropdown-menu-primary">
+
                 {% for marca in marcas %}
                     <li><a class="dropdown-item" href="{% url 'catalogo' %}?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}marca={{ marca.nombre_m }}">{{ marca.nombre_m }}</a></li>
                     {% if not forloop.last %}
+
                         <li><hr class="dropdown-divider"></li>
                     {% endif %}
                 {% endfor %}
