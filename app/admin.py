@@ -1,8 +1,9 @@
 from django.contrib import admin
+from.models import Categoria, Marca, Producto, Usuario, Cliente, Empleado, Inventario, Dimensiones, Venta, Historial, Fecha, Proveedores, OrdenCompra, Despacho, Direccion, Ciudad, Comuna, TipoPago, ComprobantePago, Cuenta, TipoUsuario
 
 # se registran los modelos (tablas) para mostralo en el admin de Django
 
-from.models import Categoria, Marca, Producto, Usuario, Cliente, Empleado, Inventario, Dimensiones, Venta, Historial, Fecha, Proveedores, OrdenCompra, Despacho, Direccion, Ciudad, Comuna, TipoPago, ComprobantePago, Cuenta, TipoUsuario
+
 
 # filtro en el admin
 class ProductoAdmin(admin.ModelAdmin):
@@ -15,9 +16,22 @@ class ProductoAdmin(admin.ModelAdmin):
 
 
 # Registrar modelos individuales
+
+class ProductoAdmin(admin.ModelAdmin ):
+    list_display = ["Nomber", "Precio", "Nuevo", "Marca"]
+    list_editable = ["Precio"]
+    search_fields = ["Nombre"]
+    list_filter=["Marca","Nuevo"]
+    list_per_page = 2
+
 admin.site.register(Categoria)
 admin.site.register(Marca)
+<<<<<<< HEAD
 admin.site.register(Producto, ProductoAdmin) #llamo la funcionalidad de filtros en el admin
+=======
+
+admin.site.register(Producto)
+>>>>>>> karina
 admin.site.register(Usuario)
 admin.site.register(Cliente)
 admin.site.register(Empleado)
