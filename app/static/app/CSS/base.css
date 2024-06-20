@@ -25,13 +25,10 @@ body{
    box-shadow: 0 0 0 4px rgba(100, 76, 234, 0.1);
 }
 
-<<<<<<< HEAD
 .menuNav{
    background-color: #1c7ce2 !important;
 }
-=======
 
->>>>>>> webstore
 /*efectos menu nav*/
 .menuNav a{
    color: #ffffff;
