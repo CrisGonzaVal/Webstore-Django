@@ -73,10 +73,9 @@
   <div class="container">  
     <!-- fila 1 de galeria -->
     <div class="row justify-content-center">
-        
       {% load humanize %} <!--para ver los datos mas legibles-->
       {% for p in productos %} <!--llama a todos los productos para mostrarlo-->
-        <div class="col ">
+        <div class="col tarjet">
             <div class="card">
                 <div class="card-body">
                     {% if p.imagen %}
@@ -95,11 +94,11 @@
                       <p>Producto agregado al carrito</p>
                   </div>  
               </div>
+          </div>
         </div>
-       
-      </div>
+    
       {% endfor %} 
-    </div>
+    
   </div>      
 
   <br><br>
