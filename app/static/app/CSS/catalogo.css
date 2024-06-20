@@ -73,4 +73,16 @@
     opacity: 0;
 }
 
+.navFiltro .navbar{
+    padding: 1px;
+}
 
+.navFiltro b{
+    font-weight: 500;
+    font-size: medium;
+}
+
+.dropdown-scrollable {
+    max-height: 600px; /* Altura máxima del dropdown */
+    overflow-y: auto; /* Permite el scroll vertical */
+}

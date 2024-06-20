@@ -4,7 +4,6 @@
 
 {% block contenido %}
 
-<link rel="stylesheet" href="{% static '/app/CSS/catalogo.css' %}">
 
 
 
@@ -21,13 +20,13 @@
                   <button class="btn dropdown-toggle navbar-brand" data-bs-toggle="dropdown" aria-expanded="false">
                     <b>Marca</b>
                   </button>
-                  <ul class="dropdown-menu dropdown-menu-primary">
-
+                  <ul class="dropdown-menu dropdown-menu-primary dropdown-scrollable">
+                    <li><a class="dropdown-item" href="{% url 'catalogo'%}">Todos</a></li>
+                    <li><hr class="dropdown-divider"></li>
                 {% for marca in marcas %}
                     <li><a class="dropdown-item" href="{% url 'catalogo' %}?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}marca={{ marca.nombre_m }}">{{ marca.nombre_m }}</a></li>
                     {% if not forloop.last %}
-
-                        <li><hr class="dropdown-divider"></li>
+                    <li><hr class="dropdown-divider"></li>
                     {% endif %}
                 {% endfor %}
                   </ul>
@@ -38,7 +37,9 @@
                     <button class="btn dropdown-toggle navbar-brand" data-bs-toggle="dropdown" aria-expanded="false">
                       <b>Categoria</b>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-primary">
+                    <ul class="dropdown-menu dropdown-menu-primary dropdown-scrollable">
+                      <li><a class="dropdown-item" href="{% url 'catalogo'%}">Todos</a></li>
+                       <li><hr class="dropdown-divider"></li>
                       {% for categoria in categorias %}
                         <li><a class="dropdown-item" href="{% url 'catalogo' %}?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}categoria={{ categoria.nombre }}">{{ categoria.nombre }}</a></li>
                           {% if not forloop.last %}
@@ -53,15 +54,15 @@
                     <button class="btn dropdown-toggle navbar-brand" data-bs-toggle="dropdown" aria-expanded="false">
                       <b>Precio</b>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-primary">
+                    <ul class="dropdown-menu dropdown-menu-primary dropdown-scrollable">
                       <li><a class="dropdown-item" href="{% url 'catalogo' %}?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}precio=asc">Menor a Mayor</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <li><a class="dropdown-item" href="{% url 'catalogo' %}?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}precio=desc">Mayor a Menor</a></li>
                     </ul>
                   </li>
             </ul> 
+          </nav>
       </div>
-  </nav>
  </div>
 </div> 
 <br> <br>
@@ -93,10 +94,13 @@
                   <div id="popupMessage{{ p.id_producto }}" class="popup hidden">
                       <p>Producto agregado al carrito</p>
                   </div>  
-                </div>
-            </div>
+              </div>
         </div>
+       
+      </div>
       {% endfor %} 
+    </div>
+  </div>      
 
   <br><br>
 
