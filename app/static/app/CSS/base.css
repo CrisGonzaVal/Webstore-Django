@@ -1,20 +1,19 @@
+
+body{
+   font-family: "Questrial", sans-serif;
+   font-weight: 200; /* Grosor normal */
+   letter-spacing: 0.04em; /* Aumenta el espacio entre letras*/
+}
 /* Estilo para navbar fija */
 .navbar-sticky {
-
    width: 100%;
+   top: 0;
    position: fixed;
-    top: 0;
-    z-index: 1000; /* Asegúrse de que esté por encima de otros elementos */
-    background-color: rgba(255, 255, 255, 0.5);
-
-    backdrop-filter: blur(130px);
-
-    border-bottom: 1px solid #ccc; /* para un borde inferior */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /*sombra para mejor visibilidad */
-}
-
-.bg-primary{ 
-   margin-top: 100px; /* banner azul mas abajo */
+   z-index: 1000;
+   background-color: rgba(255, 255, 255, 0.5);
+   backdrop-filter: blur(130px);
+   border-bottom: 1px solid #ccc;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -26,47 +25,163 @@
    box-shadow: 0 0 0 4px rgba(100, 76, 234, 0.1);
 }
 
+.menuNav{
+   background-color: #1c7ce2 !important;
+   padding: 2px;
+}
 
 /*efectos menu nav*/
 .menuNav a{
-      color: #ffffff;
-      cursor: pointer;
-      position: relative;
-      border: none;
-      background: none;
-     transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-      transition-duration: 400ms;
-      transition-property: color;
-    }
+   color: #ffffff;
+   cursor: pointer;
+   position: relative;
+   border:none;
+   background: none;
+   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+   transition-duration: 400ms;
+   transition-property: color;
+
+}
+
 
 .menuNav a:focus, .menuNav a:hover {
-      color: #fff;
+   color: #fff;
 }
 
-.menuNav a:focus:after,
-.menuNav a:hover:after {
-      width: 100%;
-      left: 0%;
-}
 
 .menuNav a:after {
    content: "";
-  pointer-events: none;
-  bottom: -2px;
-  left: 50%;
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  background-color: #fff;
-  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition-duration: 400ms;
-  transition-property: width, left;
+   pointer-events: none;
+   bottom: -2px;
+   left: 50%;
+   position: absolute;
+   width: 0%;
+   height: 2px;
+   background-color: #fff;
+   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+   transition-duration: 400ms;
+   transition-property: width, left;
 }
 
 /*todos los dropdown se despliega cuando lo enfoca*/
-.dropdown:hover .dropdown-menu,
-        .dropdown:focus .dropdown-menu {
-            display: block;
-            max-height: 300px; /* Ajusta según el contenido */
-            opacity: 1;
-        }
+ .dropdown:hover .dropdown-menu,
+.dropdown:focus .dropdown-menu {
+   display: block;
+   max-height: 300px;
+   opacity: 1;
+}
+
+
+
+
+
+
+.menuNav a:focus:after,
+.menuNav a:hover:after {
+   width: 100%;
+   left: 0%;
+} 
+
+
+
+
+
+/* CAMBIOS */
+
+
+/* ajustes del baner */
+.navbar-sticky {
+   width: 100%;
+   top: 0;
+}
+
+.navbar-sticky ul{
+   width: 50%;
+   margin-left: 5%;
+}
+
+.navbar-sticky li{
+   width: 100%;
+
+}
+
+form{
+   width: 70%;
+   margin-left: 5%;
+   height: 35px;
+   
+}
+
+form button{
+   align-content: center ;
+}
+
+
+.logotipo{
+   width: 20%;
+}
+
+
+
+
+/* ajustes de la barra de navegación */
+.menuNav{
+   width: 100%;
+   margin-top: 100px; /* separacion con el sticky*/
+   position: static;
+   display: block;
+   justify-content:center;
+   
+
+
+}
+
+/* centrar contenido */
+.menuNav ul{
+   width: 100%;
+   height: 20px;
+   align-content: center;
+   list-style-type: none;
+   justify-content: space-between;
+}
+
+
+/* espaciado entre margenes */
+.menuNav li{
+   width: 25%;
+   justify-content: center;
+ 
+}
+
+.menuNav .navbar-brand{
+   margin-top: 14px; /* Ajustar margen superior de los enlaces */
+   font-size: large;
+}
+
+
+/* ajustes del pie de pagina */
+footer{
+   width: 100%;
+   margin-bottom: 0;
+   position: static;
+   display: block;
+
+}
+
+footer ul{
+   width: 35%;
+   height: 40px;
+   margin-bottom: 0;
+   align-content: center ;
+   list-style-type: none;
+   display: flex ;
+
+   
+
+}
+
+footer li{
+   width: 25%;
+}
+
+

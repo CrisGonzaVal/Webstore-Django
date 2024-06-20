@@ -1,8 +1,28 @@
+.card{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.row .card{
+    width: 250px; /* Define el ancho deseado */
+    height: 350px; /* Define la altura deseada */
+    margin-right: 1px; /* Espacio a la derecha de cada tarjeta */
+    margin-bottom: 20px; /* Espacio debajo de cada tarjeta */    
+    border: 2px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+    display: flex;
+
+}
+
+
 image {
     width: 200px; /* Define el ancho deseado */
     height: 200px; /* Define la altura deseada */
     
 }
+<<<<<<< HEAD
 .row .card{
     width: 300px; /* Define el ancho deseado */
     height: 450px; /* Define la altura deseada */
@@ -10,8 +30,10 @@ image {
     margin-bottom: 20px; /* Espacio debajo de cada tarjeta */    
     border: 2px solid rgba(0, 0, 0, 0.05);
 }
+=======
+>>>>>>> webstore
 
-/*cuando el cursor esta dentro de la tarjeta se muestra  la sombra*/
+/*cuando el cursor esta dentro de la tarjeta se muestra  la somcbra*/
 .row .card:hover{
     cursor: pointer;
     box-shadow: inset 0 -3em 3em rgba(199, 199, 199, 0.1),
@@ -20,27 +42,30 @@ image {
   }
 
 .row .btn-outline-light {
+    width: 100%;
+    height: 12%;
     transform: translate(-50%, 125%);
-    width: 60%;
-    border-radius: 1rem;
+    border-radius: 10px;
     border: none;
-    background-color: #008bf8;
+    background-color: #008bf8 !important;
     color: #fbfbfb;
-    font-size: 1rem;
-    padding: .5rem 1rem;
+    font-size: large;
+    padding: .8rem 1rem;
     position: absolute;
     left: 50%;
     bottom: 0;
     opacity: 0;
-    transition: 0.5s ease-out;
+    transition: 0.2s ease-out;
 }
 
 /*cursor*/
 .row .card:hover .btn-outline-light {
-    transform: translate(-50%, -35%); /*posicion del boton*/
+    transform: translate(-50%, -3%); /*posicion del boton*/
     opacity: 1;
-    background-color: #008bf8;
+    background-color: #008bf8 !important;
     color: #fbfbfb;
    }
    
-
+   .card .text-bg-primary{
+    background-color:#1c7ce2 !important;
+   }

@@ -1,6 +1,6 @@
 /* Cambia el color de fondo de los tag */
 #header, .submit-row input, caption {
-    background-color: #0073e6 !important;
+    background-color: #1c7ce2 !important;
 }
 /* Cambia el color del texto de los enlaces de la barra de navegación */
 #header a {
@@ -11,3 +11,4 @@
     width: 200px; /* Define el ancho deseado */
     filter: invert(100%) brightness(150%); /*el logotipo se deja blanco*/
 }
+
