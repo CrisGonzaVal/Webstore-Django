@@ -22,6 +22,16 @@ image {
     height: 200px; /* Define la altura deseada */
     
 }
+<<<<<<< HEAD
+.row .card{
+    width: 300px; /* Define el ancho deseado */
+    height: 450px; /* Define la altura deseada */
+    margin-right: 20px; /* Espacio a la derecha de cada tarjeta */
+    margin-bottom: 20px; /* Espacio debajo de cada tarjeta */    
+    border: 2px solid rgba(0, 0, 0, 0.05);
+}
+=======
+>>>>>>> webstore
 
 /*cuando el cursor esta dentro de la tarjeta se muestra  la somcbra*/
 .row .card:hover{
