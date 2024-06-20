@@ -25,6 +25,10 @@ body{
    box-shadow: 0 0 0 4px rgba(100, 76, 234, 0.1);
 }
 
+.menuNav{
+   background-color: #1c7ce2 !important;
+   padding: 2px;
+}
 
 /*efectos menu nav*/
 .menuNav a{
@@ -123,7 +127,7 @@ form button{
 /* ajustes de la barra de navegación */
 .menuNav{
    width: 100%;
-   margin-top: 100px;
+   margin-top: 100px; /* separacion con el sticky*/
    position: static;
    display: block;
    justify-content:center;
@@ -149,8 +153,8 @@ form button{
  
 }
 
-.navbar-brand{
-   margin-top: 10px; /* Ajustar margen superior de los enlaces */
+.menuNav .navbar-brand{
+   margin-top: 14px; /* Ajustar margen superior de los enlaces */
    font-size: large;
 }
 
