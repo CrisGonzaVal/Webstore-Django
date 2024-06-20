@@ -43,13 +43,13 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="{% url 'carro' %}">
-                                        <img src="{% static '/app/imagenes/logo/carrito-de-compras.png' %}" alt="carro" width="auto" height="39px">
+                                        <img src="{% static '/app/imagenes/logo/carrito-de-compras.png' %}" alt="carro" width="auto" height="38px">
                                         <span class=" top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ carrito|length }}</span>
                                     </a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img data-bs-toggle="dropdown" src="{% static '/app/imagenes/logo/acceso.png' %}" alt="acceso" width="auto" height="40px">
+                                        <img data-bs-toggle="dropdown" src="{% static '/app/imagenes/logo/acceso.png' %}" alt="acceso" width="auto" height="38px">
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-primary ">
                                         <li><a class="dropdown-item" href="{% url 'login' %}">Iniciar sesión</a></li>
@@ -75,9 +75,15 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                 <div class="container justify-content-center">
                     <ul class="navbar">
-                       <li class="nav"><a class="navbar-brand" href="{% url 'home' %}"><b>Home</b></a></li>
-                       <li class="nav"><a class="navbar-brand" href="{% url 'catalogo' %}"><b>Catálogo</b></a></li>
-                       <li class="nav"><a class="navbar-brand" href="{% url 'ofertas' %}"><b>Ofertas</b></a></li>
+                       <li class="nav"><a class="navbar-brand" href="{% url 'home' %}">
+                        <img class="icon"src="{% static '/app/imagenes/logo/home.png' %}" alt="home" width="20px" height="auto">
+                        <b>Home</b></a></li>
+                       <li class="nav"><a class="navbar-brand" href="{% url 'catalogo' %}">
+                        <img class="icon"src="{% static '/app/imagenes/logo/catalogo.png' %}" alt="catalogo" width="25px" height="auto">
+                        <b>Catálogo</b></a></li>
+                       <li class="nav"><a class="navbar-brand" href="{% url 'ofertas' %}">
+                        <img class="icon"src="{% static '/app/imagenes/logo/sale.png' %}" alt="catalogo" width="25px" height="auto">
+                        <b>Ofertas</b></a></li>
                        <li class="nav"><a class="navbar-brand" href=""><b>Help</b></a></li>
                     </ul>
                 </div>
