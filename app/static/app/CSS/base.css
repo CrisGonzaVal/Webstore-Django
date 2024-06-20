@@ -1,8 +1,8 @@
 
 body{
-   font-family: "Barlow", sans-serif;
+   font-family: "Questrial", sans-serif;
    font-weight: 200; /* Grosor normal */
-   letter-spacing: 0.05em; /* Aumenta el espacio entre letras*/
+   letter-spacing: 0.04em; /* Aumenta el espacio entre letras*/
 }
 /* Estilo para navbar fija */
 .navbar-sticky {
