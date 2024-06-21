@@ -14,7 +14,7 @@
             <div class="col-lg-8">
                 <div class="card" style="justify-content: space-between">
                     <div class="card-body">
-                        <b>TU CARRO</b> ({{ cantidad_total_productos }} Productos)
+                        <b id="cantProducto">TU CARRO ({{ cantidad_total_productos }} Productos)</b> 
                     </div>
                 </div>
             </div>
@@ -78,7 +78,6 @@
                         </div>
                         
                         <br><br>
-
                         <div id="paypal-button-container">
                             <!--API  PAY PAL-->
                                 <script src="https://www.paypal.com/sdk/js?client-id=AbTNaxU3ExF7fl-Ic5e3aBs49-36S6o1m8zThj270D9kzbF05cpjsabs_7n0SwrxxKXdtgZTIoPsnYfn&currency=USD"></script>
@@ -100,7 +99,4 @@
 </main>
 
 <br><br>
-
-
-
 {% endblock %}
