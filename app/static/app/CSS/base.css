@@ -105,22 +105,16 @@ body{
 
 }
 
-form{
+.d-flex{
    width: 90%;
    margin-left: 5%;
    height: 35px;
    
 }
 
-form button{
+.d-flex button{
    align-content: center ;
 }
-
-
-.logotipo{
-   width: 15%;
-}
-
 
 
 
