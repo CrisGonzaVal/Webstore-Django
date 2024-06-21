@@ -10,7 +10,7 @@
 <main>
     
     <div class="container-sm">   
-        <img class="rounded float-end" src="{% static 'app/IMAGENES/logo/registro.png'%}" alt="" width="auto" height="550px" >
+        <img class="rounded float-end d-none d-md-block" src="{% static 'app/IMAGENES/logo/registro.png'%}" alt="" width="auto" height="450px" >
 
         <div class="clearfix"> 
 
@@ -18,30 +18,31 @@
             <div class="container">  
                 <form id="registerForm " onmouseover = "validacion()">
                     <div class="text-center" style="color: grey;" >
-                        <h2 style="font-size: 260%;">Registro de Cliente</h2> <br>
+                        <h3 style="font-size: 260%;">Registro de Cliente</h3> <br>
                     </div>
+                <div class="row mt-3">
                     <!-- Nombre -->
-                    <div >
-                        <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+                    <div class="col-sm-6" >
+                        <input type="text" class="form-control col-sm-5" id="nombre" placeholder="Nombre" required>
                         <small  id="nombreError" style="display: none;"></small>
                     </div>
                     
                     <!-- Apellidos -->
-                    <div class="mt-3">
-                        <input type="text" class="form-control" id="apellido" placeholder="Apellidos" required>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control col-sm-5" id="apellido" placeholder="Apellidos" required>
                         <small  id="apellidoError" style="display: none;"></small>
                     </div>
-                    
+                </div>
                     
                     <div class="row mt-3">
                         <!-- Rut -->
-                        <div class="col-sm-7">
+                        <div class="col-sm-6">
                             <input type="text" class="form-control col-sm-5" id="rut" placeholder="Rut/Pasaporte" required>
                             <small class="form-text text-danger" id="longError" style="display: none;"></small>
                             <small  id="rutError" style="display: none;"></small>
                         </div>
                         <!-- Edad -->
-                        <div class="col-sm-5">
+                        <div class="col-sm-6">
                             <input type="number" class="form-control col-sm-4" id="edad" placeholder="Edad" required min="18" max="100">
                             <small  id="edadError" style="display: none;"></small>
                         </div> 
@@ -51,36 +52,36 @@
                     
                     <div class="row mt-3">
                         <!-- Direccion -->
-                        <div class="col-sm-7">
+                        <div class="col-sm-6">
                             <input type="text" class="form-control" id="direccion" placeholder="Dirección" required>
                             <small  id="direccionError" style="display: none;"></small>
                         </div>
                         <!-- Numero -->
-                        <div class="col-sm-5">
+                        <div class="col-sm-6">
                             <input type="number" class="form-control" id="numero" placeholder="Numero" required>
                         </div>
                     </div>
-                    
+                <div class="row mt-3">
                     <!-- Region -->
-                    <div class="mt-3">
+                    <div class="col-sm-6">
                         <select class="form-control" id="region" required>
                             <option value="">Seleccione Región</option>
                             <option value="Masculino">Metropolitana</option>
                         </select>
                         <small  id="regionError" style="display: none;"></small>
                     </div>
-                    
+                   
                     <!-- Comuna -->
-                    <div class="mt-3">
+                    <div class="col-sm-6">
                         <select class="form-control" id="comuna" required>
                             <option value="">Seleccione Comuna</option>
                             <option value="Masculino">Maipu</option>
                             <option value="Femenino">Cerillos</option>
                             <option value="Otro">Santiago</option>
                         </select>
+                        <small  id="comunaError" style="display: none;"></small>
                     </div>
-                    <small  id="comunaError" style="display: none;"></small>
-                    
+                </div>
                     <!-- Telefono -->
                     <div class="mt-3">
                         <input type="text" class="form-control" id="celular" placeholder="9-12345678" required>
@@ -133,8 +134,6 @@
     </div>
         
 </main >
-
-<br>
 
 
 {% endblock %}

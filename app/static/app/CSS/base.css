@@ -105,29 +105,23 @@ body{
 
 }
 
-form{
-   width: 70%;
+.d-flex{
+   width: 90%;
    margin-left: 5%;
    height: 35px;
    
 }
 
-form button{
+.d-flex button{
    align-content: center ;
 }
-
-
-.logotipo{
-   width: 20%;
-}
-
 
 
 
 /* ajustes de la barra de navegación */
 .menuNav{
    width: 100%;
-   margin-top: 100px; /* separacion con el sticky*/
+   margin-top: 99px; /* separacion con el sticky*/
    position: static;
    display: block;
    justify-content:center;
@@ -153,9 +147,12 @@ form button{
  
 }
 
-.menuNav .navbar-brand{
-   margin-top: 14px; /* Ajustar margen superior de los enlaces */
+.menuNav .navbar-brand {
+   margin-top: 15px;  /*Ajustar margen superior de los enlaces */
    font-size: large;
+}
+.navbar-brand img{
+   margin-bottom: 7px;
 }
 
 
