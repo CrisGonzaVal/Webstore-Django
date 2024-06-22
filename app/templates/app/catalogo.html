@@ -20,15 +20,7 @@
                   <button class="btn dropdown-toggle navbar-brand" data-bs-toggle="dropdown" aria-expanded="false">
                     <b>Marca</b>
                   </button>
-<<<<<<< HEAD
-                  <ul class="dropdown-menu dropdown-menu-primary">
 
-                {% for marca in marcas %}
-                    <li><a class="dropdown-item" href="{% url 'catalogo' %}?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}marca={{ marca.nombre_m }}">{{ marca.nombre_m }}</a></li>
-                    {% if not forloop.last %}
-
-                        <li><hr class="dropdown-divider"></li>
-=======
                   <ul class="dropdown-menu dropdown-menu-primary dropdown-scrollable">
                     <li><a class="dropdown-item" href="{% url 'catalogo'%}">Todos</a></li>
                     <li><hr class="dropdown-divider"></li>
@@ -36,7 +28,7 @@
                     <li><a class="dropdown-item" href="{% url 'catalogo' %}?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}marca={{ marca.nombre_m }}">{{ marca.nombre_m }}</a></li>
                     {% if not forloop.last %}
                     <li><hr class="dropdown-divider"></li>
->>>>>>> main
+
                     {% endif %}
                 {% endfor %}
                   </ul>
@@ -100,19 +92,13 @@
                     <div class="text-center">
                           <a id="addToCart{{ p.id_producto }}" href="{% url 'agregar_producto_catalogo' p.id_producto %}" class="btn btn-outline-light" >agregar al carro</a>
                     </div>
-<<<<<<< HEAD
-                    <div id="popupMessage{{ p.id_producto }}" class="popup hidden">
-                      <p>Producto agregado al carrito</p>
-                  </div>
-                </div>
-            </div>
-=======
+
                   <div id="popupMessage{{ p.id_producto }}" class="popup hidden">
                       <p>Producto agregado al carrito</p>
                   </div>  
               </div>
           </div>
->>>>>>> main
+
         </div>
       {% endfor %} 
   </div>      
