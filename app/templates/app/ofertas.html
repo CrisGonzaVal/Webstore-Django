@@ -5,58 +5,11 @@
 {% block contenido %}
 
 
+
 <link rel="stylesheet" href="{% static '/app/CSS/ofertas.css' %}">
 
+
 <main>
-
-    <!-- barra filtros -->
-    <div class="container ">
-        <nav class="navbar navbar-expand-sm bg-body-secondary p-2 ">
-            <div class="container justify-content-center">
-                <ul class="navbar-nav">
-                    <li class="nav-item dropdown">
-                    <button class="btn dropdown-toggle navbar-brand" data-bs-toggle="dropdown" aria-expanded="false">
-                        Marca
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-primary">
-                        <li><a class="dropdown-item" href="#">xiaomi</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">huawei</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">opo</a></li>
-                    </ul>
-                    </li>
-                    
-                    <li class="nav-item dropdown">
-                        <button class="btn dropdown-toggle navbar-brand" data-bs-toggle="dropdown" aria-expanded="false">
-                        Categoria
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-primary">
-                        <li><a class="dropdown-item" href="#">Audio</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Computacion</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Electro Hogar</a></li>
-                        </ul>
-                    </li>
-    
-                    <li class="nav-item dropdown">
-                        <button class="btn dropdown-toggle navbar-brand" data-bs-toggle="dropdown" aria-expanded="false">
-                        Precio
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-primary">
-                        <li><a class="dropdown-item" href="#">menor a mayor</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">mayor a menor</a></li>
-                        </ul>
-                    </li> 
-
-                </ul> 
-            </div>
-        </nav>
-    </div>
-
-  <br>
     
     <!-- Ofertas -->
     <div class="container" id="categoria">
@@ -65,11 +18,12 @@
                 <medium class="card-title"><b>OFERTAS</b></medium>
                 <p class="card-text"></p>
             </div>
-    </div>
+         </div>
+    </div>    
     <!-- fila 1 de galeria -->
     <div class="container">
         <div class="row">
-            <div class="col">
+            <div class="col tarjet">
                 <div class="card">
                     <div class="card-body text-center">
                         <br><br>
@@ -83,7 +37,7 @@
                 </div>
             </div>
             
-            <div class="col">
+            <div class="col tarjet">
                 <div class="card">
                     <div class="card-body text-center">
                         <br><br>
@@ -97,7 +51,7 @@
                 </div>
             </div>
 
-            <div class="col">
+            <div class="col tarjet">
                 <div class="card">
                     <div class="card-body text-center">
                         <br><br>
@@ -111,7 +65,7 @@
                 </div>
             </div>
 
-            <div class="col">
+            <div class="col tarjet">
                 <div class="card">
                     <div class="card-body text-center">
                         <br><br>

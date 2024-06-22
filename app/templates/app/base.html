@@ -11,12 +11,16 @@
     <script src="{% static '/app/JS/valorDolar.js' %}" defer></script>
     <link rel="stylesheet" href="{% static '/app/CSS/base.css' %}"> 
     <script src="{% static '/app/JS/validaciones.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static '/app/CSS/catalogo.css' %}">
+    
 </head>
 <body>
 
     <header>
 
         <!-- barra encabezado -->
+
+
         <div class="navbar-sticky">   
             <div class="container">
                 <nav class="navbar navbar-expand-lg">
@@ -33,19 +37,19 @@
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="#">
-                                        <img class="campana" src="{% static '/app/imagenes/logo/campana.png' %}" alt="notificacion" width="auto" height="25px">
+                                        <img class="campana" src="{% static '/app/imagenes/logo/campana.png' %}" alt="notificacion" width="auto" height="30px">
                                         <span class=" top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="{% url 'carro' %}">
-                                        <img src="{% static '/app/imagenes/logo/carrito-de-compras.png' %}" alt="carro" width="auto" height="35px">
-                                        <span class=" top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ carrito|length }}</span>
+                                        <img src="{% static '/app/imagenes/logo/carrito-de-compras.png' %}" alt="carro" width="auto" height="38px">
+                                        <span class=" top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ cantidad_total_productos }}</span>
                                     </a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img data-bs-toggle="dropdown" src="{% static '/app/imagenes/logo/acceso.png' %}" alt="acceso" width="auto" height="35px">
+                                        <img data-bs-toggle="dropdown" src="{% static '/app/imagenes/logo/acceso.png' %}" alt="acceso" width="auto" height="38px">
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-primary ">
                                         <li><a class="dropdown-item" href="{% url 'login' %}">Iniciar sesión</a></li>
@@ -71,22 +75,31 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                 <div class="container justify-content-center">
                     <ul class="navbar">
-                       <li class="nav"><a class="navbar-brand" href="{% url 'home' %}"><b>Home</b></a></li>
-                       <li class="nav"><a class="navbar-brand" href="{% url 'catalogo' %}"><b>Catalogo</b></a></li>
-                       <li class="nav"><a class="navbar-brand" href="{% url 'ofertas' %}"><b>Ofertas</b></a></li>
-                       <li class="nav"><a class="navbar-brand" href=""><b>Help</b></a></li>
+                       <li class="nav"><a class="navbar-brand" href="{% url 'home' %}">
+                        <img class="icon"src="{% static '/app/imagenes/logo/home.png' %}" alt="home" width="20px" height="auto">
+                        <b>Home</b></a></li>
+                       <li class="nav"><a class="navbar-brand" href="{% url 'catalogo' %}">
+                        <img class="icon"src="{% static '/app/imagenes/logo/catalogo.png' %}" alt="catalogo" width="25px" height="auto">
+                        <b>Catálogo</b></a></li>
+                       <li class="nav"><a class="navbar-brand" href="{% url 'ofertas' %}">
+                        <img class="icon"src="{% static '/app/imagenes/logo/sale.png' %}" alt="ofertas" width="25px" height="auto">
+                        <b>Ofertas</b></a></li>
+                       <li class="nav"><a class="navbar-brand" href="">
+                        <img class="icon"src="{% static '/app/imagenes/logo/help.png' %}" alt="help" width="25px" height="auto">
+                        <b>Help</b></a></li>
                     </ul>
                 </div>
             </nav>
         </div>
     </header>
-    <br><br>
+
+    <br>
     
         {% block contenido%}
 
         {% endblock %}
 
-    <br><br>
+    <br>
     <!-- pie de pagina -->
     <footer>
         <nav class="navbar navbar-expand-sm bg-body-secondary">
@@ -113,11 +126,14 @@
         </nav>
     </footer>
 
+<<<<<<< HEAD
 
 
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
+=======
+>>>>>>> main
 </body>
 </html>

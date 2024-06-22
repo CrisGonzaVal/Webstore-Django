@@ -4,20 +4,21 @@
 
 {% block contenido %}
 <script src="{% static '/app/JS/validaciones.js' %}" defer></script>
+<link rel="stylesheet" href="{% static '/app/CSS/login.css' %}">
 
 
-
+<br><br>
 <main>
     <div class="container ">   
         <div class="row align-items-start">
             <!-- columna 1 -->
             <div class="col-6 ">
                 <!-- logo larrain -->
-                <div class=" " id="logotipo">
-                    <a href="{% url 'home' %}"><img src="{% static 'app/imagenes/logo/logotipo.png' %}" alt="logotipo" width="auto" height="150px"></a>
+                <div class="logo container text-center" id="logotipo">
+                    <a href="{% url 'home' %}"><img src="{% static 'app/imagenes/logo/logotipo.png' %}" alt="logotipo" width="auto" height="100px"></a>
                 </div>
                 <!-- Tarjeta de inicio de sesión -->
-                <div class=" w-100" id="formulario" >
+                <div class="clearfix w-100" id="formulario" >
                     
                         <form id="registerForm" onmouseover = "validacion()" >
                             <div class="mb-3">
@@ -44,7 +45,7 @@
             
             <!-- columna 2 -->
             <div class="col-6" > 
-                <div class="" id="login">
+                <div class="login" id="login">
                     <img src="{% static 'app/imagenes/logo/login.jpg' %}" alt="" width="auto" height="400px">
                 </div>
             </div>
@@ -53,7 +54,11 @@
     </div>
 </main>
 
+<<<<<<< HEAD
 
+=======
+<br><br><br>
+>>>>>>> main
 
 
 

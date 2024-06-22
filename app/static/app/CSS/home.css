@@ -23,6 +23,7 @@ image {
     
 }
 
+
 /*cuando el cursor esta dentro de la tarjeta se muestra  la somcbra*/
 .row .card:hover{
     cursor: pointer;

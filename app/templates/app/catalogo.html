@@ -4,7 +4,7 @@
 
 {% block contenido %}
 
-<link rel="stylesheet" href="{% static '/app/CSS/catalogo.css' %}">
+
 
 
 <main>
@@ -20,6 +20,7 @@
                   <button class="btn dropdown-toggle navbar-brand" data-bs-toggle="dropdown" aria-expanded="false">
                     <b>Marca</b>
                   </button>
+<<<<<<< HEAD
                   <ul class="dropdown-menu dropdown-menu-primary">
 
                 {% for marca in marcas %}
@@ -27,6 +28,15 @@
                     {% if not forloop.last %}
 
                         <li><hr class="dropdown-divider"></li>
+=======
+                  <ul class="dropdown-menu dropdown-menu-primary dropdown-scrollable">
+                    <li><a class="dropdown-item" href="{% url 'catalogo'%}">Todos</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                {% for marca in marcas %}
+                    <li><a class="dropdown-item" href="{% url 'catalogo' %}?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}marca={{ marca.nombre_m }}">{{ marca.nombre_m }}</a></li>
+                    {% if not forloop.last %}
+                    <li><hr class="dropdown-divider"></li>
+>>>>>>> main
                     {% endif %}
                 {% endfor %}
                   </ul>
@@ -37,7 +47,9 @@
                     <button class="btn dropdown-toggle navbar-brand" data-bs-toggle="dropdown" aria-expanded="false">
                       <b>Categoria</b>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-primary">
+                    <ul class="dropdown-menu dropdown-menu-primary dropdown-scrollable">
+                      <li><a class="dropdown-item" href="{% url 'catalogo'%}">Todos</a></li>
+                       <li><hr class="dropdown-divider"></li>
                       {% for categoria in categorias %}
                         <li><a class="dropdown-item" href="{% url 'catalogo' %}?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}categoria={{ categoria.nombre }}">{{ categoria.nombre }}</a></li>
                           {% if not forloop.last %}
@@ -52,29 +64,28 @@
                     <button class="btn dropdown-toggle navbar-brand" data-bs-toggle="dropdown" aria-expanded="false">
                       <b>Precio</b>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-primary">
+                    <ul class="dropdown-menu dropdown-menu-primary dropdown-scrollable">
                       <li><a class="dropdown-item" href="{% url 'catalogo' %}?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}precio=asc">Menor a Mayor</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <li><a class="dropdown-item" href="{% url 'catalogo' %}?{% if request.GET %}{{ request.GET.urlencode }}&{% endif %}precio=desc">Mayor a Menor</a></li>
                     </ul>
                   </li>
-                  
-              </ul> 
-        
-      </nav>
-    </div>
-  </div> 
-
+            </ul> 
+          </nav>
+      </div>
+ </div>
+</div> 
 <br> <br>
+
+<main>
 
   <!--Galeria Productos-->
   <div class="container">  
     <!-- fila 1 de galeria -->
     <div class="row justify-content-center">
-        
       {% load humanize %} <!--para ver los datos mas legibles-->
       {% for p in productos %} <!--llama a todos los productos para mostrarlo-->
-        <div class="col ">
+        <div class="col tarjet">
             <div class="card">
                 <div class="card-body">
                     {% if p.imagen %}
@@ -87,18 +98,24 @@
                     <p class="card-text" style="color: gray;">{{ p.cantidad_total}} en inventario</p>
                     <h4 class="card-text ">${{ p.valor | intcomma }}</h4>
                     <div class="text-center">
-                        <a href="{% url 'agregar_producto_catalogo' p.id_producto %}" class="btn btn-outline-light" >agregar al carro</a>
+                          <a id="addToCart{{ p.id_producto }}" href="{% url 'agregar_producto_catalogo' p.id_producto %}" class="btn btn-outline-light" >agregar al carro</a>
                     </div>
+<<<<<<< HEAD
                     <div id="popupMessage{{ p.id_producto }}" class="popup hidden">
                       <p>Producto agregado al carrito</p>
                   </div>
                 </div>
             </div>
+=======
+                  <div id="popupMessage{{ p.id_producto }}" class="popup hidden">
+                      <p>Producto agregado al carrito</p>
+                  </div>  
+              </div>
+          </div>
+>>>>>>> main
         </div>
       {% endfor %} 
-    
-    </div>
-  </div>
+  </div>      
 
   <br><br>
 
@@ -124,5 +141,6 @@
 
 </main>
     
-    <script src="{% static '/app/JS/mensajeCarro.js' %}"></script>
-    {% endblock %}
+<script src="{% static '/app/JS/mensajeCarro.js' %}"></script>
+
+{% endblock %}

@@ -16,8 +16,6 @@ class ProductoAdmin(admin.ModelAdmin):
 
 
 # Registrar modelos individuales
-
-
 admin.site.register(Categoria)
 admin.site.register(Marca)
 admin.site.register(Producto, ProductoAdmin) #llamo la funcionalidad de filtros en el admin

@@ -3,9 +3,8 @@
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import home, carro, catalogo, login, ofertas, registro, agregar_producto, eliminar_producto, restar_producto, limpiar_carrito, agregar_producto_catalogo
+from .views import home, carro, catalogo, login, ofertas, registro,  agregar_producto, eliminar_producto, restar_producto, limpiar_carrito, agregar_producto_catalogo
 from .views import create_order, capture_order, limpiar_carrito_despues_compra, gracias
-
 
 
 
