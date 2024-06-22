@@ -1,0 +1,19 @@
+.clearfix{
+    padding-bottom: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 50%;
+}
+@media (max-width: 1000px) {
+
+    .login {
+        display: none; /* Oculta la imagen en pantallas más pequeñas */
+    }
+    .clearfix {
+       width: 100%; 
+    }
+
+    .login{
+        max-width: 20%; /* Ajusta la imagen a un tamaño adecuado */
+    }
+}

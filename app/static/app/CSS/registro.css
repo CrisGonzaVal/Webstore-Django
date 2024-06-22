@@ -1,0 +1,24 @@
+
+.clearfix{
+    padding-bottom: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 50%;
+}
+
+@media (max-width: 1000px) {
+
+    .rounded {
+        display: none; /* Oculta la imagen en pantallas más pequeñas */
+    }
+    .clearfix {
+       width: 100%; 
+    }
+}
+
+
+
+
+
+
+
