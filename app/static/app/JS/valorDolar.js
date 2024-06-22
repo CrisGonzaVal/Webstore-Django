@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(response => response.json())
         .then(data => {
             const valorDolar = data.rates.CLP;
-            document.getElementById('valor-dolar').innerText = `1 USD = CLP$${valorDolar}`;
+            document.getElementById('valor-dolar').innerText = ` 1 USD  CLP:$${valorDolar}`;
         })
         .catch(error => {
             console.error('Error fetching the dollar value:', error);

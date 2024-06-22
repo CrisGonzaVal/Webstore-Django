@@ -1,46 +1,94 @@
-.row .image {
-    width: 200px; /* Define el ancho deseado */
-    height: 200px; /* Define la altura deseada */
-    
+
+
+.row .tarjet .image {
+    width: 180px; /* Define el ancho deseado */
+    height: 180px; /* Define la altura deseada */
+
 }
-.row .card {
+
+
+.row .tarjet .card {
     width: 300px; /* Define el ancho deseado */
-    height: 450px; /* Define la altura deseada */
-    margin-right: 20px; /* Espacio a la derecha de cada tarjeta */
-    margin-bottom: 20px; /* Espacio debajo de cada tarjeta */    
+    height: 430px; /* Define la altura deseada */
+
+    margin-right: 1px; /* Espacio a la derecha de cada tarjeta */
+    margin-bottom: 20px; /* Espacio debajo de cada tarjeta */
+
     border: 2px solid rgba(0, 0, 0, 0.05);
+
+    text-align: center;
+
+
 }
 
 /*cuando el cursor esta dentro de la tarjeta se muestra  la sombra*/
-.row .card:hover{
+.row .tarjet .card:hover{
     cursor: pointer;
     box-shadow: inset 0 -3em 3em rgba(199, 199, 199, 0.1),
     0 0  0 2px rgb(245, 245, 245),
     0.3em 0.3em 1em rgba(0,0,0,0.3);
   }
 
-.row .btn-outline-light {
+.row .tarjet .btn-outline-light {
+
+    width: 100%;
+    height: 12%;
     transform: translate(-50%, 125%);
-    width: 60%;
     border-radius: 10px;
     border: none;
-    background-color: #008bf8;
+    background-color: #008bf8 !important;
     color: #fbfbfb;
-    font-size: 1rem;
-    padding: .5rem 1rem;
+    font-size: large;
+    padding: .8rem 1rem;
     position: absolute;
     left: 50%;
     bottom: 0;
     opacity: 0;
-    transition: 0.5s ease-out;
+    transition: 0.2s ease-out;
 }
 
 /*cursor*/
-.row .card:hover .btn-outline-light {
-    transform: translate(-50%, -35%); /*posicion del boton*/
+.row .tarjet .card:hover .btn-outline-light {
+    transform: translate(-50%, -3%); /*posicion del boton*/
     opacity: 1;
-    background-color: #008bf8;
+    background-color: #008bf8 !important;
     color: #fbfbfb;
    }
-   
 
+
+   /* Estilo para la ventana emergente */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #008bf8 !important;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    font-size:large;
+}
+
+/* Estilo para ocultar el mensaje */
+.hidden {
+    display: none;
+    opacity: 0;
+}
+
+.navFiltro .navbar{
+    padding: 1px;
+}
+
+.navFiltro b{
+    font-weight: 500;
+    font-size: medium;
+}
+
+.dropdown-scrollable {
+    max-height: 600px; /* Altura máxima del dropdown */
+    overflow-y: auto; /* Permite el scroll vertical */
+}
