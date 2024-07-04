@@ -3,7 +3,6 @@
 .row .tarjet .image {
     width: 180px; /* Define el ancho deseado */
     height: 180px; /* Define la altura deseada */
-
 }
 
 
@@ -18,6 +17,7 @@
 
     text-align: center;
 
+    background-color: transparent;
 
 }
 
