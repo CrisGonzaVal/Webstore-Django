@@ -3,7 +3,20 @@ body{
    font-family: "Questrial", sans-serif;
    font-weight: 200; /* Grosor normal */
    letter-spacing: 0.04em; /* Aumenta el espacio entre letras*/
+   background: #f4f4f4;
 }
+
+input, select{
+   background-color: #f7f7f7 !important;
+}
+
+.sinfondo{
+   /*dejar las imagen sin fondo blanco*/
+   background-color: transparent; /* Fondo deseado */
+   display: inline-block;
+   mix-blend-mode: multiply; /* Modo de mezcla para eliminar el blanco */
+}
+
 /* Estilo para navbar fija */
 .navbar-sticky {
    width: 100%;
@@ -11,9 +24,14 @@ body{
    position: fixed;
    z-index: 1000;
    background-color: rgba(255, 255, 255, 0.5);
-   backdrop-filter: blur(130px);
+   backdrop-filter: blur(20px);
    border-bottom: 1px solid #ccc;
-   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+   /* ajustes del baner */
+   width: 100%;
+   top: 0;
+
 }
 
 
@@ -25,10 +43,6 @@ body{
    box-shadow: 0 0 0 4px rgba(100, 76, 234, 0.1);
 }
 
-.menuNav{
-   background-color: #1c7ce2 !important;
-   padding: 2px;
-}
 
 /*efectos menu nav*/
 .menuNav a{
@@ -89,11 +103,7 @@ body{
 /* CAMBIOS */
 
 
-/* ajustes del baner */
-.navbar-sticky {
-   width: 100%;
-   top: 0;
-}
+
 
 .navbar-sticky ul{
    width: 50%;
@@ -121,10 +131,12 @@ body{
 /* ajustes de la barra de navegación */
 .menuNav{
    width: 100%;
-   margin-top: 99px; /* separacion con el sticky*/
+   margin-top: 98px; /* separacion con el sticky*/
    position: static;
    display: block;
    justify-content:center;
+   background-color: #1c7ce2 !important;
+   padding: 2px;
    
 
 

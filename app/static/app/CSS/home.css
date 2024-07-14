@@ -60,3 +60,8 @@ image {
    .card .text-bg-primary{
     background-color:#1c7ce2 !important;
    }
+
+   .carousel-inner {
+    border-radius: 10px;
+   }
+   

@@ -30,8 +30,8 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Tenemos lo que usted necesita" aria-label="Search">
+                            <form class="d-flex" role="search" method="get" action="{% url 'catalogo' %}">
+                                <input class="form-control me-2" name="q" type="search" placeholder="Tenemos lo que usted necesita" aria-label="Search" value="{{ query }}">
                                 <button class="btn btn-primary" type="submit">Buscar</button>
                             </form>
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -43,13 +43,13 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="{% url 'carro' %}">
-                                        <img src="{% static '/app/imagenes/logo/carrito-de-compras.png' %}" alt="carro" width="auto" height="38px">
+                                        <img src="{% static '/app/imagenes/logo/carrito-de-compras.png' %}" alt="carro" width="auto" height="36px">
                                         <span class=" top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ cantidad_total_productos }}</span>
                                     </a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img data-bs-toggle="dropdown" src="{% static '/app/imagenes/logo/acceso.png' %}" alt="acceso" width="auto" height="38px">
+                                        <img data-bs-toggle="dropdown" src="{% static '/app/imagenes/logo/acceso.png' %}" alt="acceso" width="auto" height="35px">
                                     </a>
                                     <ul class="dropdown-menu dropdown-menu-primary ">
                                         <li><a class="dropdown-item" href="{% url 'login' %}">Iniciar sesión</a></li>
