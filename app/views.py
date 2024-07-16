@@ -116,7 +116,10 @@ def catalogo(request):
         cantidad_total = Inventario.objects.filter(id_producto=producto).aggregate(total=Sum('cantidad'))['total']
         producto.cantidad_total = cantidad_total if cantidad_total is not None else 0
 
-
+    
+    
+    
+    
         # Obtener listas para los filtros
     categorias = Categoria.objects.all()
     marcas = Marca.objects.all()
