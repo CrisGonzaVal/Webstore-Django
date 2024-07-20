@@ -1,4 +1,5 @@
+/* con una altura mínima de 410 píxeles y habilitará el desplazamiento automático una vez que el contenido exceda ese límite*/
 .extendible{
-    min-height: 410px; /* Ajusta este valor según tus preferencias */
+    min-height: 410px;
     overflow: auto;  
 }
