@@ -6,7 +6,6 @@
 
 
 
-
 <main>
   <!-- aqui esta barra filtros -->
   <div class="navFiltro ">
@@ -69,7 +68,7 @@
 
 <main>
   <!--Galeria Productos-->
-  <div class="container">  
+ <div class="container pagination">  
     <!-- fila 1 de galeria -->
     <div class="row justify-content-center">
       <h3>Resultados de búsqueda para "{{ query }}"</h3><br><br>
@@ -102,7 +101,9 @@
     {% else %}
             <p>No se encontraron productos para "{{ query }}".</p>
     {% endif %}
-  </div>      
+  </div>
+ </div>   
+
 
   <br><br>
 
@@ -114,9 +115,11 @@
             <span aria-hidden="true">&laquo;</span>
           </a>
         </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        
+        <li class="page-item"><a class="page-link" href="#" data-page="1">1</a></li>
+        <li class="page-item"><a class="page-link" href="#" data-page="2">2</a></li>
+        <li class="page-item"><a class="page-link" href="#" data-page="3">3</a></li>   
+        
         <li class="page-item">
           <a class="page-link" href="#" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
@@ -124,10 +127,12 @@
         </li>
     </ul>
   </nav>
-  
 
 </main>
     
 <script src="{% static '/app/JS/mensajeCarro.js' %}"></script>
+<script src="{% static '/app/JS/pagination.js' %}"></script>
+
+
 
 {% endblock %}

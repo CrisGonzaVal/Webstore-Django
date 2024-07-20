@@ -81,6 +81,7 @@
 
 .navFiltro .navbar{
     padding: 1px;
+    border-radius: 10px;
 }
 
 .navFiltro b{

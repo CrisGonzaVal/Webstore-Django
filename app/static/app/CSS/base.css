@@ -178,15 +178,12 @@ footer{
 }
 
 footer ul{
-   width: 35%;
+   width: 20%;
    height: 40px;
    margin-bottom: 0;
    align-content: center ;
    list-style-type: none;
    display: flex ;
-
-   
-
 }
 
 footer li{
