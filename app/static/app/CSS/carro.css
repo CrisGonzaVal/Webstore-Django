@@ -1,0 +1,4 @@
+.extendible{
+    min-height: 410px; /* Ajusta este valor según tus preferencias */
+    overflow: auto;  
+}

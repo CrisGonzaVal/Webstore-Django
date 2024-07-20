@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
     var buttons = document.querySelectorAll('a[id^="addToCart"]');
-
     buttons.forEach(function(button) {
         button.addEventListener('click', function(event) {
             // Evitar la acción de navegación predeterminada del enlace

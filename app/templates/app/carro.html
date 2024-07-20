@@ -29,7 +29,7 @@
         <br>
         <div class="row">
             <div class="col-lg-8">
-                <div class="card">
+                <div class="card extendible">
                     <div class="card-body">
                         {% for key, item in carrito.items %}
                         <div class="row">
@@ -59,9 +59,11 @@
                         {% endfor %}
                     </div>
                 </div>
+                <br>
+                <a href="{% url 'limpiar_carrito' %}" class="btn btn-danger" >Limpiar Carrito</a>
             </div>
             <div class="col-lg-4">
-                <div class="card">
+                <div class="card extendible">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-lg-8">
@@ -93,7 +95,6 @@
             </div>
         </div>
         <br>
-        <a href="{% url 'limpiar_carrito' %}" class="btn btn-danger" >Limpiar Carrito</a>
     </div>
    
 </main>

@@ -24,6 +24,7 @@
 /*cuando el cursor esta dentro de la tarjeta se muestra  la sombra*/
 .row .tarjet .card:hover{
     cursor: pointer;
+    background-color: white;
     box-shadow: inset 0 -3em 3em rgba(199, 199, 199, 0.1),
     0 0  0 2px rgb(245, 245, 245),
     0.3em 0.3em 1em rgba(0,0,0,0.3);
@@ -53,6 +54,11 @@
     opacity: 1;
     background-color: #008bf8 !important;
     color: #fbfbfb;
+   }
+
+   /*cuando se mantenga presionado :active*/
+   .row .tarjet .card .btn-outline-light:active {
+    background-color: green !important;
    }
 
 
@@ -93,3 +99,7 @@
     max-height: 600px; /* Altura máxima del dropdown */
     overflow-y: auto; /* Permite el scroll vertical */
 }
+
+footer{
+    position:relative !important;
+   }

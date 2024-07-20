@@ -116,14 +116,14 @@ input, select{
 }
 
 .d-flex{
-   width: 90%;
+   width: 100%;
    margin-left: 5%;
    height: 35px;
    
 }
 
 .d-flex button{
-   align-content: center ;
+   align-content: center;
 }
 
 
@@ -131,7 +131,7 @@ input, select{
 /* ajustes de la barra de navegación */
 .menuNav{
    width: 100%;
-   margin-top: 98px; /* separacion con el sticky*/
+   margin-top: 82px; /* separacion con el sticky*/
    position: static;
    display: block;
    justify-content:center;
@@ -171,8 +171,8 @@ input, select{
 /* ajustes del pie de pagina */
 footer{
    width: 100%;
-   margin-bottom: 0;
-   position: static;
+   bottom: 0;
+   position:fixed;
    display: block;
 
 }
@@ -190,4 +190,7 @@ footer li{
    width: 25%;
 }
 
+.nav-link img:hover{
+   height: 45px;
+}
 
