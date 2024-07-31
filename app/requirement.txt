@@ -1,3 +1,3 @@
-#pip install -r requirements.txt
-Django == 4.1.2
-Pillow==9.5.0
+#pip install -r requirement.txt
+django == 4.1.2
+pillow == 9.5.0
