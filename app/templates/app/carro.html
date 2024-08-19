@@ -29,12 +29,12 @@
         <br>
         <div class="row">
             <div class="col-lg-8">
-                <div class="card">
+                <div class="card extendible">
                     <div class="card-body">
                         {% for key, item in carrito.items %}
                         <div class="row">
                             <div class="col-lg-3">
-                                <img class="img-fluid mx-auto d-block image" src="{{ item.imagen }}" alt="{{ item.nombre }}">
+                                <img class="img-fluid mx-auto d-block image sinfondo" src="{{ item.imagen }}" alt="{{ item.nombre }}">
                             </div>
                             <div class="col-lg-3">
                                 <a href="#">{{ item.nombre }}</a>
@@ -59,9 +59,11 @@
                         {% endfor %}
                     </div>
                 </div>
+                <br>
+                <a href="{% url 'limpiar_carrito' %}" class="btn btn-danger" >Limpiar Carrito</a>
             </div>
             <div class="col-lg-4">
-                <div class="card">
+                <div class="card extendible">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-lg-8">
@@ -93,7 +95,6 @@
             </div>
         </div>
         <br>
-        <a href="{% url 'limpiar_carrito' %}" class="btn btn-danger" >Limpiar Carrito</a>
     </div>
    
 </main>

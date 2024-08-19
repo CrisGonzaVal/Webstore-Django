@@ -2,24 +2,18 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    align-content: center ;
 }
 
 
 .row .card{
-    width: 250px; /* Define el ancho deseado */
-    height: 350px; /* Define la altura deseada */
-    margin-right: 1px; /* Espacio a la derecha de cada tarjeta */
-    margin-bottom: 20px; /* Espacio debajo de cada tarjeta */    
-    border: 2px solid rgba(0, 0, 0, 0.05);
-    text-align: center;
-    display: flex;
-
+     height: 360px !important; /* Define la altura deseada */
 }
 
 
 image {
-    width: 200px; /* Define el ancho deseado */
-    height: 200px; /* Define la altura deseada */
+    width: 100px !important; /* Define el ancho deseado */
+    height: 100px !important; /* Define la altura deseada */
     
 }
 
@@ -59,4 +53,12 @@ image {
    
    .card .text-bg-primary{
     background-color:#1c7ce2 !important;
+   }
+
+   .carousel-inner {
+    border-radius: 10px;
+   }
+   
+   footer{
+    position:relative !important;
    }

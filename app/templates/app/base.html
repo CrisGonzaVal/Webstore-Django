@@ -25,25 +25,22 @@
             <div class="container">
                 <nav class="navbar navbar-expand-lg">
                     <div class="container">
-                        <a class="logotipo" href="{% url 'home' %}"><img src="{% static '/app/imagenes/logo/logotipo.png' %}" alt="logotipo" width="auto" height="80px"></a>
+                        <a class="logotipo" href="{% url 'home' %}"><img src="{% static '/app/imagenes/logo/logotipo.png' %}" alt="logotipo" width="auto" height="65px"></a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Tenemos lo que usted necesita" aria-label="Search">
+                            <form class="d-flex" role="search" method="get" action="{% url 'catalogo' %}">
+                                <input class="form-control me-2" name="q" type="search" placeholder="Tenemos lo que usted necesita" aria-label="Search" value="{{ query }}">
                                 <button class="btn btn-primary" type="submit">Buscar</button>
                             </form>
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">
-                                        <img class="campana" src="{% static '/app/imagenes/logo/campana.png' %}" alt="notificacion" width="auto" height="30px">
-                                        <span class=" top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
-                                    </a>
-                                </li>
+                               
                                 <li class="nav-item">
                                     <a class="nav-link active" aria-current="page" href="{% url 'carro' %}">
-                                        <img src="{% static '/app/imagenes/logo/carrito-de-compras.png' %}" alt="carro" width="auto" height="35px">
+
+                                        <img src="{% static '/app/imagenes/logo/carrito-de-compras.png' %}" alt="carro" width="auto" height="42px">
+
                                         <span class=" top-0 start-100 translate-middle badge rounded-pill bg-danger">{{ cantidad_total_productos }}</span>
                                     </a>
                                 </li>
@@ -59,7 +56,7 @@
                                         <li><a class="dropdown-item" href="http://127.0.0.1:8000/admin/">Empleados</a></li>
                                     </ul>
                                 </li>
-                                <li class="nav-item" href="#">
+                                <li class="nav-item" href="#" style="align-content: center;">
                                     <!--VISUALIZACION DEL API VALOR DOLAR-->
                                     <h6 id="valor-dolar"></h6>
                                 </li>
@@ -98,8 +95,6 @@
         {% block contenido%}
 
         {% endblock %}
-
-    <br>
     <!-- pie de pagina -->
     <footer>
         <nav class="navbar navbar-expand-sm bg-body-secondary">

@@ -6,7 +6,6 @@
 
 
 
-
 <main>
   <!-- aqui esta barra filtros -->
   <div class="navFiltro ">
@@ -65,21 +64,22 @@
       </div>
  </div>
 </div> 
-<br> <br>
+<br>
 
 <main>
-
   <!--Galeria Productos-->
-  <div class="container">  
+ <div class="container pagination">  
     <!-- fila 1 de galeria -->
     <div class="row justify-content-center">
-      {% load humanize %} <!--para ver los datos mas legibles-->
+      <h3>Resultados de búsqueda para "{{ query }}"</h3><br><br>
+  {% load humanize %} <!--para ver los datos mas legibles-->
+    {% if productos %}  
       {% for p in productos %} <!--llama a todos los productos para mostrarlo-->
         <div class="col tarjet">
             <div class="card">
                 <div class="card-body">
                     {% if p.imagen %}
-                    <img class="img-fluid mx-auto d-block image" src="{{ p.imagen.url }}" alt="{{ p.nombre_prod }}">
+                    <img class="img-fluid mx-auto d-block image sinfondo" src="{{ p.imagen.url }}" alt="{{ p.nombre_prod }}">
                     {% else %}
                             <p>No hay imagen disponible</p>    
                     {% endif %}
@@ -88,7 +88,7 @@
                     <p class="card-text" style="color: gray;">{{ p.cantidad_total}} en inventario</p>
                     <h4 class="card-text ">${{ p.valor | intcomma }}</h4>
                     <div class="text-center">
-                          <a id="addToCart{{ p.id_producto }}" href="{% url 'agregar_producto_catalogo' p.id_producto %}" class="btn btn-outline-light" >agregar al carro</a>
+                          <a id="addToCart{{ p.id_producto }}" href="{% url 'agregar_producto_catalogo' p.id_producto %}" class="btn btn-outline-light" >🛒 Añadir al carrito</a>
                     </div>
                   <div id="popupMessage{{ p.id_producto }}" class="popup hidden">
                       <p>Producto agregado al carrito</p>
@@ -97,9 +97,12 @@
           </div>
         </div>
       {% endfor %} 
-  </div>      
 
-  <br><br>
+    {% else %}
+            <p>No se encontraron productos para "{{ query }}".</p>
+    {% endif %}
+  </div>
+ </div>   
 
   <!-- paginacion -->
   <nav aria-label="Page navigation example">
@@ -109,9 +112,11 @@
             <span aria-hidden="true">&laquo;</span>
           </a>
         </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        
+        <li class="page-item"><a class="page-link" href="#" data-page="1">1</a></li>
+        <li class="page-item"><a class="page-link" href="#" data-page="2">2</a></li>
+        <li class="page-item"><a class="page-link" href="#" data-page="3">3</a></li>   
+        
         <li class="page-item">
           <a class="page-link" href="#" aria-label="Next">
             <span aria-hidden="true">&raquo;</span>
@@ -119,10 +124,12 @@
         </li>
     </ul>
   </nav>
-  
 
 </main>
     
 <script src="{% static '/app/JS/mensajeCarro.js' %}"></script>
+<script src="{% static '/app/JS/pagination.js' %}"></script>
+
+<br>
 
 {% endblock %}

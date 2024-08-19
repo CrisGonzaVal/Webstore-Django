@@ -9,6 +9,7 @@ from decimal import Decimal
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
+
 import requests
 import json
 import base64
@@ -80,10 +81,7 @@ def carro(request):
     
     # Renderizar la plantilla 'carro.html' con el contexto extendido
     return render(request, 'app/carro.html', contexto_carrito)
-
-def catalogo(include):
-    return render(include, 'app/catalogo.html')  
-
+ 
 
 #manipulo los modelos producto e inventario y lo muestro en la vista catalogo.html
 def catalogo(request):
@@ -94,6 +92,12 @@ def catalogo(request):
     marca = request.GET.get('marca')
     categoria = request.GET.get('categoria')
     precio = request.GET.get('precio')
+    query = request.GET.get('q', '')  # Obtener la consulta de búsqueda
+    
+
+     # Aplicar búsqueda no exacta
+    if query:
+        productos = productos.filter(nombre_prod__icontains=query)
 
     # Aplicar filtros si están presentes
     if marca:
@@ -126,6 +130,7 @@ def catalogo(request):
        'productos': productos,
        'categorias': categorias,
        'marcas': marcas,
+       'query': query,
      })
     return render(request, 'app/catalogo.html',contexto_carrito)  
 

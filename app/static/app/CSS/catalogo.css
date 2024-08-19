@@ -3,7 +3,6 @@
 .row .tarjet .image {
     width: 180px; /* Define el ancho deseado */
     height: 180px; /* Define la altura deseada */
-
 }
 
 
@@ -18,12 +17,14 @@
 
     text-align: center;
 
+    background-color: transparent;
 
 }
 
 /*cuando el cursor esta dentro de la tarjeta se muestra  la sombra*/
 .row .tarjet .card:hover{
     cursor: pointer;
+    background-color: white;
     box-shadow: inset 0 -3em 3em rgba(199, 199, 199, 0.1),
     0 0  0 2px rgb(245, 245, 245),
     0.3em 0.3em 1em rgba(0,0,0,0.3);
@@ -55,6 +56,11 @@
     color: #fbfbfb;
    }
 
+   /*cuando se mantenga presionado :active*/
+   .row .tarjet .card .btn-outline-light:active {
+    background-color: green !important;
+   }
+
 
    /* Estilo para la ventana emergente */
 .popup {
@@ -81,6 +87,7 @@
 
 .navFiltro .navbar{
     padding: 1px;
+    border-radius: 10px;
 }
 
 .navFiltro b{
@@ -92,3 +99,7 @@
     max-height: 600px; /* Altura máxima del dropdown */
     overflow-y: auto; /* Permite el scroll vertical */
 }
+
+footer{
+    position:relative !important;
+   }
