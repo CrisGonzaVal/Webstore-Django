@@ -32,7 +32,7 @@ image {
     transform: translate(-50%, 125%);
     border-radius: 10px;
     border: none;
-    background-color: #008bf8 !important;
+    background-color: #0B5ED7 !important;
     color: #fbfbfb;
     font-size: large;
     padding: .8rem 1rem;
@@ -47,12 +47,12 @@ image {
 .row .card:hover .btn-outline-light {
     transform: translate(-50%, -3%); /*posicion del boton*/
     opacity: 1;
-    background-color: #008bf8 !important;
+    background-color: #0B5ED7 !important;
     color: #fbfbfb;
    }
    
    .card .text-bg-primary{
-    background-color:#1c7ce2 !important;
+    background-color:#0B5ED7 !important;
    }
 
    .carousel-inner {
