@@ -120,7 +120,7 @@ USE_TZ = True
 
 
 # se define la carpeta donde guardará las imagenes
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'app/static'),
 ]
