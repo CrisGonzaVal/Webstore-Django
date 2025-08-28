@@ -5,3 +5,8 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/*
+
+.env
+*.pyc
+__pycache__/
+db.sqlite3
