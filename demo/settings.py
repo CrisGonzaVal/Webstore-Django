@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app', #aqui se aprega la app
     'django.contrib.humanize', #para utilizar la etiqueta humanize
+    'rest_framework', #para utilizar django rest framework
+    'corsheaders',#para utilizar django cors headers
 ]
 
 MIDDLEWARE = [
@@ -49,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware', #para utilizar django cors headers
 ]
 
 ROOT_URLCONF = 'demo.urls'
@@ -141,3 +144,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 PAYPAL_CLIENT_ID = 'AbTNaxU3ExF7fl-Ic5e3aBs49-36S6o1m8zThj270D9kzbF05cpjsabs_7n0SwrxxKXdtgZTIoPsnYfn'
 PAYPAL_CLIENT_SECRET = 'EM4FtE79uMW0c3S_fwqOhfp0jezMu7hy9m2DxeAMhQdSVQbvr5Bk5GBRSPpPPpaR53UOTlS11zgIjsrC'
 PAYPAL_BASE_URL = "https://api-m.sandbox.paypal.com"
+
+
+# Configuraciones REST Framework
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+}
+
+# Configuraciones CORS
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8100",  # Para Ionic
+    "http://localhost:4200",  # Para Angular
+]
