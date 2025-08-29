@@ -1,0 +1,6 @@
+dependencias apis restful
+python -m pip install djangorestframework
+python -m pip install django-cors-headers
+
+python -m pip install python-dotenv // para proteger las claves de credenciales
+

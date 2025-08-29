@@ -1,0 +1,61 @@
+{% extends 'app/base.html'%}
+
+{% load static %}
+
+{% block contenido %}
+<script src="{% static '/app/JS/validaciones.js' %}" defer></script>
+<link rel="stylesheet" href="{% static '/app/CSS/login.css' %}">
+
+
+<br><br>
+<main>
+    <div class="container ">   
+        <div class="row align-items-start">
+            <!-- columna 1 -->
+            <div class="col-6 ">
+                <!-- logo larrain -->
+                <div class="logo container text-center" id="logotipo">
+                    <a href="{% url 'home' %}"><img src="{% static 'app/IMAGENES/logo/logotipo.png' %}" alt="logotipo" width="auto" height="100px"></a>
+                </div>
+                <!-- Tarjeta de inicio de sesión -->
+                <div class="clearfix w-100" id="formulario" >
+                    
+                        <form id="registerForm" onmouseover = "validacion()" >
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" placeholder="Info@gmail.com" required>
+                                <small  id="emailError" style="display: none;"></small>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Password" required>
+                                <small  id="passError" style="display: none;"></small>
+                            </div>
+                            <div class="text-center mt-4">
+                                <a href="#" class="text-decoration-none small">¿Olvidaste la contraseña?</a>
+                            </div>
+                            <br>
+                            <div class="text-center mt-3">
+                                <button type="submit" class="btn btn-primary w-50" onclick="return validacion()" onmouseover="validacion()">Login</button>
+                            </div>
+                        </form>
+                    
+                </div>
+            </div>
+            
+            <!-- columna 2 -->
+            <div class="col-6" > 
+                <div class="login sinfondo" id="login">
+                    <img src="{% static 'app/IMAGENES/logo/login.jpg' %}" alt="" width="auto" height="400px">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<br><br><br>
+
+
+
+{% endblock %}

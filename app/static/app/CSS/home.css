@@ -1,0 +1,64 @@
+.card{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center ;
+}
+
+
+.row .card{
+     height: 360px !important; /* Define la altura deseada */
+}
+
+
+image {
+    width: 100px !important; /* Define el ancho deseado */
+    height: 100px !important; /* Define la altura deseada */
+    
+}
+
+
+/*cuando el cursor esta dentro de la tarjeta se muestra  la somcbra*/
+.row .card:hover{
+    cursor: pointer;
+    box-shadow: inset 0 -3em 3em rgba(199, 199, 199, 0.1),
+    0 0  0 2px rgb(245, 245, 245),
+    0.3em 0.3em 1em rgba(0,0,0,0.3);
+  }
+
+.row .btn-outline-light {
+    width: 100%;
+    height: 12%;
+    transform: translate(-50%, 125%);
+    border-radius: 10px;
+    border: none;
+    background-color: #0B5ED7 !important;
+    color: #fbfbfb;
+    font-size: large;
+    padding: .8rem 1rem;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.2s ease-out;
+}
+
+/*cursor*/
+.row .card:hover .btn-outline-light {
+    transform: translate(-50%, -3%); /*posicion del boton*/
+    opacity: 1;
+    background-color: #0B5ED7 !important;
+    color: #fbfbfb;
+   }
+   
+   .card .text-bg-primary{
+    background-color:#0B5ED7 !important;
+   }
+
+   .carousel-inner {
+    border-radius: 10px;
+   }
+   
+   footer{
+    position:relative !important;
+   }
