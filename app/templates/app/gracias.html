@@ -1,0 +1,12 @@
+{% extends 'app/base.html' %}
+{% block contenido %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Gracias por su compra</h1>
+            <p>Su transacción ha sido completada con éxito.</p><br>
+            <a href="{% url 'home' %}">Volver</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

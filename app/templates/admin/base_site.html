@@ -1,0 +1,30 @@
+<!--Este archivo es para modificar el admin de django raiz-->
+{% extends "admin/base_site.html" %}
+{% load static %}
+
+<!--modificaciones logo-->
+{% block branding %}
+<div id="site-name">
+    <img class="logotipo" src="{% static 'app/IMAGENES/logo/logotipo.png' %}" alt="Logo" id="admin-logo">
+</div>
+{% endblock %}
+
+
+{% block footer %} 
+{{ block.super }}
+<!-- Botón Volver -->
+<div id="back-button-container">
+    <a href="{% url 'home' %}" class="back-button" style="position: fixed;">Volver</a>
+</div>
+{% endblock %}
+
+
+
+
+<!--modificaciones estilo del admin-->
+{% block extrahead %}
+{{ block.super }}
+
+<link rel="stylesheet" type="text/css" href="{% static 'app/CSS/admin.css' %}">
+
+{% endblock %}
