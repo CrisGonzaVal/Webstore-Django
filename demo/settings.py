@@ -144,8 +144,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Cargar variables de entorno desde el archivo .env
 
-
-SECRET_KEY = os.environ.get('SECRET_KEY')
+# Configuraciones de PayPal
 PAYPAL_CLIENT_ID = os.environ.get('PAYPAL_CLIENT_ID')
 PAYPAL_CLIENT_SECRET = os.environ.get('PAYPAL_CLIENT_SECRET')
 
