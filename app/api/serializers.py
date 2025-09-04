@@ -14,11 +14,11 @@ class ImportadoraSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class BodegaSerializer(serializers.ModelSerializer):
+class BodegaSerializer(serializers.ModelSerializer): #Crea automáticamente campos basados en tu modelo
     rut_empresa_nombre = serializers.CharField(source='rut_empresa.rut_empresa', read_only=True)
     
     class Meta:
-        model = Bodega
+        model = Bodega # Se basa en el modelo Bodega
         fields = ['id_bodega', 'rut_empresa', 'rut_empresa_nombre']
 
 
