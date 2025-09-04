@@ -153,6 +153,7 @@ PAYPAL_CLIENT_SECRET = os.environ.get('PAYPAL_CLIENT_SECRET')
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
+        # 'rest_framework.permissions.AllowAny', # Permitir acceso sin autenticación para pruebas
     ],
 }
 
@@ -161,3 +162,5 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8100",  # Para Ionic
     "http://localhost:4200",  # Para Angular
 ]
+
+# Cors es un mecanismo de seguridad de los navegadores web que controla qué sitios web pueden acceder a recursos de otros dominios.

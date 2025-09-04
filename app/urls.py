@@ -6,6 +6,7 @@ from django.conf.urls.static import static
 from .views import home, carro, catalogo, login, ofertas, registro,  agregar_producto, eliminar_producto, restar_producto, limpiar_carrito, agregar_producto_catalogo
 from .views import create_order, capture_order, limpiar_carrito_despues_compra, gracias
 
+from django.urls import path, include  # Importar include para las URLs de la API
 
 
 urlpatterns = [
@@ -25,6 +26,12 @@ urlpatterns = [
     path('api/orders', create_order, name='create_order'),
     path('api/orders/<order_id>/capture', capture_order, name='capture_order'),
     path('gracias/', gracias, name='gracias'),
+    
     path('limpiar_carrito_despues_compra/', limpiar_carrito_despues_compra, name='limpiar_carrito_despues_compra'),
+
+
+    path('api/', include('app.api.urls')),  # Incluir las URLs de la API
+
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
