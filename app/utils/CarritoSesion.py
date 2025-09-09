@@ -6,6 +6,8 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+# Maneja los datos del carrito en la sesión del navegador
+# Persistir el carrito entre páginas
 class CarritoSesion:
     def __init__(self, request):
         self.session = request.session

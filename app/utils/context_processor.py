@@ -1,5 +1,9 @@
 from decimal import Decimal
-from .utils.CarritoSesion import CarritoSesion
+from .CarritoSesion import CarritoSesion
+
+#genera variables para todos los templates
+#Información que necesitas en múltiples páginas
+#Estado persistente (carrito, usuario, notificaciones)
 
 def carrito_context(request):
     carrito = CarritoSesion(request)
