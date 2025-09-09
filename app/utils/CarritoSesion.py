@@ -1,12 +1,12 @@
 from decimal import Decimal
 from django.core.exceptions import ValidationError
-from .services.CarritoService import CarritoService
-from .services.InventarioService import InventarioService
+from ..services.CarritoService import CarritoService
+from ..services.InventarioService import InventarioService
 import logging
 
 logger = logging.getLogger(__name__)
 
-class Carrito:
+class CarritoSesion:
     def __init__(self, request):
         self.session = request.session
         self.request = request

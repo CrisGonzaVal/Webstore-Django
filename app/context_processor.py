@@ -1,8 +1,8 @@
 from decimal import Decimal
-from .Carrito import Carrito
+from .utils.CarritoSesion import CarritoSesion
 
 def carrito_context(request):
-    carrito = Carrito(request)
+    carrito = CarritoSesion(request)
     total_items = sum(item['cantidad'] for item in carrito.carrito.values())
     total_acumulado = Decimal('0.00')
     

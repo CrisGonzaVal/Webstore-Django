@@ -3,7 +3,7 @@ from django.shortcuts import render , redirect
 from.models import Producto, Inventario, Categoria, Marca
 from django.db.models import Sum
 
-from .Carrito import Carrito
+from .utils.CarritoSesion import CarritoSesion
 from decimal import Decimal
 
 from django.http import JsonResponse
@@ -15,7 +15,7 @@ import json
 import base64
 
 def cantidad_carrito(request):
-    carrito = Carrito(request)
+    carrito = CarritoSesion(request)
     total_carrito = sum(Decimal(str(item['acumulado'])) for item in carrito.carrito.values())
 
     # Calcular la cantidad total de productos en el carrito
@@ -149,31 +149,31 @@ def ofertas(request):
 
 
 def agregar_producto(request, producto_id):
-    carrito = Carrito(request)
+    carrito = CarritoSesion(request)
     producto = Producto.objects.get(id_producto=producto_id)
     carrito.agregar(producto)
     return redirect("carro")
 
 def agregar_producto_catalogo(request, producto_id):
-    carrito = Carrito(request)
+    carrito = CarritoSesion(request)
     producto = Producto.objects.get(id_producto=producto_id)
     carrito.agregar(producto)
     return redirect("catalogo")
 
 def eliminar_producto(request, producto_id):
-    carrito = Carrito(request)
+    carrito = CarritoSesion(request)
     producto = Producto.objects.get(id_producto=producto_id)
     carrito.eliminar(producto)
     return redirect("carro")
 
 def restar_producto(request, producto_id):
-    carrito = Carrito(request)
+    carrito = CarritoSesion(request)
     producto = Producto.objects.get(id_producto=producto_id)
     carrito.disminuir(producto)
     return redirect("carro")
 
 def limpiar_carrito(request):
-    carrito = Carrito(request)
+    carrito = CarritoSesion(request)
     carrito.limpiar()
     return redirect("carro")
 
@@ -249,7 +249,7 @@ def capture_order(request, order_id):
 @csrf_exempt
 def limpiar_carrito_despues_compra(request):
     if request.method == 'POST':
-        carrito = Carrito(request)
+        carrito = CarritoSesion(request)
         carrito.limpiar()
         return JsonResponse({'status': 'Carrito limpiado después de la compra'}, status=200)
     else:
