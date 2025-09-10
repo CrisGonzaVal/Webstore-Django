@@ -34,6 +34,15 @@ class ProductoViewSet(viewsets.ModelViewSet):
 
     filter_backends = [DjangoFilterBackend] # Habilitar filtros
     filterset_fields = ['id_categoria', 'id_marca', 'valor']
+    """ Filtrar por categoría
+        GET /api/productos/?id_categoria=2
+
+        Filtrar por marca
+        GET /api/productos/?id_marca=5
+
+        Filtrar por precio exacto
+        GET /api/productos/?valor=15000
+    """
 
 class InventarioViewSet(viewsets.ModelViewSet):
     queryset = Inventario.objects.all()

@@ -5,3 +5,4 @@ requests == 2.32.3
 django-filter==23.2
 djangorestframework==3.14.0
 django-cors-headers==4.0.0
+python-dotenv

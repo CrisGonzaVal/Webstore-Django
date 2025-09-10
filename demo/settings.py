@@ -22,12 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-fallback-key-for-development-only')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',')  # * solo para desarrollo
 
 
 # Application definition
@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.humanize', #para utilizar la etiqueta humanize
     'rest_framework', #para utilizar django rest framework
     'corsheaders',#para utilizar django cors headers
+    'django_filters', #para utilizar filtros en la API
+    'app.api', #API package for Django REST Framework endpoints
 ]
 
 MIDDLEWARE = [
@@ -57,7 +59,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'demo.urls'
-import os #se importa (admin)
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -113,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'es' #idioma django
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Santiago'
 
 USE_I18N = True
 
@@ -130,7 +131,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'app/static'),
 ]
 
-import os
 
 #url donde se guardaran las imagenes de la base de datos por medio el admin
 MEDIA_URL = '/media/'
@@ -149,8 +149,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Cargar variables de entorno desde el archivo .env
 
 # Configuraciones de PayPal
-PAYPAL_CLIENT_ID = os.environ.get('PAYPAL_CLIENT_ID')
-PAYPAL_CLIENT_SECRET = os.environ.get('PAYPAL_CLIENT_SECRET')
+PAYPAL_CLIENT_ID = os.environ.get('PAYPAL_CLIENT_ID','')
+PAYPAL_CLIENT_SECRET = os.environ.get('PAYPAL_CLIENT_SECRET','')
 
 
 # Configuraciones REST Framework
@@ -161,17 +161,24 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 20,  # 20 productos por página
+
+    'DEFAULT_FILTER_BACKENDS': [ # para habilitar filtros en la api
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.SearchFilter',
+        'rest_framework.filters.OrderingFilter',
+    ]
 }
 
 # Configuraciones CORS
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8100",  # Para Ionic
-    "http://localhost:8100",  # Ionic dev
+    "http://localhost:8000",  # Ionic dev
     "http://localhost:4200",  # Para Angular
 ]
 
 # Cors es un mecanismo de seguridad de los navegadores web que controla qué sitios web pueden acceder a recursos de otros dominios.
 
+CORS_ALLOW_CREDENTIALS = True # Permitir el envío de cookies y credenciales en solicitudes CORS
 
 # demo/settings.py - Agregar logging
 LOGGING = {

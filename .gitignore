@@ -10,3 +10,7 @@
 *.pyc
 __pycache__/
 db.sqlite3
+django.log
+media/
+.DS_Store
+node_modules/
