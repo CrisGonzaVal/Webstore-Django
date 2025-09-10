@@ -12,6 +12,9 @@ from .serializers import (
     ProductoListSerializer, InventarioDetalleSerializer
 )
 
+from django_filters.rest_framework import DjangoFilterBackend #para filtros en la API
+from rest_framework.permissions import AllowAny # Permitir acceso sin autenticación
+
 class ImportadoraViewSet(viewsets.ModelViewSet):
     queryset = Importadora.objects.all() #define qué datos obtener de la base de datos
     serializer_class = ImportadoraSerializer #define cómo convertir los datos
@@ -28,6 +31,9 @@ class MarcaViewSet(viewsets.ModelViewSet):
 class ProductoViewSet(viewsets.ModelViewSet):
     queryset = Producto.objects.all()
     serializer_class = ProductoSerializer
+
+    filter_backends = [DjangoFilterBackend] # Habilitar filtros
+    filterset_fields = ['id_categoria', 'id_marca', 'valor']
 
 class InventarioViewSet(viewsets.ModelViewSet):
     queryset = Inventario.objects.all()
