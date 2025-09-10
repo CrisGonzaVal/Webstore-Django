@@ -8,11 +8,14 @@ from .CarritoSesion import CarritoSesion
 def carrito_context(request):
     carrito = CarritoSesion(request)
     total_items = sum(item['cantidad'] for item in carrito.carrito.values())
-    total_acumulado = Decimal('0.00')
     
-    if request.user.is_authenticated:
-        for item in carrito.carrito.values():
-            total_acumulado += Decimal(str(item["acumulado"]))
+    
+    
+    total_acumulado = Decimal('0.00')
+    # Verifica si el usuario está autenticado antes de acceder al carrito
+    #if request.user.is_authenticated: 
+    for item in carrito.carrito.values():
+        total_acumulado += Decimal(str(item["acumulado"]))
     
     return {
         'total_items_carrito': total_items,

@@ -136,6 +136,10 @@ import os
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+# Limitar tamaño de archivos subidos
+FILE_UPLOAD_MAX_MEMORY_SIZE = 5242880  # 5MB
+DATA_UPLOAD_MAX_MEMORY_SIZE = 5242880  # 5MB
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -152,15 +156,43 @@ PAYPAL_CLIENT_SECRET = os.environ.get('PAYPAL_CLIENT_SECRET')
 # Configuraciones REST Framework
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-        # 'rest_framework.permissions.AllowAny', # Permitir acceso sin autenticación para pruebas
+        #'rest_framework.permissions.IsAuthenticated', # Permitir acceso con autenticación para pruebas
+         'rest_framework.permissions.AllowAny', 
     ],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 20,  # 20 productos por página
 }
 
 # Configuraciones CORS
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8100",  # Para Ionic
+    "http://localhost:8100",  # Ionic dev
     "http://localhost:4200",  # Para Angular
 ]
 
 # Cors es un mecanismo de seguridad de los navegadores web que controla qué sitios web pueden acceder a recursos de otros dominios.
+
+
+# demo/settings.py - Agregar logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': 'django.log',
+        },
+        'console': {
+            'level': 'INFO',
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'app.services': {
+            'handlers': ['file', 'console'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+    },
+}
