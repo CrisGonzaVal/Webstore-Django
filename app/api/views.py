@@ -34,6 +34,8 @@ class ProductoViewSet(viewsets.ModelViewSet):
 
     filter_backends = [DjangoFilterBackend] # Habilitar filtros
     filterset_fields = ['id_categoria', 'id_marca', 'valor']
+    search_fields = ['nombre_prod', 'descripcion']
+    ordering_fields = ['valor', 'nombre_prod']
     """ Filtrar por categoría
         GET /api/productos/?id_categoria=2
 
@@ -42,6 +44,10 @@ class ProductoViewSet(viewsets.ModelViewSet):
 
         Filtrar por precio exacto
         GET /api/productos/?valor=15000
+
+        http://localhost:8000/api/productos/?search=laptop # Buscar por nombre o descripción
+        http://localhost:8000/api/productos/?ordering=valor  # Ordenar por precio ascendente
+        http://localhost:8000/api/productos/?ordering=-valor # Ordenar por precio descendente
     """
 
 class InventarioViewSet(viewsets.ModelViewSet):
