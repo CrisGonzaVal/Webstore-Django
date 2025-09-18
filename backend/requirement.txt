@@ -1,4 +1,6 @@
 #python -m pip install -r requirement.txt
+#pip install -r requirement.txt
+
 django == 4.1.2
 pillow == 9.5.0
 requests == 2.32.3
@@ -6,3 +8,5 @@ django-filter==23.2
 djangorestframework==3.14.0
 django-cors-headers==4.0.0
 python-dotenv == 1.1.1
+
+#python manage.py runserver
