@@ -139,9 +139,39 @@ class Usuario(models.Model):
     dv = models.CharField(max_length=1)
     email = models.CharField(max_length=100)
     tipo_usuario = models.ForeignKey(TipoUsuario, on_delete=models.CASCADE)
+    fecha_registro = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        unique_together = ('rut', 'dv')  # La combinación rut+dv debe ser única
+    
+    @property
+    def rut_formateado(self):
+        """
+        Retorna el RUT formateado con puntos y guión
+        """
+        if self.rut and self.dv:
+            from .services.RutValidationService import RutValidationService
+            return RutValidationService.formatear_rut(self.rut, self.dv)
+        return ""
+    
+    @property
+    def rut_completo(self):
+        """
+        Retorna el RUT completo sin formato
+        """
+        if self.rut and self.dv:
+            return f"{self.rut}{self.dv}"
+        return ""
+    
+    
+    def __str__(self):
+        return f"{self.nombre} {self.apellido} ({self.rut_formateado})"
+    
     def __str__(self):
       return self.nombre + " "+ self.apellido
+
+    
+
 
     
 class Cliente(models.Model):
